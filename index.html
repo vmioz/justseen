@@ -749,12 +749,14 @@ button.cred:hover,button.cred:focus-visible{border-color:var(--gold);outline:non
       <h2>الأسئلة الشائعة</h2>
     </div>
     <div class="faq">
-      <div class="faq-item reveal"><button class="faq-q" aria-expanded="false">كم تستغرق مدة تسليم الخدمة؟ <span class="plus">+</span></button><div class="faq-a"><div>تختلف المدة حسب نوع الخدمة وحجمها، وغالبًا نسلّم خلال ١ إلى ٥ أيام. للطلبات المستعجلة تواصل معنا لتنسيق وقت أسرع.</div></div></div>
-      <div class="faq-item reveal"><button class="faq-q" aria-expanded="false">هل تضمنون خصوصية معلوماتي؟ <span class="plus">+</span></button><div class="faq-a"><div>بالتأكيد، جميع بياناتك وتفاصيل طلبك تبقى سرّية تمامًا ولا تُشارك مع أي طرف.</div></div></div>
-      <div class="faq-item reveal"><button class="faq-q" aria-expanded="false">هل يمكنني طلب تعديلات بعد التسليم؟ <span class="plus">+</span></button><div class="faq-a"><div>نعم، التعديلات غير محدودة ومجانية حتى ترضى تمامًا، ضمن نطاق الطلب المتفق عليه.</div></div></div>
-      <div class="faq-item reveal"><button class="faq-q" aria-expanded="false">كيف أعرف السعر النهائي؟ <span class="plus">+</span></button><div class="faq-a"><div>الأسعار المعروضة حد أدنى وقابلة للزيادة حسب حجم العمل وتفاصيله. نحدد معك السعر النهائي قبل البدء، ولا تدفع أي مبلغ إضافي بعد الاتفاق.</div></div></div>
-      <div class="faq-item reveal"><button class="faq-q" aria-expanded="false">لماذا أسعاركم أعلى من غيركم؟ <span class="plus">+</span></button><div class="faq-a"><div>لأننا لا نقدّم قوالب جاهزة؛ كل عمل يُنفَّذ خصيصًا لك بأعلى جودة، مع تعديلات غير محدودة ودعم حتى التسليم. تدفع مرة واحدة وتستلم عملًا تفتخر به.</div></div></div>
-      <div class="faq-item reveal"><button class="faq-q" aria-expanded="false">كيف أبدأ طلب خدمة؟ <span class="plus">+</span></button><div class="faq-a"><div>اضغط على بطاقة الخدمة التي تريدها أو زر «اطلب الآن»، وسيتم تحويلك مباشرة إلى واتساب للتواصل.</div></div></div>
+      <div class="faq-item reveal"><button class="faq-q" aria-expanded="false">كم تستغرق مدة تسليم الخدمة؟ <span class="plus">+</span></button><div class="faq-a"><div>تختلف المدة حسب نوع الخدمة وحجمها وغالبًا نسلّم خلال ١ إلى ٣ أيام
+     للطلبات المستعجلة تواصل معنا لتنسيق وقت أسرع</div></div></div>
+      <div class="faq-item reveal"><button class="faq-q" aria-expanded="false">هل تضمنون خصوصية معلوماتي؟ <span class="plus">+</span></button><div class="faq-a"><div>أكيد جميع بياناتك وتفاصيل طلبك تبقى سرّية تمامًا ولا تُشارك مع أي طرف</div></div></div>
+      <div class="faq-item reveal"><button class="faq-q" aria-expanded="false">هل يمكنني طلب تعديلات بعد التسليم؟ <span class="plus">+</span></button><div class="faq-a"><div>نعم، التعديلات غير محدودة ومجانية حتى ترضى تمامًا ضمن نطاق الطلب المتفق عليه</div></div></div>
+      <div class="faq-item reveal"><button class="faq-q" aria-expanded="false">كيف أعرف السعر النهائي؟ <span class="plus">+</span></button><div class="faq-a"><div>الأسعار المعروضة حد أدنى وقابلة للزيادة حسب حجم العمل وتفاصيله نحدد معك السعر النهائي قبل البدء ولا تدفع أي مبلغ إضافي بعد الاتفاق</div></div></div>
+      <div class="faq-item reveal"><button class="faq-q" aria-expanded="false">لماذا أسعاركم أعلى من غيركم؟ <span class="plus">+</span></button><div class="faq-a"><div>لأننا لا نقدّم قوالب جاهزة كل عمل يُنفَّذ خصيصًا لك بأعلى جودة مع تعديلات غير محدودة ودعم حتى التسليم
+         تدفع مرة واحدة وتستلم عملًا تفتخر به</div></div></div>
+      <div class="faq-item reveal"><button class="faq-q" aria-expanded="false">كيف أبدأ طلب خدمة؟ <span class="plus">+</span></button><div class="faq-a"><div>اضغط على بطاقة الخدمة التي تريدها أو زر «اطلب الآن» وسيتم تحويلك مباشرة إلى واتساب للتواصل</div></div></div>
     </div>
   </div>
 </section>
@@ -1096,14 +1098,13 @@ if(location.hash==='#packages') setPkgs(true);
 /* ===== نماذج الأعمال ===== */
 const WORK_CATS = {research:'بحوث (PDF)', tech:'برامج وتطبيقات', careers:'التوظيف', design:'تصاميم وعروض'};
 const WORKS = [
-  {cat:'research', title:'بحث: العوامل الخارجية للإجرام', desc:'ورقة بحثية بالعربية لمقرر علم الإجرام والعقاب — منهج وصفي تحليلي، توثيق علمي، وتنسيق PDF جاهز للتسليم', img:'research-crime'},
-  {cat:'research', title:'بحث: مراجعة أدبيات بالإنجليزية', desc:'مراجعة 15 دراسة محكّمة في تعلّم الآلة لكشف التسلل الشبكي، بتوثيق IEEE وجداول مقارنة', img:'research-review'},
-  {cat:'tech', title:'تطبيق تحويل العملات', desc:'تطبيق أندرويد (Kotlin) يحوّل بين الدولار والريال — جرّبه مباشرة من هنا', img:'converter', live:'works/currency-converter.html'},
+  {cat:'careers', title:'سيرة ذاتية بصيغة ATS', desc:'سيرة احترافية متوافقة مع أنظمة فرز السير الذاتية بلغة إنجليزية وإنجازات بالأرقام', img:'cv-ats'},
+  {cat:'careers', title:'ملف 50 شركة حسب مدينتك', desc:'ملف Excel منظّم بالشركات المناسبة لتخصصك في مدينتك مع مواقعها الرسمية', img:'companies-50'},
   {cat:'tech', title:'حاسبة تسعير التقسيط', desc:'برنامج لأصحاب المتاجر يحسب سعر البيع بعد عمولة تابي وتمارا والضريبة', img:'installments'},
-  {cat:'careers', title:'سيرة ذاتية بصيغة ATS', desc:'سيرة احترافية متوافقة مع أنظمة فرز السير الذاتية، بلغة إنجليزية وإنجازات بالأرقام', img:'cv-ats'},
-  {cat:'careers', title:'ملف 50 شركة حسب مدينتك', desc:'ملف Excel منظّم بالشركات المناسبة لتخصصك في مدينتك، مع مواقعها الرسمية', img:'companies-50'},
-  {cat:'design', title:'عرض تقديمي مختصر', desc:'عرض من 4 شرائح عن إدارة الوقت للطلاب — تصميم واضح وأفكار مرتبة', img:'presentation'},
-  {cat:'design', title:'شهادة شكر وتقدير', desc:'تصميم رسمي بهوية مدرسية، جاهز للطباعة بمقاس A4 مع إضافة الأسماء', img:'certificate'}
+  {cat:'research', title:'بحث: مراجعة أدبيات بالإنجليزية', desc:'مراجعة 15 دراسة محكّمة في تعلّم الآلة لكشف التسلل الشبكي، بتوثيق IEEE وجداول مقارنة', img:'research-review'},
+  {cat:'tech', title:'تطبيق تحويل العملات', desc:'تطبيق أندرويد (Kotlin) يحوّل بين الدولار والريال  جرّبه مباشرة من هنا', img:'converter', live:'works/currency-converter.html'},
+  {cat:'design', title:'عرض تقديمي مختصر', desc:'عرض من 4 شرائح عن إدارة الوقت للطلاب  تصميم واضح وأفكار مرتبة', img:'presentation'},
+  {cat:'design', title:'شهادة شكر وتقدير', desc:'تصميم رسمي بهوية مدرسية جاهز للطباعة بمقاس A4 مع إضافة الأسماء', img:'certificate'}
 ];
 const workFiltersEl = document.getElementById('workFilters');
 const worksGrid = document.getElementById('worksGrid');
