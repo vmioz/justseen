@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>محوّل العملات</title>
+
+  <style>
+    /* ========== التنسيق العام ========== */
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #F3F6FB;
+      font-family: Tahoma, "Segoe UI", Arial, sans-serif;
+      padding: 16px;
+    }
+
+    /* البطاقة الرئيسية للتطبيق */
+    .app {
+      width: 100%;
+      max-width: 380px;
+      background: #FFFFFF;
+      border-radius: 24px;
+      padding: 28px 24px;
+      box-shadow: 0 10px 30px rgba(26, 35, 126, 0.15);
+    }
+
+    h1 {
+      margin: 0;
+      text-align: center;
+      color: #1A237E;
+      font-size: 28px;
+    }
+
+    .rate {
+      text-align: center;
+      color: #5C6BC0;
+      font-size: 14px;
+      margin: 6px 0 24px;
+    }
+
+    /* ========== 1) حقل إدخال المبلغ ========== */
+    label.title {
+      display: block;
+      font-weight: bold;
+      color: #263238;
+      margin-bottom: 8px;
+    }
+
+    #amount {
+      width: 100%;
+      padding: 14px;
+      font-size: 18px;
+      border: 2px solid #B0BEC5;
+      border-radius: 10px;
+      direction: ltr;
+      text-align: right;
+    }
+
+    #amount:focus {
+      outline: none;
+      border-color: #3949AB;
+    }
+
+    /* شكل الحقل عند وجود خطأ */
+    #amount.error { border-color: #C62828; }
+
+    #errorMsg {
+      color: #C62828;
+      font-size: 13px;
+      min-height: 18px;
+      margin-top: 4px;
+    }
+
+    /* ========== 2) أزرار اختيار اتجاه التحويل ========== */
+    .options {
+      margin-top: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .options label {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    .options input { width: 20px; height: 20px; accent-color: #3949AB; }
+
+    /* ========== 3) زر التحويل ========== */
+    #convertBtn {
+      width: 100%;
+      margin-top: 24px;
+      height: 56px;
+      border: none;
+      border-radius: 16px;
+      background: #3949AB;
+      color: #FFFFFF;
+      font-size: 18px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    #convertBtn:hover { background: #283593; }
+
+    /* ========== 4) عرض النتيجة ========== */
+    .result-card {
+      margin-top: 28px;
+      padding: 20px;
+      border-radius: 20px;
+      background: #F3F6FB;
+      text-align: center;
+    }
+
+    .result-card small { color: #78909C; }
+
+    #result {
+      margin-top: 8px;
+      font-size: 26px;
+      font-weight: bold;
+      color: #1B5E20;
+      direction: ltr;
+      white-space: pre-line;
+    }
+
+    /* رسالة التنبيه المنبثقة (تشبه Toast في أندرويد) */
+    #toast {
+      position: fixed;
+      bottom: 30px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #323232;
+      color: #FFFFFF;
+      padding: 10px 20px;
+      border-radius: 20px;
+      font-size: 14px;
+      opacity: 0;
+      transition: opacity 0.3s;
+      pointer-events: none;
+    }
+
+    #toast.show { opacity: 1; }
+  </style>
+</head>
+<body>
+
+  <div class="app">
+    <h1>محوّل العملات</h1>
+    <p class="rate">1 دولار أمريكي = 3.75 ريال سعودي</p>
+
+    <!-- 1) حقل إدخال المبلغ -->
+    <label class="title" for="amount">أدخل المبلغ</label>
+    <input type="text" id="amount" inputmode="decimal" placeholder="0.00" autocomplete="off">
+    <div id="errorMsg"></div>
+
+    <!-- 2) اختيار اتجاه التحويل -->
+    <div class="options">
+      <label class="title">اتجاه التحويل:</label>
+      <label><input type="radio" name="direction" id="usdToSar" checked> من دولار إلى ريال (USD → SAR)</label>
+      <label><input type="radio" name="direction" id="sarToUsd"> من ريال إلى دولار (SAR → USD)</label>
+    </div>
+
+    <!-- 3) زر التحويل -->
+    <button id="convertBtn">تحويل (Convert)</button>
+
+    <!-- 4) عرض النتيجة -->
+    <div class="result-card">
+      <small>النتيجة</small>
+      <div id="result">—</div>
+    </div>
+  </div>
+
+  <!-- رسالة التنبيه -->
+  <div id="toast"></div>
+
+  <script>
+    // ثابت سعر الصرف: 1 دولار = 3.75 ريال
+    const USD_TO_SAR_RATE = 3.75;
+
+    // ربط عناصر الصفحة بالمتغيرات
+    const amountInput = document.getElementById("amount");
+    const errorMsg    = document.getElementById("errorMsg");
+    const usdToSar    = document.getElementById("usdToSar");
+    const convertBtn  = document.getElementById("convertBtn");
+    const result      = document.getElementById("result");
+    const toast       = document.getElementById("toast");
+
+    // السماح بإدخال الأرقام ونقطة عشرية واحدة فقط
+    amountInput.addEventListener("input", function () {
+      let value = amountInput.value.replace(/[^0-9.]/g, "");
+      const dot = value.indexOf(".");
+      if (dot !== -1) {
+        value = value.slice(0, dot + 1) + value.slice(dot + 1).replace(/\./g, "");
+      }
+      amountInput.value = value;
+    });
+
+    // مسح النتيجة عند تغيير اتجاه التحويل
+    document.querySelectorAll('input[name="direction"]').forEach(function (radio) {
+      radio.addEventListener("change", function () { result.textContent = "—"; });
+    });
+
+    // عرض رسالة تنبيه لمدة ثانيتين
+    function showToast(message) {
+      toast.textContent = message;
+      toast.classList.add("show");
+      setTimeout(function () { toast.classList.remove("show"); }, 2000);
+    }
+
+    // عرض الخطأ في الرسالة المنبثقة وتحت الحقل
+    function showError(message) {
+      showToast(message);
+      errorMsg.textContent = message;
+      amountInput.classList.add("error");
+      result.textContent = "—";
+    }
+
+    // تنسيق الرقم بخانتين عشريتين، مثل: 1,234.50
+    function formatNumber(value) {
+      return value.toLocaleString("en-US", { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+    }
+
+    // الدالة الرئيسية: تتحقق من المدخل ثم تحسب النتيجة
+    function convert() {
+      // إزالة أي خطأ سابق
+      errorMsg.textContent = "";
+      amountInput.classList.remove("error");
+
+      const input = amountInput.value.trim();
+
+      // الحالة 1: الحقل فارغ
+      if (input === "") {
+        showError("الرجاء إدخال المبلغ أولاً");
+        return;
+      }
+
+      // الحالة 2: المدخل ليس رقماً صالحاً
+      const amount = Number(input);
+      if (input === "." || isNaN(amount)) {
+        showError("الرجاء إدخال رقم صحيح");
+        return;
+      }
+
+      // الحالة 3: المبلغ صفر
+      if (amount <= 0) {
+        showError("يجب أن يكون المبلغ أكبر من صفر");
+        return;
+      }
+
+      // التحويل حسب الاتجاه المختار
+      if (usdToSar.checked) {
+        // دولار ← ريال: نضرب في سعر الصرف
+        const sar = amount * USD_TO_SAR_RATE;
+        result.textContent = formatNumber(amount) + " USD\n= " + formatNumber(sar) + " SAR";
+      } else {
+        // ريال ← دولار: نقسم على سعر الصرف
+        const usd = amount / USD_TO_SAR_RATE;
+        result.textContent = formatNumber(amount) + " SAR\n= " + formatNumber(usd) + " USD";
+      }
+    }
+
+    // تشغيل التحويل عند الضغط على الزر أو على Enter
+    convertBtn.addEventListener("click", convert);
+    amountInput.addEventListener("keydown", function (e) {
+      if (e.key === "Enter") convert();
+    });
+  </script>
+
+</body>
+</html>
