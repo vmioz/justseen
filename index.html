@@ -5,12 +5,16 @@
 <title>سين | Seen — خدمات متكاملة للطلاب والموظفين والمعلمين</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
 <meta name="description" content="سين | Seen — خدمات متكاملة للطلاب والباحثين عن عمل والمعلمين: بحوث، مشاريع، عروض تقديمية، سيرة ذاتية ATS، تجهيزات المعلمين، وتصاميم إبداعية من بوسترات وإنفوجرافيك وشهادات وبطاقات أعمال.">
-<meta name="keywords" content="بحوث جامعية, مشاريع مقررات, عروض تقديمية, خدمات طلابية, سيرة ذاتية, استبيانات, تحضير دروس, سين Seen">
+<meta name="keywords" content="بحوث جامعية, مشاريع مقررات, عروض تقديمية, خدمات طلابية, سيرة ذاتية, تلخيص مناهج, تحضير دروس, سين Seen">
 <meta name="theme-color" content="#0d2019">
 <meta property="og:title" content="سين | Seen — خدمات متكاملة للطلاب والموظفين والمعلمين">
 <meta property="og:description" content="خدمات ترقى بك وتوفّر وقتك — بحوث، مشاريع، عروض تقديمية، سير ذاتية، تجهيزات المعلمين، وتصاميم إبداعية.">
 <meta property="og:type" content="website">
-<meta property="og:image" content="logo.png">
+<meta property="og:image" content="https://justseensa.com/logo.png">
+<meta property="og:url" content="https://justseensa.com/">
+<meta property="og:locale" content="ar_SA">
+<meta name="twitter:card" content="summary">
+<link rel="canonical" href="https://justseensa.com/">
 <link rel="icon" type="image/png" href="logo.png">
 <link rel="apple-touch-icon" href="logo.png">
 
@@ -145,11 +149,22 @@ nav a.active::after{content:"";position:absolute;bottom:3px;right:50%;transform:
 .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;max-width:880px;margin:clamp(36px,6vw,56px) auto 0;}
 .stat{background:var(--glass);border:1px solid var(--glass-line);border-radius:var(--radius);padding:22px 12px;text-align:center;}
 .stat .num{font-family:'El Messiri','Tajawal',sans-serif;font-weight:700;font-size:clamp(28px,3.6vw,36px);color:var(--gold-bright);line-height:1.1;direction:ltr;unicode-bidi:isolate;}
+.stat .num-word{direction:rtl;}
+.stat-link{text-decoration:none;color:inherit;transition:border-color .25s;}
+.stat-link:hover{border-color:var(--gold);}
 .stat .lbl{color:var(--muted);font-size:14px;margin-top:6px;}
 
 /* ===================== الأقسام ===================== */
 section.block{padding:clamp(60px,9vw,96px) 0;position:relative;}
-section.block.alt::before{content:"";position:absolute;inset:0;background:rgba(255,255,255,.018);border-block:1px solid rgba(203,182,130,.07);z-index:-1;}
+.how-block{padding:clamp(48px,7vw,72px) 0;}
+.how-block .section-head{margin-bottom:clamp(22px,4vw,34px);}
+section.block.alt::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(203,182,130,.045),rgba(255,255,255,.025) 30%,rgba(255,255,255,.025) 70%,rgba(203,182,130,.045));border-block:1px solid rgba(203,182,130,.16);z-index:-1;}
+/* فاصل بين الأقسام: خط ذهبي بنجمة في المنتصف */
+section.block.alt::after,section.block.alt + section.block::after,section.block.alt + section.block[hidden] + section.block::after{content:"";position:absolute;left:50%;width:min(340px,70vw);height:18px;transform:translate(-50%,-50%);
+  background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath d='M50 2 C54 34 66 46 98 50 C66 54 54 66 50 98 C46 66 34 54 2 50 C34 46 46 34 50 2 Z' fill='%23cbb682'/%3E%3C/svg%3E") center/18px 18px no-repeat,linear-gradient(90deg,transparent,rgba(203,182,130,.45) 35%,transparent 47%,transparent 53%,rgba(203,182,130,.45) 65%,transparent) center/100% 1px no-repeat;
+  background-color:transparent;pointer-events:none;}
+section.block.alt::after{top:0;}
+section.block.alt + section.block::after,section.block.alt + section.block[hidden] + section.block::after{top:0;}
 
 /* فلاتر */
 .filters{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-bottom:20px;}
@@ -175,16 +190,21 @@ section.block.alt::before{content:"";position:absolute;inset:0;background:rgba(2
 .card-cat{position:absolute;top:14px;left:14px;font-size:11px;line-height:1.6;color:var(--gold-soft);border:1px solid var(--glass-line);padding:2px 9px;border-radius:20px;}
 .sc-body{flex:1;}
 .service-card h3{font-size:18px;line-height:1.5;color:var(--gold-bright);margin-bottom:4px;}
+.hot-tag{display:inline-block;vertical-align:middle;margin-inline-start:6px;font-family:'Tajawal',sans-serif;font-size:11px;font-weight:700;line-height:1;padding:5px 9px;border-radius:20px;background:linear-gradient(135deg,var(--gold-bright),var(--gold-soft));color:var(--green-900);white-space:nowrap;}
+.service-card.is-hot{border-color:rgba(203,182,130,.45);background:linear-gradient(180deg,rgba(203,182,130,.08),var(--glass));}
 .service-card p{color:var(--muted);font-size:14px;line-height:1.75;margin-bottom:16px;}
 .card-foot{display:flex;align-items:center;justify-content:space-between;gap:10px;padding-top:14px;border-top:1px solid rgba(203,182,130,.1);}
 .service-price{font-family:'El Messiri','Tajawal',sans-serif;color:var(--gold);font-weight:700;font-size:21px;line-height:1.2;display:flex;align-items:baseline;gap:5px;}
 .service-price small{font-family:'Tajawal',sans-serif;font-size:12px;color:var(--muted);font-weight:500;}
-.order-link{font-size:13px;font-weight:700;color:var(--muted);display:inline-flex;align-items:center;gap:6px;transition:color .2s, gap .2s;white-space:nowrap;}
+.order-link{font-size:13px;font-weight:700;color:var(--muted);display:inline-flex;align-items:center;gap:6px;transition:color .2s, gap .2s;white-space:nowrap;text-decoration:none;}
+.order-link::before{content:"";position:absolute;inset:0;z-index:1;border-radius:inherit;}
+.sample-btn{position:relative;z-index:2;display:inline-flex;align-items:center;gap:6px;margin:-6px 0 14px;padding:5px 12px;border-radius:20px;border:1px solid var(--glass-line);background:rgba(203,182,130,.08);color:var(--gold);font-size:12.5px;font-weight:700;cursor:pointer;transition:background .2s,color .2s;}
+.sample-btn .ico{width:15px;height:15px;}
+.sample-btn:hover,.sample-btn:focus-visible{background:var(--gold);color:var(--green-900);}
 .order-link .ico{width:16px;height:16px;}
 
 /* ===================== الباقات ===================== */
-.pkg-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;align-items:stretch;}
-.pkg-grid{display:flex;flex-wrap:wrap;justify-content:center;}
+.pkg-grid{display:flex;flex-wrap:wrap;justify-content:center;gap:22px;align-items:stretch;}
 .pkg-grid>.pkg{flex:0 1 calc((100% - 22px)/2);max-width:470px;}
 .pkg{position:relative;background:var(--glass);border:1px solid var(--glass-line);border-radius:var(--radius);padding:34px 26px 26px;display:flex;flex-direction:column;transition:transform .35s var(--ease), border-color .35s, box-shadow .35s;}
 .pkg.featured{border-color:var(--gold);background:linear-gradient(180deg,rgba(203,182,130,.13),var(--glass));box-shadow:0 14px 40px rgba(203,182,130,.16);}
@@ -192,6 +212,9 @@ section.block.alt::before{content:"";position:absolute;inset:0;background:rgba(2
 .pkg h3{font-size:22px;color:var(--gold-bright);margin-bottom:6px;}
 .pkg-price{color:var(--cream);margin-bottom:18px;font-size:15px;display:flex;align-items:baseline;gap:6px;}
 .pkg-price b{font-family:'El Messiri','Tajawal',sans-serif;font-size:38px;line-height:1.1;color:var(--gold);}
+.pkg[hidden]{display:none!important;}
+.pkg-more .ico{transition:transform .3s var(--ease);}
+.pkg-more[aria-expanded="true"] .ico{transform:rotate(180deg);}
 .pkg ul{list-style:none;margin-bottom:24px;flex:1;}
 .pkg ul li{color:var(--muted);font-size:15px;padding:8px 0;border-bottom:1px solid rgba(203,182,130,.08);display:flex;gap:10px;align-items:flex-start;}
 .pkg ul li::before{content:"✦";color:var(--gold);flex-shrink:0;}
@@ -201,47 +224,11 @@ section.block.alt::before{content:"";position:absolute;inset:0;background:rgba(2
 .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;counter-reset:s;}
 .step{position:relative;background:var(--glass);border:1px solid var(--glass-line);border-radius:var(--radius);padding:28px 22px;text-align:center;}
 .step .n{font-family:'El Messiri','Tajawal',sans-serif;font-size:42px;color:rgba(203,182,130,.25);position:absolute;top:8px;left:18px;line-height:1;}
-.step .ic,.why-card .ic{width:54px;height:54px;border-radius:15px;display:grid;place-items:center;margin:0 auto 14px;background:linear-gradient(145deg,rgba(203,182,130,.2),rgba(203,182,130,.04));border:1px solid var(--glass-line);color:var(--gold-bright);}
-.step .ic .ico,.why-card .ic .ico{width:26px;height:26px;}
+.step .ic{width:54px;height:54px;border-radius:15px;display:grid;place-items:center;margin:0 auto 14px;background:linear-gradient(145deg,rgba(203,182,130,.2),rgba(203,182,130,.04));border:1px solid var(--glass-line);color:var(--gold-bright);}
+.step .ic .ico{width:26px;height:26px;}
 .step h3{font-size:18px;color:var(--gold-bright);margin-bottom:6px;}
 .step p{color:var(--muted);font-size:14px;}
 
-/* ===================== طرق الدفع ===================== */
-.pay-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;max-width:780px;margin:0 auto 24px;}
-.pay-card{background:var(--glass);border:1px solid var(--glass-line);border-radius:18px;padding:22px 16px;text-align:center;transition:transform .3s var(--ease), border-color .3s;}
-.pay-card .pic{width:50px;height:50px;border-radius:14px;margin:0 auto 12px;display:grid;place-items:center;color:var(--gold-bright);background:rgba(203,182,130,.1);border:1px solid var(--glass-line);}
-.pay-card h4{color:var(--gold-bright);font-size:16px;margin-bottom:2px;}
-.pay-card p{color:var(--muted);font-size:13px;}
-.pay-panel{background:var(--glass);border:1px solid var(--glass-line);border-radius:var(--radius);padding:clamp(20px,4vw,30px);max-width:680px;margin:0 auto;text-align:center;}
-.pay-panel h3{font-size:20px;margin-bottom:4px;}
-.iban-row{display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:12px;background:rgba(0,0,0,.25);border:1px dashed var(--glass-line);border-radius:14px;padding:12px 14px;margin:12px 0;text-align:right;}
-.iban-row .lbl{color:var(--muted);font-size:14px;min-width:68px;}
-.iban-row code{font-family:'Tajawal',monospace;font-weight:700;letter-spacing:1px;color:var(--gold-bright);font-size:16px;direction:ltr;text-align:center;word-break:break-all;}
-.copy-btn{display:inline-flex;align-items:center;gap:6px;background:var(--gold);color:var(--green-900);border:none;border-radius:10px;padding:8px 14px;font-weight:700;cursor:pointer;font-size:13px;transition:filter .2s;white-space:nowrap;}
-.copy-btn .ico{width:15px;height:15px;}
-.copy-btn.done{background:#7fc79a;}
-.pay-note{color:var(--muted);font-size:13.5px;margin-top:6px;}
-.pay-panel .btn{margin-top:14px;}
-
-/* ===================== لماذا نحن ===================== */
-.why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;}
-.why-card{background:var(--glass);border:1px solid var(--glass-line);border-radius:var(--radius);padding:26px 22px;transition:transform .3s var(--ease), border-color .3s;}
-.why-card .ic{margin:0 0 14px;}
-.why-card h3{font-size:18px;color:var(--gold-bright);margin-bottom:4px;}
-.why-card p{color:var(--muted);font-size:14px;}
-
-/* ===================== نموذج الطلب ===================== */
-.order-form{max-width:660px;margin:0 auto;background:var(--glass);border:1px solid var(--glass-line);border-radius:var(--radius);padding:clamp(20px,4vw,32px);}
-.of-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
-.field{margin-bottom:16px;display:flex;flex-direction:column;}
-.field label{color:var(--gold-soft);font-size:14px;margin-bottom:7px;font-weight:500;}
-.field input,.field select,.field textarea{width:100%;background:rgba(0,0,0,.25);border:1px solid var(--glass-line);border-radius:12px;padding:13px 14px;color:var(--text);font-family:inherit;font-size:16px;outline:none;transition:border-color .2s, box-shadow .2s;resize:vertical;-webkit-appearance:none;appearance:none;}
-.field select{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' fill='none' stroke='%23cbb682' stroke-width='1.8' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:left 14px center;padding-left:36px;}
-.field input::placeholder,.field textarea::placeholder{color:rgba(166,179,167,.6);}
-.field input:focus,.field select:focus,.field textarea:focus{border-color:var(--gold);box-shadow:0 0 0 3px rgba(203,182,130,.15);}
-.field select option,.field select optgroup{background:var(--green-800);color:var(--text);}
-.field-error{color:#e08a6a;font-size:13.5px;margin-top:6px;}
-.order-form .btn{width:100%;}
 
 /* ===================== الأسئلة الشائعة ===================== */
 .faq{max-width:780px;margin:0 auto;}
@@ -270,8 +257,9 @@ footer{margin-top:20px;border-top:1px solid rgba(203,182,130,.12);background:rgb
 .copy-bar{text-align:center;color:var(--muted);font-size:13px;border-top:1px solid rgba(203,182,130,.1);padding-top:20px;max-width:1180px;margin:0 auto;}
 
 /* أزرار عائمة */
-.float-wa{position:fixed;bottom:calc(20px + env(safe-area-inset-bottom));left:20px;background:#25D366;color:#fff;padding:12px 20px;border-radius:30px;font-weight:700;box-shadow:0 8px 24px rgba(0,0,0,.35);text-decoration:none;z-index:90;display:inline-flex;align-items:center;gap:8px;transition:transform .3s var(--ease), background .3s;}
+.float-wa{opacity:0;pointer-events:none;translate:0 12px;transition:opacity .3s,translate .3s var(--ease),transform .3s var(--ease),background .3s;position:fixed;bottom:calc(20px + env(safe-area-inset-bottom));left:20px;background:#25D366;color:#fff;padding:12px 20px;border-radius:30px;font-weight:700;box-shadow:0 8px 24px rgba(0,0,0,.35);text-decoration:none;z-index:90;display:inline-flex;align-items:center;gap:8px;transition:transform .3s var(--ease), background .3s;}
 .float-wa .ico{width:22px;height:22px;}
+.float-wa.show{opacity:1;pointer-events:auto;translate:0 0;}
 .to-top{position:fixed;bottom:calc(20px + env(safe-area-inset-bottom));right:20px;width:48px;height:48px;border-radius:50%;background:rgba(13,32,25,.8);border:1px solid var(--glass-line);color:var(--gold);cursor:pointer;z-index:90;opacity:0;pointer-events:none;transform:translateY(10px);transition:opacity .3s, transform .3s, background .3s;-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);display:grid;place-items:center;}
 .to-top .ico{width:20px;height:20px;}
 .to-top.show{opacity:1;pointer-events:auto;transform:none;}
@@ -298,15 +286,13 @@ footer{margin-top:20px;border-top:1px solid rgba(203,182,130,.12);background:rgb
   .service-card:hover::after{opacity:1;}
   .service-card:hover .order-link{color:var(--gold-bright);gap:10px;}
   .pkg:hover{transform:translateY(-7px);border-color:var(--gold);box-shadow:var(--shadow);}
-  .pay-card:hover,.why-card:hover{border-color:var(--gold);transform:translateY(-5px);}
-  .copy-btn:hover{filter:brightness(1.08);}
   .foot-col a.fl:hover{color:var(--gold);}
   .socials a:hover{background:var(--gold);color:var(--green-900);transform:translateY(-4px);}
   .float-wa:hover{background:#1fb855;transform:scale(1.05);}
   .to-top:hover{background:var(--gold);color:var(--green-900);}
 }
 /* ضغط على الجوال */
-.service-card:active,.btn:active,.pkg .btn:active{transform:scale(.98);}
+.service-card:has(.order-link:active),.btn:active,.pkg .btn:active{transform:scale(.98);}
 
 /* ===================== تجاوب: لابتوب صغير / آيباد أفقي ===================== */
 @media (max-width:1100px){
@@ -332,7 +318,6 @@ footer{margin-top:20px;border-top:1px solid rgba(203,182,130,.12);background:rgb
   nav a.active::after{display:none;}
 
   .steps{grid-template-columns:repeat(2,1fr);}
-  .why-grid{grid-template-columns:repeat(2,1fr);}
   .services-grid{grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:16px;}
   .foot-grid{grid-template-columns:1fr 1fr;}
   .foot-grid .foot-col:first-child{grid-column:1 / -1;}
@@ -344,7 +329,7 @@ footer{margin-top:20px;border-top:1px solid rgba(203,182,130,.12);background:rgb
   .pkg ul li{font-size:14px;}
 }
 @media (max-width:700px){
-  .pkg-grid{grid-template-columns:1fr;max-width:480px;margin-inline:auto;gap:30px;}
+  .pkg-grid{max-width:480px;margin-inline:auto;gap:30px;}
   .pkg-grid>.pkg{flex-basis:100%;}
   .pkg{padding:34px 24px 24px;}
   .pkg.featured{order:-1;}
@@ -378,6 +363,7 @@ footer{margin-top:20px;border-top:1px solid rgba(203,182,130,.12);background:rgb
   .service-card h3{font-size:16.5px;}
   .service-card p{font-size:13.5px;line-height:1.65;margin-bottom:10px;}
   .card-foot{grid-column:2;padding-top:10px;}
+  .sample-btn{margin:-2px 0 10px;font-size:12px;}
   .service-price{font-size:19px;}
 
   .steps{grid-template-columns:1fr;gap:12px;}
@@ -386,22 +372,8 @@ footer{margin-top:20px;border-top:1px solid rgba(203,182,130,.12);background:rgb
   .step .n{top:10px;left:14px;font-size:30px;}
   .step h3{font-size:17px;margin:0;}
 
-  .why-grid{grid-template-columns:1fr;gap:12px;}
-  .why-card{display:grid;grid-template-columns:54px 1fr;column-gap:14px;padding:18px;align-items:center;}
-  .why-card .ic{margin:0;grid-row:1 / span 2;}
-  .why-card h3{font-size:17px;margin:0;}
 
-  .pay-grid{grid-template-columns:repeat(3,1fr);gap:10px;}
-  .pay-card{padding:16px 8px;border-radius:16px;}
-  .pay-card .pic{width:44px;height:44px;margin-bottom:8px;}
-  .pay-card h4{font-size:14.5px;}
-  .pay-card p{font-size:12px;line-height:1.6;}
-  .iban-row{grid-template-columns:1fr auto;grid-template-areas:"lbl btn" "code code";row-gap:8px;padding:12px;}
-  .iban-row .lbl{grid-area:lbl;}
-  .iban-row .copy-btn{grid-area:btn;}
-  .iban-row code{grid-area:code;font-size:clamp(13px,3.9vw,15.5px);letter-spacing:.2px;word-break:normal;text-align:center;background:rgba(0,0,0,.2);border-radius:10px;padding:8px 6px;}
 
-  .of-row{grid-template-columns:1fr;gap:0;}
   .faq-q{font-size:15.5px;padding:16px 18px;}
   .faq-a div{padding:0 18px 16px;}
 
@@ -418,9 +390,6 @@ footer{margin-top:20px;border-top:1px solid rgba(203,182,130,.12);background:rgb
 @media (max-width:380px){
   .titles p{display:none;}
   .nav-cta .lbl-long{display:none;}
-  .pay-grid{grid-template-columns:1fr;}
-  .pay-card{display:grid;grid-template-columns:44px 1fr;column-gap:12px;text-align:right;align-items:center;padding:12px 14px;}
-  .pay-card .pic{margin:0;grid-row:1 / span 2;}
 }
 
 /* تقليل الحركة */
@@ -430,18 +399,6 @@ footer{margin-top:20px;border-top:1px solid rgba(203,182,130,.12);background:rgb
   .js .reveal{opacity:1;transform:none;}
   .particle{display:none;}
 }
-/* ===== نماذج الأعمال ===== */
-.works-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:22px;}
-.work-card{background:var(--glass);border:1px solid var(--glass-line);border-radius:var(--radius);overflow:hidden;cursor:pointer;text-align:right;color:inherit;font:inherit;padding:0;display:flex;flex-direction:column;transition:transform .3s var(--ease),border-color .3s;}
-.work-card:hover,.work-card:focus-visible{border-color:var(--gold);transform:translateY(-5px);outline:none;}
-.work-thumb{position:relative;aspect-ratio:16/10;overflow:hidden;background:var(--green-800);}
-.work-thumb img{width:100%;height:100%;object-fit:cover;object-position:top;display:block;transition:transform .5s var(--ease);}
-.work-card:hover .work-thumb img{transform:scale(1.04);}
-.work-thumb .zoom{position:absolute;bottom:10px;left:10px;background:rgba(9,19,16,.75);color:var(--gold-bright);font-size:12px;padding:4px 10px;border-radius:20px;border:1px solid var(--glass-line);}
-.work-body{padding:16px 18px 18px;}
-.work-body .card-cat{position:static;display:inline-block;margin-bottom:8px;}
-.work-body h3{font-size:17px;color:var(--gold-bright);margin-bottom:4px;line-height:1.5;}
-.work-body p{color:var(--muted);font-size:14px;line-height:1.7;}
 .lightbox{position:fixed;inset:0;z-index:200;background:rgba(5,10,8,.88);backdrop-filter:blur(6px);display:flex;align-items:center;justify-content:center;padding:24px;}
 .lightbox[hidden]{display:none!important;}
 .lightbox figure{margin:0;max-width:1100px;width:100%;max-height:100%;display:flex;flex-direction:column;gap:14px;}
@@ -450,11 +407,21 @@ footer{margin-top:20px;border-top:1px solid rgba(203,182,130,.12);background:rgb
 .lightbox figcaption b{color:var(--gold-bright);font-size:18px;}
 .lightbox figcaption span{color:var(--muted);font-size:14px;flex:1 1 300px;}
 .lightbox .btn{padding:10px 20px;font-size:14px;}
-#lbLive[hidden]{display:none!important;}
+#lbLive[hidden],.lb-nav[hidden]{display:none!important;}
+.lb-nav{display:inline-flex;align-items:center;gap:10px;}
+.lb-nav b{font-size:14px!important;color:var(--muted)!important;}
 .lb-close{position:absolute;top:14px;left:18px;width:44px;height:44px;border-radius:50%;border:1px solid var(--glass-line);background:var(--glass-2);color:var(--text);font-size:26px;line-height:1;cursor:pointer;}
-@media (max-width:640px){.works-grid{grid-template-columns:1fr;gap:16px;}.lightbox{padding:14px;}}
+@media (max-width:640px){.lightbox{padding:14px;}}
+/* ===== آراء العملاء ===== */
+#reviews[hidden]{display:none;}
+.reviews-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:18px;}
+.review{background:var(--glass);border:1px solid var(--glass-line);border-radius:var(--radius);padding:22px;}
+.review .stars{color:var(--gold);letter-spacing:2px;margin-bottom:8px;}
+.review p{color:var(--cream);font-size:15px;margin-bottom:12px;}
+.review small{color:var(--muted);font-size:13px;}
 /* ===== الاعتمادات ===== */
-.creds{max-width:1180px;margin:0 auto 26px;display:grid;grid-template-columns:1.4fr 1fr;gap:18px;}
+
+.creds{max-width:1180px;margin:0 auto;display:grid;grid-template-columns:1.4fr 1fr;gap:18px;}
 .cred{display:flex;gap:16px;align-items:center;background:var(--glass);border:1px solid var(--glass-line);border-radius:var(--radius);padding:16px;text-align:right;color:var(--text);font:inherit;}
 button.cred{cursor:pointer;transition:border-color .3s;}
 button.cred:hover,button.cred:focus-visible{border-color:var(--gold);outline:none;}
@@ -467,20 +434,6 @@ button.cred:hover,button.cred:focus-visible{border-color:var(--gold);outline:non
 .cred-ic .ico{width:26px;height:26px;}
 @media (max-width:960px){.creds{grid-template-columns:1fr;}}
 @media (max-width:520px){.cred{flex-direction:column;text-align:center;}.cred img{width:100%;max-width:320px;}}
-/* ===== طرق الدفع (بطاقتان متناسقتان) ===== */
-.pay-methods{display:grid;grid-template-columns:1fr 1fr;gap:18px;max-width:880px;margin:0 auto 22px;align-items:stretch;}
-.pay-method{background:var(--glass);border:1px solid var(--glass-line);border-radius:var(--radius);padding:22px;display:flex;flex-direction:column;gap:12px;transition:border-color .3s;}
-.pay-method:hover{border-color:var(--gold);}
-.pm-head{display:flex;align-items:center;gap:14px;}
-.pm-head .pic{width:52px;height:52px;flex-shrink:0;border-radius:14px;display:grid;place-items:center;color:var(--gold-bright);background:rgba(203,182,130,.1);border:1px solid var(--glass-line);}
-.pm-head h4{color:var(--gold-bright);font-size:18px;margin:0 0 2px;}
-.pm-head p{color:var(--muted);font-size:13.5px;margin:0;}
-.pm-lbl{color:var(--muted);font-size:13px;margin-top:auto;}
-.pm-code{display:flex;align-items:center;justify-content:space-between;gap:10px;background:rgba(0,0,0,.25);border:1px dashed var(--glass-line);border-radius:14px;padding:10px 12px;min-height:58px;}
-.pm-code code{font-family:'Tajawal',monospace;font-weight:700;color:var(--gold-bright);font-size:clamp(14px,1.6vw,16.5px);letter-spacing:.6px;direction:ltr;}
-.pay-foot{text-align:center;}
-.pay-foot .btn{margin-top:10px;}
-@media (max-width:640px){.pay-methods{grid-template-columns:1fr;}.pm-code{flex-direction:column;align-items:stretch;text-align:center;}.pm-code .copy-btn{justify-content:center;}}
 /* ===== نجوم طائرة في الخلفية ===== */
 .sky{position:fixed;inset:0;z-index:-1;pointer-events:none;overflow:hidden;}
 .sky .fs{position:absolute;color:var(--gold);opacity:var(--o,.12);animation:drift var(--d,18s) ease-in-out infinite alternate;will-change:transform;}
@@ -488,11 +441,6 @@ button.cred:hover,button.cred:focus-visible{border-color:var(--gold);outline:non
 @keyframes drift{0%{transform:translate(0,0)}50%{transform:translate(var(--x,30px),calc(var(--y,-40px) * .6))}100%{transform:translate(calc(var(--x,30px) * -.5),var(--y,-40px))}}
 @keyframes spin{to{transform:rotate(360deg)}}
 @media (prefers-reduced-motion:reduce){.sky .fs,.sky .fs svg{animation:none;}}
-.pkg-toggle-wrap{margin:0 0 6px;}
-#pkgGrid[hidden]{display:none!important;}
-#pkgGrid:not([hidden]){margin-top:26px;animation:pkgIn .45s var(--ease);}
-#pkgGrid:not([hidden]) .reveal{opacity:1;transform:none;}
-@keyframes pkgIn{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
 </style>
 </head>
 <body>
@@ -517,12 +465,9 @@ button.cred:hover,button.cred:focus-visible{border-color:var(--gold);outline:non
       </div>
     </a>
     <nav id="nav" aria-label="القائمة الرئيسية">
-      <a href="#how">كيف نعمل</a>
       <a href="#services">الخدمات</a>
-      <a href="#works">أعمالنا</a>
+      <a href="#how">كيف نعمل</a>
       <a href="#packages">الباقات</a>
-      <a href="#payment">طرق الدفع</a>
-      <a href="#why">لماذا نحن</a>
       <a href="#faq">الأسئلة</a>
     </nav>
     <a href="https://wa.me/966594827253" target="_blank" rel="noopener" class="nav-cta"><i data-icon="whatsapp"></i>اطلب<span class="lbl-long"> الآن</span></a>
@@ -539,44 +484,24 @@ button.cred:hover,button.cred:focus-visible{border-color:var(--gold);outline:non
     <h1>خطوتك نحو <span class="glow">التفوّق</span><br>تبدأ من هنا</h1>
     <p class="sub">خدمات ترقى بك وتوفّر وقتك</p>
     <p class="sub-en">Services That Elevate You</p>
-    <p class="about-text">
-      فريق <b>سين | Seen</b> يقدّم خدمات متكاملة للجميع: الطلاب في جميع المراحل، والموظفين والباحثين عن عمل، والمعلمين —
-      من البحوث والمشاريع والعروض التقديمية، إلى السير الذاتية وتجهيزات المعلمين والتصاميم الإبداعية.
-      هدفنا إنجاز مهامك بجودة عالية وفي الوقت المحدد ✨
-    </p>
+    <p class="about-text">للطلاب، والباحثين عن عمل، والموظفين، والمعلمين — بحوث وتلخيصات، عروض تقديمية، سير ذاتية، وتصاميم بجودة عالية وتسليم سريع ✨</p>
     <div class="hero-btns">
       <a href="https://wa.me/966594827253" target="_blank" rel="noopener" class="btn btn-primary"><i data-icon="whatsapp"></i> اطلب خدمتك الآن</a>
       <a href="#services" class="btn btn-ghost">تصفّح الخدمات <i data-icon="down"></i></a>
     </div>
 
     <div class="stats reveal" id="stats">
-      <div class="stat"><div class="num" data-count="100" data-suffix="+">0</div><div class="lbl">عميل وثق بنا</div></div>
-      <div class="stat"><div class="num" id="servicesCount" data-count="25" data-suffix="">0</div><div class="lbl">خدمة متنوعة</div></div>
-      <div class="stat"><div class="num" data-count="95" data-suffix="%">0</div><div class="lbl">نسبة الرضا</div></div>
-      <div class="stat"><div class="num" data-count="24" data-suffix="/7">0</div><div class="lbl">دعم متواصل</div></div>
+      <div class="stat"><div class="num">1–12</div><div class="lbl">ساعة للتسليم</div></div>
+      <div class="stat"><div class="num" id="servicesCount" data-count="25" data-suffix="">25</div><div class="lbl">خدمة متنوعة</div></div>
+      <div class="stat"><div class="num">3</div><div class="lbl">تعديلات مجانية</div></div>
+      <a class="stat stat-link" href="#creds"><div class="num num-word">موثّق</div><div class="lbl">بوثيقة العمل الحر</div></a>
     </div>
   </div>
 </section>
 
-<!-- ===== كيف نعمل ===== -->
-<section class="block" id="how">
-  <div class="wrap">
-    <div class="section-head reveal">
-      <span class="eyebrow"><svg class="star" viewBox="0 0 100 100" aria-hidden="true"><use href="#seen-star"/></svg> آلية العمل</span>
-      <h2>كيف نعمل؟</h2>
-      <p>أربع خطوات بسيطة تفصلك عن إنجاز مهمتك</p>
-    </div>
-    <div class="steps">
-      <div class="step reveal"><span class="n">١</span><span class="ic"><i data-icon="pointer"></i></span><h3>اختر الخدمة</h3><p>تصفّح الأقسام واضغط على الخدمة التي تناسبك</p></div>
-      <div class="step reveal"><span class="n">٢</span><span class="ic"><i data-icon="chat"></i></span><h3>تواصل معنا</h3><p>تُحوّل مباشرة لواتساب لشرح طلبك وتأكيد السعر</p></div>
-      <div class="step reveal"><span class="n">٣</span><span class="ic"><i data-icon="card"></i></span><h3>ادفع بسهولة</h3><p>اختر طريقة الدفع المناسبة لك وأكمل العملية</p></div>
-      <div class="step reveal"><span class="n">٤</span><span class="ic"><i data-icon="target"></i></span><h3>استلم عملك</h3><p>نسلّمك العمل بجودة عالية وفي الوقت المتفق عليه</p></div>
-    </div>
-  </div>
-</section>
 
 <!-- ===== الخدمات ===== -->
-<section class="block alt" id="services">
+<section class="block" id="services">
   <div class="wrap">
     <div class="section-head reveal">
       <span class="eyebrow"><svg class="star" viewBox="0 0 100 100" aria-hidden="true"><use href="#seen-star"/></svg> خدماتنا</span>
@@ -593,17 +518,36 @@ button.cred:hover,button.cred:focus-visible{border-color:var(--gold);outline:non
   </div>
 </section>
 
-<!-- ===== نماذج من أعمالنا ===== -->
-<section class="block" id="works">
+
+<!-- ===== كيف نعمل ===== -->
+<section class="block alt how-block" id="how">
   <div class="wrap">
     <div class="section-head reveal">
-      <span class="eyebrow"><svg class="star" viewBox="0 0 100 100" aria-hidden="true"><use href="#seen-star"/></svg> أعمالنا</span>
-      <h2>نماذج من أعمالنا</h2>
-      <p>هذه بعض أعمال عملائنا — أخفينا أسماءهم وبياناتهم حفاظًا على خصوصيتهم</p>
+      <span class="eyebrow"><svg class="star" viewBox="0 0 100 100" aria-hidden="true"><use href="#seen-star"/></svg> آلية العمل</span>
+      <h2>كيف نعمل؟</h2>
+      <p>أربع خطوات بسيطة تفصلك عن إنجاز مهمتك</p>
     </div>
-    <div class="filters reveal" id="workFilters" role="tablist" aria-label="تصنيف الأعمال"></div>
-    <div class="works-grid" id="worksGrid"></div>
-    <div class="more-wrap" id="worksMoreWrap" hidden><button class="btn btn-ghost" id="worksMore" type="button"></button></div>
+    <div class="steps">
+      <div class="step reveal"><span class="n">١</span><span class="ic"><i data-icon="pointer"></i></span><h3>اختر الخدمة</h3><p>تصفّح الأقسام واضغط على الخدمة التي تناسبك</p></div>
+      <div class="step reveal"><span class="n">٢</span><span class="ic"><i data-icon="chat"></i></span><h3>تواصل معنا</h3><p>تُحوّل مباشرة لواتساب لشرح طلبك وتأكيد السعر</p></div>
+      <div class="step reveal"><span class="n">٣</span><span class="ic"><i data-icon="card"></i></span><h3>ادفع بسهولة</h3><p>نرسل لك بيانات الدفع على واتساب: تحويل بنكي أو محفظة برق</p></div>
+      <div class="step reveal"><span class="n">٤</span><span class="ic"><i data-icon="target"></i></span><h3>استلم عملك</h3><p>نسلّمك العمل بجودة عالية وفي الوقت المتفق عليه</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== الاعتمادات ===== -->
+<section class="block creds-block" id="creds">
+  <div class="wrap">
+    <div class="creds reveal">
+    <button class="cred cred-doc" id="credDoc" aria-label="عرض وثيقة العمل الحر">
+      <img src="works/freelance-doc-thumb.jpg" alt="وثيقة العمل الحر في تصميم الجرافيك (الاسم ورقم الهوية مخفيان)" width="640" height="400" loading="lazy">
+      <div><b>معتمدون رسميًا</b><p>مؤسس سين حاصل على <span class="hl">وثيقة العمل الحر في تخصص تصميم الجرافيك</span> من وزارة الموارد البشرية والتنمية الاجتماعية.</p><small>رمز الوثيقة: <span dir="ltr">FL-807258574</span> — اضغط لعرضها والتحقق منها بالباركود</small></div>
+    </button>
+    <div class="cred">
+      <div class="cred-ic"><i data-icon="pen"></i></div>
+      <div><b>أدوات احترافية</b><p>نستخدم برامج مخصّصة للتصميم وإعداد البحوث وتنسيق المراجع، لنضمن لك عملًا احترافيًا في كل تفاصيله.</p></div>
+    </div>
   </div>
 </section>
 
@@ -611,7 +555,7 @@ button.cred:hover,button.cred:focus-visible{border-color:var(--gold);outline:non
   <button class="lb-close" id="lbClose" aria-label="إغلاق">×</button>
   <figure>
     <img id="lbImg" alt="">
-    <figcaption><b id="lbTitle"></b><span id="lbDesc"></span><a id="lbLive" class="btn btn-primary" target="_blank" rel="noopener" hidden>جرّب التطبيق مباشرة</a></figcaption>
+    <figcaption><b id="lbTitle"></b><span id="lbDesc"></span><a id="lbLive" class="btn btn-primary" target="_blank" rel="noopener" hidden>جرّب التطبيق مباشرة</a><span class="lb-nav" id="lbNav" hidden><button type="button" class="btn btn-ghost" id="lbPrev">→ السابق</button><b id="lbCount"></b><button type="button" class="btn btn-ghost" id="lbNext">التالي ←</button></span></figcaption>
   </figure>
 </div>
 
@@ -623,9 +567,9 @@ button.cred:hover,button.cred:focus-visible{border-color:var(--gold);outline:non
       <h2>باقات توفّر عليك أكثر</h2>
       <p>اجمع أكثر من خدمة في باقة واحدة بسعر أقل</p>
     </div>
-    <div class="more-wrap pkg-toggle-wrap reveal"><button class="btn btn-primary" id="pkgToggle" type="button" aria-expanded="false" aria-controls="pkgGrid">عرض الباقات (4 باقات)</button></div>
-    <div class="pkg-grid" id="pkgGrid" hidden>
-      <div class="pkg reveal">
+    <div class="pkg-grid" id="pkgGrid">
+      <div class="pkg featured reveal">
+        <span class="pkg-tag">الأكثر طلبًا 🔥</span>
         <h3>باقة الوظيفة</h3>
         <div class="pkg-price">من <b>120</b> ر.س</div>
         <ul>
@@ -634,21 +578,20 @@ button.cred:hover,button.cred:focus-visible{border-color:var(--gold);outline:non
           <li>خطاب تعريفي (Cover Letter)</li>
           <li>نصائح لتجهيز المقابلة</li>
         </ul>
-        <button class="btn btn-ghost pkg-btn" data-pkg="باقة الوظيفة">اطلب الباقة</button>
+        <button class="btn btn-primary pkg-btn" data-pkg="باقة الوظيفة">اطلب الباقة</button>
       </div>
-      <div class="pkg featured reveal">
-        <span class="pkg-tag">الأكثر طلبًا 🔥</span>
+      <div class="pkg reveal">
         <h3>باقة المشروع</h3>
         <div class="pkg-price">من <b>199</b> ر.س</div>
         <ul>
           <li>مشروع مقرر متكامل</li>
           <li>عرض تقديمي إبداعي</li>
           <li>تقرير منسّق</li>
-          <li>تعديلات حتى الرضا التام</li>
+          <li>3 تعديلات مجانية</li>
         </ul>
-        <button class="btn btn-primary pkg-btn" data-pkg="باقة المشروع">اطلب الباقة</button>
+        <button class="btn btn-ghost pkg-btn" data-pkg="باقة المشروع">اطلب الباقة</button>
       </div>
-      <div class="pkg reveal">
+      <div class="pkg pkg-extra reveal" hidden>
         <h3>باقة الموظف</h3>
         <div class="pkg-price">من <b>129</b> ر.س</div>
         <ul>
@@ -659,7 +602,7 @@ button.cred:hover,button.cred:focus-visible{border-color:var(--gold);outline:non
         </ul>
         <button class="btn btn-ghost pkg-btn" data-pkg="باقة الموظف">اطلب الباقة</button>
       </div>
-      <div class="pkg reveal">
+      <div class="pkg pkg-extra reveal" hidden>
         <h3>باقة العرض العلمي</h3>
         <div class="pkg-price">من <b>119</b> ر.س</div>
         <ul>
@@ -671,92 +614,42 @@ button.cred:hover,button.cred:focus-visible{border-color:var(--gold);outline:non
         <button class="btn btn-ghost pkg-btn" data-pkg="باقة العرض العلمي">اطلب الباقة</button>
       </div>
     </div>
+    <div class="more-wrap"><button class="btn btn-ghost pkg-more" id="pkgMore" type="button" aria-expanded="false">عرض باقات أكثر (2) <i data-icon="down"></i></button></div>
   </div>
 </section>
 
-<!-- ===== طرق الدفع ===== -->
-<section class="block" id="payment">
+
+<!-- ===== آراء العملاء (تظهر تلقائيًا لما تنضاف آراء في REVIEWS) ===== -->
+<section class="block" id="reviews" hidden>
   <div class="wrap">
     <div class="section-head reveal">
-      <span class="eyebrow"><svg class="star" viewBox="0 0 100 100" aria-hidden="true"><use href="#seen-star"/></svg> طرق الدفع</span>
-      <h2>ادفع بالطريقة التي تريحك</h2>
-      <p>نوفّر عدة وسائل دفع آمنة وسريعة</p>
+      <span class="eyebrow"><svg class="star" viewBox="0 0 100 100" aria-hidden="true"><use href="#seen-star"/></svg> آراء عملائنا</span>
+      <h2>وش قالوا عنّا؟</h2>
+      <p>رسائل حقيقية من عملائنا — أخفينا أسماءهم حفاظًا على خصوصيتهم</p>
     </div>
-
-    <div class="pay-methods">
-      <div class="pay-method reveal">
-        <div class="pm-head"><div class="pic"><i data-icon="bank"></i></div><div><h4>تحويل بنكي</h4><p>حوالة فورية عبر تطبيق البنك</p></div></div>
-        <span class="pm-lbl">رقم الآيبان (IBAN)</span>
-        <div class="pm-code"><code>SA48 8000 0337 6080 1095 0206</code><button class="copy-btn" data-value="SA4880000337608010950206"><i data-icon="copy"></i><span>نسخ</span></button></div>
-      </div>
-      <div class="pay-method reveal">
-        <div class="pm-head"><div class="pic"><i data-icon="zap"></i></div><div><h4>برق Barq</h4><p>تحويل لحظي عبر محفظة برق</p></div></div>
-        <span class="pm-lbl">رقم محفظة برق</span>
-        <div class="pm-code"><code>0598612880</code><button class="copy-btn" data-value="0598612880"><i data-icon="copy"></i><span>نسخ</span></button></div>
-      </div>
-    </div>
-    <div class="pay-foot reveal">
-      <p class="pay-note">انسخ البيانات المناسبة لك، ثم أرسل إيصال التحويل عبر واتساب لتأكيد طلبك</p>
-      <a href="https://wa.me/966594827253?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%D8%8C%20%D9%87%D8%B0%D8%A7%20%D8%A5%D9%8A%D8%B5%D8%A7%D9%84%20%D8%A7%D9%84%D8%AA%D8%AD%D9%88%D9%8A%D9%84%20%D9%84%D8%B7%D9%84%D8%A8%D9%8A" target="_blank" rel="noopener" class="btn btn-primary"><i data-icon="whatsapp"></i> أرسل إيصال الدفع</a>
-    </div>
+    <div class="reviews-grid" id="reviewsGrid"></div>
   </div>
 </section>
 
-<!-- ===== لماذا نحن ===== -->
-<section class="block alt" id="why">
-  <div class="wrap">
-    <div class="section-head reveal">
-      <span class="eyebrow"><svg class="star" viewBox="0 0 100 100" aria-hidden="true"><use href="#seen-star"/></svg> مميّزاتنا</span>
-      <h2>لماذا تختار سين؟</h2>
-      <p>نهتم بتفاصيل نجاحك كما تهتم أنت تمامًا</p>
-    </div>
-    <div class="why-grid">
-      <div class="why-card reveal"><div class="ic"><i data-icon="zap"></i></div><h3>سرعة في الإنجاز</h3><p>نسلّم أغلب الطلبات خلال 1 إلى 5 أيام حسب حجمها، والطلبات المستعجلة بالتنسيق معنا</p></div>
-      <div class="why-card reveal"><div class="ic"><i data-icon="cap"></i></div><h3>خبرة متنوعة</h3><p>محتوى دقيق ومرتب يراعي المعايير الأكاديمية والمهنية</p></div>
-      <div class="why-card reveal"><div class="ic"><i data-icon="award"></i></div><h3>جودة تستحق قيمتها</h3><p>أسعارنا تعكس مستوى عملنا — نقدّم الأفضل ولا نساوم على الجودة</p></div>
-      <div class="why-card reveal"><div class="ic"><i data-icon="lock"></i></div><h3>خصوصية تامة</h3><p>بياناتك وطلباتك تبقى سرّية بالكامل</p></div>
-      <div class="why-card reveal"><div class="ic"><i data-icon="headset"></i></div><h3>دعم دائم</h3><p>فريقنا متواجد للرد على استفساراتك وقت ما تحتاج</p></div>
-      <div class="why-card reveal"><div class="ic"><i data-icon="refresh"></i></div><h3>تعديلات غير محدودة</h3><p>نعدّل العمل مجانًا وبلا حد حتى تصل للنتيجة التي ترضيك</p></div>
-    </div>
-  </div>
-</section>
 
-<!-- ===== نموذج الطلب ===== -->
-<section class="block" id="order">
-  <div class="wrap">
-    <div class="section-head reveal">
-      <span class="eyebrow"><svg class="star" viewBox="0 0 100 100" aria-hidden="true"><use href="#seen-star"/></svg> اطلب الآن</span>
-      <h2>أرسل تفاصيل طلبك</h2>
-      <p>عبّئ النموذج وسنستلم طلبك مباشرة على واتساب</p>
-    </div>
-    <form class="order-form reveal" id="orderForm" novalidate>
-      <div class="of-row">
-        <div class="field"><label for="ofName">الاسم</label><input id="ofName" type="text" autocomplete="name" placeholder="اكتب اسمك"></div>
-        <div class="field"><label for="ofService">نوع الخدمة</label><select id="ofService" aria-describedby="ofServiceErr"></select><p class="field-error" id="ofServiceErr" role="alert" hidden>اختر الخدمة المطلوبة أولًا</p></div>
-      </div>
-      <div class="field" id="ofOtherWrap" hidden><label for="ofOther">اكتب الخدمة التي تريدها</label><input id="ofOther" type="text" placeholder="مثال: تصميم غلاف كتاب، تلخيص كتاب..."><p class="field-error" id="ofOtherErr" role="alert" hidden>اكتب الخدمة المطلوبة</p></div>
-      <div class="field"><label for="ofDetails">تفاصيل الطلب</label><textarea id="ofDetails" rows="4" placeholder="اكتب تفاصيل طلبك: الموضوع، عدد الصفحات، الموعد المطلوب..."></textarea></div>
-      <button type="submit" class="btn btn-primary"><i data-icon="whatsapp"></i> إرسال الطلب عبر واتساب</button>
-    </form>
-  </div>
-</section>
+
 
 <!-- ===== الأسئلة الشائعة ===== -->
-<section class="block alt" id="faq">
+<section class="block" id="faq">
   <div class="wrap">
     <div class="section-head reveal">
       <span class="eyebrow"><svg class="star" viewBox="0 0 100 100" aria-hidden="true"><use href="#seen-star"/></svg> استفسارات</span>
       <h2>الأسئلة الشائعة</h2>
     </div>
     <div class="faq">
-      <div class="faq-item reveal"><button class="faq-q" aria-expanded="false">كم تستغرق مدة تسليم الخدمة؟ <span class="plus">+</span></button><div class="faq-a"><div>تختلف المدة حسب نوع الخدمة وحجمها وغالبًا نسلّم خلال ١ إلى ٣ أيام
-     للطلبات المستعجلة تواصل معنا لتنسيق وقت أسرع</div></div></div>
-      <div class="faq-item reveal"><button class="faq-q" aria-expanded="false">هل تضمنون خصوصية معلوماتي؟ <span class="plus">+</span></button><div class="faq-a"><div>أكيد جميع بياناتك وتفاصيل طلبك تبقى سرّية تمامًا ولا تُشارك مع أي طرف</div></div></div>
-      <div class="faq-item reveal"><button class="faq-q" aria-expanded="false">هل يمكنني طلب تعديلات بعد التسليم؟ <span class="plus">+</span></button><div class="faq-a"><div>نعم، التعديلات غير محدودة ومجانية حتى ترضى تمامًا ضمن نطاق الطلب المتفق عليه</div></div></div>
-      <div class="faq-item reveal"><button class="faq-q" aria-expanded="false">كيف أعرف السعر النهائي؟ <span class="plus">+</span></button><div class="faq-a"><div>الأسعار المعروضة حد أدنى وقابلة للزيادة حسب حجم العمل وتفاصيله نحدد معك السعر النهائي قبل البدء ولا تدفع أي مبلغ إضافي بعد الاتفاق</div></div></div>
-      <div class="faq-item reveal"><button class="faq-q" aria-expanded="false">لماذا أسعاركم أعلى من غيركم؟ <span class="plus">+</span></button><div class="faq-a"><div>لأننا لا نقدّم قوالب جاهزة كل عمل يُنفَّذ خصيصًا لك بأعلى جودة مع تعديلات غير محدودة ودعم حتى التسليم
-         تدفع مرة واحدة وتستلم عملًا تفتخر به</div></div></div>
-      <div class="faq-item reveal"><button class="faq-q" aria-expanded="false">كيف أبدأ طلب خدمة؟ <span class="plus">+</span></button><div class="faq-a"><div>اضغط على بطاقة الخدمة التي تريدها أو زر «اطلب الآن» وسيتم تحويلك مباشرة إلى واتساب للتواصل</div></div></div>
+      <div class="faq-item reveal"><button class="faq-q" aria-expanded="false">كم تستغرق مدة تسليم الخدمة؟ <span class="plus">+</span></button><div class="faq-a"><div>حسب حجم الطلب: من ساعة إلى 12 ساعة للمشاريع الكبيرة، وغالبًا نسلّمك قبل الموعد المتفق عليه.</div></div></div>
+      <div class="faq-item reveal"><button class="faq-q" aria-expanded="false">متى أدفع؟ <span class="plus">+</span></button><div class="faq-a"><div>بعد ما نتفق على تفاصيل الطلب والسعر النهائي، تدفع كامل المبلغ قبل البدء (تحويل بنكي أو محفظة برق — نرسل لك البيانات على واتساب)، وترسل لنا الإيصال ونبدأ مباشرة.</div></div></div>
+      <div class="faq-item reveal"><button class="faq-q" aria-expanded="false">كيف أستلم العمل؟ <span class="plus">+</span></button><div class="faq-a"><div>نرسل لك الملفات على واتساب بالصيغة المناسبة (PDF أو Word أو PowerPoint…)، أو بالطريقة اللي تفضّلها.</div></div></div>
+      <div class="faq-item reveal"><button class="faq-q" aria-expanded="false">هل تضمنون خصوصية معلوماتي؟ <span class="plus">+</span></button><div class="faq-a"><div>أكيد، جميع بياناتك وتفاصيل طلبك تبقى سرّية تمامًا ولا تُشارك مع أي طرف.</div></div></div>
+      <div class="faq-item reveal"><button class="faq-q" aria-expanded="false">هل يمكنني طلب تعديلات بعد التسليم؟ <span class="plus">+</span></button><div class="faq-a"><div>نعم، لك 3 تعديلات مجانية ضمن نطاق الطلب المتفق عليه، وأي تعديل إضافي نتفق عليه معك.</div></div></div>
+      <div class="faq-item reveal"><button class="faq-q" aria-expanded="false">كيف أعرف السعر النهائي؟ <span class="plus">+</span></button><div class="faq-a"><div>الأسعار المعروضة حد أدنى وقابلة للزيادة حسب حجم العمل وتفاصيله. نحدد معك السعر النهائي قبل البدء، ولا تدفع أي مبلغ إضافي بعد الاتفاق.</div></div></div>
+      <div class="faq-item reveal"><button class="faq-q" aria-expanded="false">لماذا أسعاركم أعلى من غيركم؟ <span class="plus">+</span></button><div class="faq-a"><div>لأننا لا نقدّم قوالب جاهزة؛ كل عمل يُنفَّذ خصيصًا لك بأعلى جودة، مع 3 تعديلات مجانية ودعم حتى التسليم. تدفع مرة واحدة وتستلم عملًا تفتخر به.</div></div></div>
+      <div class="faq-item reveal"><button class="faq-q" aria-expanded="false">كيف أبدأ طلب خدمة؟ <span class="plus">+</span></button><div class="faq-a"><div>اضغط على بطاقة الخدمة التي تريدها أو زر «اطلب الآن»، وسيتم تحويلك مباشرة إلى واتساب.</div></div></div>
     </div>
   </div>
 </section>
@@ -775,12 +668,9 @@ button.cred:hover,button.cred:focus-visible{border-color:var(--gold);outline:non
     <div class="foot-col">
       <h4>روابط سريعة</h4>
       <div class="foot-links">
-        <a class="fl" href="#how">كيف نعمل</a>
         <a class="fl" href="#services">الخدمات</a>
-        <a class="fl" href="#works">أعمالنا</a>
+        <a class="fl" href="#how">كيف نعمل</a>
         <a class="fl" href="#packages">الباقات</a>
-        <a class="fl" href="#payment">طرق الدفع</a>
-        <a class="fl" href="#why">لماذا نحن</a>
         <a class="fl" href="#faq">الأسئلة الشائعة</a>
       </div>
     </div>
@@ -791,16 +681,6 @@ button.cred:hover,button.cred:focus-visible{border-color:var(--gold);outline:non
         <a href="https://tiktok.com/@JUSTSEENN" target="_blank" rel="noopener" aria-label="TikTok"><i data-icon="tiktok"></i></a>
         <a href="https://wa.me/966594827253" target="_blank" rel="noopener" aria-label="WhatsApp"><i data-icon="whatsapp"></i></a>
       </div>
-    </div>
-  </div>
-  <div class="creds">
-    <button class="cred cred-doc" id="credDoc" aria-label="عرض وثيقة العمل الحر">
-      <img src="works/freelance-doc-thumb.jpg" alt="وثيقة العمل الحر في تصميم الجرافيك (البيانات الشخصية مخفية)" width="640" height="400" loading="lazy">
-      <div><b>معتمدون رسميًا</b><p>مؤسس سين حاصل على <span class="hl">وثيقة العمل الحر في تخصص تصميم الجرافيك</span> من وزارة الموارد البشرية والتنمية الاجتماعية.</p><small>اضغط لعرض الوثيقة — البيانات الشخصية مخفية</small></div>
-    </button>
-    <div class="cred">
-      <div class="cred-ic"><i data-icon="pen"></i></div>
-      <div><b>أدوات احترافية</b><p>نستخدم برامج مخصّصة للتصميم وإعداد البحوث وتنسيق المراجع، لنضمن لك عملًا احترافيًا في كل تفاصيله.</p></div>
     </div>
   </div>
   <div class="copy-bar">© <span id="year"></span> سين | Seen — جميع الحقوق محفوظة</div>
@@ -855,6 +735,7 @@ const ICONS = {
   phone:'<rect x="5" y="2" width="14" height="20" rx="2"/><path d="M12 18h.01"/>',
   copy:'<rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/>',
   check:'<path d="M20 6 9 17l-5-5"/>',
+  eye:'<path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/>',
   arrow:'<path d="M19 12H5M12 19l-7-7 7-7"/>',
   down:'<path d="M12 5v14M19 12l-7 7-7-7"/>',
   up:'<path d="M12 19V5M5 12l7-7 7 7"/>',
@@ -871,35 +752,39 @@ paintIcons();
 /* ===== بيانات الخدمات ===== */
 const PHONE = '966594827253';
 const wa = (text) => `https://wa.me/${PHONE}?text=${encodeURIComponent(text)}`;
-const CATS = {research:'الأبحاث والمشاريع', writing:'الكتابة والترجمة', design:'التصميم والتقنية', careers:'التوظيف والمهنية', teachers:'المعلمين', creative:'التصاميم الإبداعية'};
+const CATS = {research:'الأبحاث والمشاريع', writing:'الكتابة والترجمة', design:'التصميم والتقنية', careers:'التوظيف والموظفين', teachers:'المعلمين والإداريين', creative:'التصاميم الإبداعية'};
 const services = [
-  {name:'بحوث جامعية',desc:'إعداد بحوث أكاديمية متكاملة',price:40,cat:'research',icon:'book'},
-  {name:'مشاريع مقررات',desc:'تنفيذ وتحليل مشاريع مع تقرير',price:60,cat:'research',icon:'project'},
+  {name:'بحوث جامعية',desc:'إعداد بحوث أكاديمية متكاملة',price:40,cat:'research',icon:'book',sample:'research-review',hot:true},
+  {name:'مشاريع مقررات',desc:'مشروع مقرر متكامل حسب متطلبات الدكتور، من الفكرة حتى التقرير النهائي',price:60,cat:'research',icon:'project',hot:true},
+  {name:'تلخيص مناهج',desc:'ملخصات مرتبة ومختصرة للمقرر تسهّل عليك المذاكرة قبل الاختبار',price:30,cat:'writing',icon:'notebook',hot:true},
   {name:'حل واجبات',desc:'حلول دقيقة بخطوات واضحة',price:30,cat:'writing',icon:'checks'},
-  {name:'ترجمة ملفات',desc:'ترجمة احترافية من الإنجليزية إلى العربية',price:30,cat:'writing',icon:'translate'},
-  {name:'استبيانات وتحليل',desc:'إعداد استبيانات وتحليل نتائجها بدقة',price:30,cat:'writing',icon:'chart'},
-  {name:'سيرة ذاتية ATS',desc:'سيرة احترافية متوافقة مع أنظمة ATS',price:50,cat:'careers',icon:'resume'},
-  {name:'ملف 50 شركة',desc:'قائمة بـ50 شركة حسب تخصصك ومدينتك جاهزة بصيغة Excel',price:50,cat:'careers',icon:'building'},
-  {name:'موقع شخصي (CV أونلاين)',desc:'موقع احترافي يعرض سيرتك وأعمالك وكل ما يخصك في رابط واحد',price:120,cat:'careers',icon:'globe'},
-  {name:'عروض تقديمية',desc:'تصميم شرائح إبداعية تناسب موضوعك',price:80,cat:'design',icon:'presentation'},
+  {name:'ترجمة ملفات',desc:'ترجمة احترافية من الإنجليزية إلى العربية',price:30,cat:'writing',icon:'translate',sample:'translation-demo'},
+  {name:'سيرة ذاتية ATS',desc:'سيرة احترافية متوافقة مع أنظمة ATS',price:50,cat:'careers',icon:'resume',sample:'cv-ats',hot:true},
+  {name:'ملف 50 شركة',desc:'قائمة بـ50 شركة حسب تخصصك ومدينتك جاهزة بصيغة Excel',price:50,cat:'careers',icon:'building',sample:'companies-50'},
+  {name:'لوحة مؤشرات Excel (Dashboard)',desc:'تحويل بياناتك لرسوم ومؤشرات واضحة تتحدّث تلقائيًا، جاهزة لعرضها على الإدارة',price:100,cat:'careers',icon:'chart',sample:'dashboard-demo'},
+  {name:'ملخص تنفيذي للتقارير',desc:'تقرير طويل يتلخّص في صفحة أو صفحتين بالأرقام والنتائج والتوصيات للمدير',price:50,cat:'careers',icon:'notebook',sample:'execsum-demo'},
+  {name:'موقع شخصي (CV أونلاين)',desc:'موقع احترافي يعرض سيرتك وأعمالك وكل ما يخصك في رابط واحد',price:120,cat:'careers',icon:'globe',sample:'website-demo'},
+  {name:'عروض تقديمية',desc:'تصميم شرائح إبداعية تناسب موضوعك',price:80,cat:'design',icon:'presentation',sample:'presentation'},
   {name:'تصميم موقع للطلاب',desc:'مواقع بسيطة وسهلة الاستخدام',price:100,cat:'design',icon:'layout'},
-  {name:'تقنية معلومات',desc:'حلول مشاريع برمجية وتقنية',price:120,cat:'design',icon:'code'},
+  {name:'تقنية معلومات',desc:'حلول مشاريع برمجية وتقنية',price:120,cat:'design',icon:'code',sample:'installments,converter'},
   {name:'تصميم شعارات',desc:'شعارات إبداعية تناسب أعمالك',price:200,cat:'design',icon:'pen'},
+  {name:'ملف إنجاز المعلم',desc:'ملف منظم بالشواهد حسب عناصر تقييم الأداء الوظيفي، جاهز للطباعة أو الرفع',price:60,cat:'teachers',icon:'briefcase',sample:'portfolio-demo'},
+  {name:'سجل درجات ومتابعة Excel',desc:'سجل يحسب المجموع والتقدير والمتوسط تلقائيًا ويوفّر وقت الرصد',price:40,cat:'teachers',icon:'sheet',sample:'grades-demo'},
+  {name:'تقرير نشاط أو برنامج مدرسي',desc:'تقرير منسّق بالأهداف والإجراءات والشواهد والتوصيات، بهوية المدرسة',price:30,cat:'teachers',icon:'exam',sample:'report-demo'},
   {name:'توزيع المناهج',desc:'توزيع المنهج على أسابيع الفصل الدراسي بدقة',price:40,cat:'teachers',icon:'calendar'},
   {name:'عرض تقديمي تعليمي',desc:'شرائح تعليمية جذابة تناسب الدرس والمرحلة',price:80,cat:'teachers',icon:'screen'},
   {name:'أوراق عمل',desc:'أوراق عمل وتمارين منسّقة لكل درس',price:40,cat:'teachers',icon:'sheet'},
   {name:'اختبارات',desc:'إعداد اختبارات ونماذج أسئلة مع نموذج الإجابة',price:60,cat:'teachers',icon:'exam'},
   {name:'وسائل تعليمية',desc:'وسائل وأنشطة تعليمية إبداعية تثري الحصة',price:90,cat:'teachers',icon:'bulb'},
   {name:'تحضير الدروس',desc:'تحاضير جاهزة ومنظمة وفق استراتيجيات التدريس',price:70,cat:'teachers',icon:'notebook'},
-  {name:'بوستر علمي',desc:'بوستر أكاديمي لعرض مشروع التخرج أو البحث في المعارض والمناقشات',price:60,cat:'creative',icon:'poster'},
-  {name:'إنفوجرافيك',desc:'تحويل المعلومات والأرقام إلى تصميم بصري مختصر وجذاب',price:30,cat:'creative',icon:'infographic'},
-  {name:'خرائط ذهنية وملخصات مصممة',desc:'ملخصات بصرية بألوان وأيقونات تسهّل الفهم والمراجعة — 5 خرائط بـ99 ر.س',price:25,cat:'creative',icon:'mindmap'},
-  {name:'جدول مذاكرة ومخطط',desc:'مخطط أسبوعي أو فصلي مصمم وجاهز للطباعة',price:20,cat:'creative',icon:'calendar'},
+  {name:'بوستر علمي',desc:'بوستر أكاديمي لعرض مشروع التخرج أو البحث في المعارض والمناقشات',price:60,cat:'creative',icon:'poster',sample:'poster-demo'},
+  {name:'إنفوجرافيك',desc:'تحويل المعلومات والأرقام إلى تصميم بصري مختصر وجذاب',price:30,cat:'creative',icon:'infographic',sample:'infographic-demo'},
+  {name:'خرائط ذهنية وملخصات مصممة',desc:'ملخصات بصرية بألوان وأيقونات تسهّل الفهم والمراجعة — 5 خرائط بـ99 ر.س',price:25,cat:'creative',icon:'mindmap',sample:'mindmap-demo'},
+  {name:'جدول مذاكرة ومخطط',desc:'مخطط أسبوعي أو فصلي مصمم وجاهز للطباعة',price:20,cat:'creative',icon:'calendar',sample:'schedule-demo'},
   {name:'قالب تقرير أو خطاب رسمي',desc:'قالب منسّق بهوية جهتك للتقارير والخطابات',price:50,cat:'creative',icon:'sheet'},
-  {name:'بطاقات دعوة وتهنئة',desc:'دعوات تخرج ومناسبات وتهاني بتصميم أنيق',price:25,cat:'creative',icon:'mail'},
-  {name:'شهادات شكر وتقدير',desc:'10 شهادات بالأسماء بتصميم رسمي جاهز للطباعة',price:30,cat:'creative',icon:'award'}
+  {name:'بطاقات دعوة وتهنئة',desc:'دعوات تخرج ومناسبات وتهاني بتصميم أنيق',price:25,cat:'creative',icon:'mail',sample:'invitation-demo'},
+  {name:'شهادات شكر وتقدير',desc:'10 شهادات بالأسماء بتصميم رسمي جاهز للطباعة',price:30,cat:'creative',icon:'award',sample:'certificate'}
 ];
-const PACKAGES = [{name:'باقة الوظيفة',price:120},{name:'باقة المشروع',price:199},{name:'باقة الموظف',price:129},{name:'باقة العرض العلمي',price:119}];
 
 /* عدد الخدمات في الإحصائيات يتحدّث تلقائيًا */
 document.getElementById('servicesCount').dataset.count = services.length;
@@ -917,26 +802,26 @@ let io;
 const SHOW_FIRST = 7; let showAll = false, curFilter = 'all';
 function renderServices(filter='all'){
   curFilter = filter;
-  let list = services.filter(s=>filter==='all'||s.cat===filter);
+  let list = services.filter(s=>filter==='all'||s.cat===filter).sort((a,b)=>(b.hot?1:0)-(a.hot?1:0));
   const limited = filter==='all' && !showAll && list.length>SHOW_FIRST;
   const moreWrap = document.getElementById('moreWrap'), moreBtn = document.getElementById('moreServices');
   moreWrap.hidden = !(filter==='all' && list.length>SHOW_FIRST);
   moreBtn.textContent = limited ? `عرض المزيد (${list.length-SHOW_FIRST} خدمة)` : 'عرض أقل';
   if(limited) list = list.slice(0,SHOW_FIRST);
   grid.innerHTML = list.map((s,i)=>`
-    <a class="service-card reveal" style="transition-delay:${Math.min(i,8)*40}ms" target="_blank" rel="noopener"
-       href="${wa(`مرحباً، أرغب في طلب خدمة: ${s.name} - يبدأ من ${s.price} ر.س`)}">
+    <article class="service-card${s.hot?' is-hot':''} reveal" style="transition-delay:${Math.min(i,8)*40}ms">
       <div class="icon-badge">${svg(s.icon)}</div>
       <div class="sc-body">
         <span class="card-cat">${CATS[s.cat]}</span>
-        <h3>${s.name}</h3>
+        <h3>${s.name}${s.hot?' <span class="hot-tag">الأكثر طلبًا 🔥</span>':''}</h3>
         <p>${s.desc}</p>
+        ${s.sample?`<button type="button" class="sample-btn" data-sample="${s.sample}">${svg('eye')} ${s.sample.includes(',')?'شوف نماذج من شغلنا':'شوف نموذج من شغلنا'}</button>`:''}
       </div>
       <div class="card-foot">
         <span class="service-price"><small>يبدأ من</small>${s.price}<small>ر.س</small></span>
-        <span class="order-link">اطلب الآن ${svg('arrow')}</span>
+        <a class="order-link" target="_blank" rel="noopener" href="${wa(`مرحباً، أرغب في طلب خدمة: ${s.name} - يبدأ من ${s.price} ر.س`)}" aria-label="اطلب ${s.name}">اطلب الآن ${svg('arrow')}</a>
       </div>
-    </a>`).join('');
+    </article>`).join('');
   observeReveals();
 }
 
@@ -948,60 +833,19 @@ filtersEl.addEventListener('click',e=>{
   showAll=false; renderServices(btn.dataset.cat);
 });
 
-/* ===== نسخ بيانات الدفع (يعمل حتى بدون https) ===== */
-function copyText(text){
-  if(navigator.clipboard && window.isSecureContext) return navigator.clipboard.writeText(text);
-  return new Promise((res,rej)=>{
-    const t=document.createElement('textarea'); t.value=text; t.setAttribute('readonly','');
-    t.style.cssText='position:fixed;top:0;opacity:0'; document.body.appendChild(t);
-    t.select(); t.setSelectionRange(0,text.length);
-    try{ document.execCommand('copy') ? res() : rej(); }catch(err){ rej(err); }
-    t.remove();
-  });
-}
-document.querySelectorAll('.copy-btn').forEach(btn=>{
-  btn.addEventListener('click',()=>{
-    if(btn.classList.contains('done')) return;
-    copyText(btn.dataset.value).then(()=>{
-      const old = btn.innerHTML;
-      btn.classList.add('done'); btn.innerHTML = svg('check')+'<span>تم النسخ</span>';
-      setTimeout(()=>{btn.classList.remove('done'); btn.innerHTML = old;},1600);
-    }).catch(()=>alert('انسخ الرقم يدويًا: '+btn.dataset.value));
-  });
-});
-
 /* ===== أزرار الباقات ===== */
 document.querySelectorAll('.pkg-btn').forEach(btn=>{
   btn.addEventListener('click',()=>window.open(wa(`مرحباً، أرغب في طلب ${btn.dataset.pkg}`),'_blank'));
 });
 
-/* ===== نموذج الطلب ===== */
-const ofSel = document.getElementById('ofService');
-ofSel.innerHTML =
-  `<option value="" disabled selected>اختر الخدمة</option>` +
-  Object.entries(CATS).map(([k,v])=>`<optgroup label="${v}">${
-    services.filter(s=>s.cat===k).map(s=>`<option value="${s.name}">${s.name} (من ${s.price} ر.س)</option>`).join('')
-  }</optgroup>`).join('') +
-  `<optgroup label="الباقات">${PACKAGES.map(p=>`<option value="${p.name}">${p.name} (من ${p.price} ر.س)</option>`).join('')}</optgroup>` +
-  `<optgroup label="غير ذلك"><option value="__other">أخرى (اكتب طلبك بنفسك)</option></optgroup>`;
-const ofOtherWrap=document.getElementById('ofOtherWrap'), ofOther=document.getElementById('ofOther'), ofOtherErr=document.getElementById('ofOtherErr');
-
-const ofErr = document.getElementById('ofServiceErr');
-function clearServiceError(){ ofSel.style.borderColor=''; ofErr.hidden=true; }
-ofSel.addEventListener('change',()=>{clearServiceError(); const o=ofSel.value==='__other'; ofOtherWrap.hidden=!o; if(o) ofOther.focus();});
-ofOther.addEventListener('input',()=>{ofOther.style.borderColor='';ofOtherErr.hidden=true;});
-
-document.getElementById('orderForm').addEventListener('submit',e=>{
-  e.preventDefault();
-  const name = document.getElementById('ofName').value.trim();
-  let srv  = ofSel.value;
-  const det  = document.getElementById('ofDetails').value.trim();
-  if(!srv){ ofSel.focus(); ofSel.style.borderColor='#e08a6a'; ofErr.hidden=false; return; }
-  clearServiceError();
-  if(srv==='__other'){ srv=ofOther.value.trim(); if(!srv){ ofOther.focus(); ofOther.style.borderColor='#e08a6a'; ofOtherErr.hidden=false; return; } srv='(خدمة أخرى) '+srv; }
-  let text = `مرحباً، أنا ${name||'(عميل)'}\nأرغب في طلب: ${srv}`;
-  if(det) text += `\nالتفاصيل: ${det}`;
-  window.open(wa(text),'_blank');
+/* ===== باقات أكثر ===== */
+const pkgMore=document.getElementById('pkgMore');
+pkgMore.addEventListener('click',()=>{
+  const open=pkgMore.getAttribute('aria-expanded')!=='true';
+  document.querySelectorAll('.pkg-extra').forEach(el=>{el.hidden=!open; if(open){el.classList.remove('reveal');}});
+  pkgMore.setAttribute('aria-expanded',open);
+  pkgMore.innerHTML=(open?'إخفاء الباقات الإضافية ':'عرض باقات أكثر (2) ')+svg('down');
+  if(!open) document.getElementById('packages').scrollIntoView({behavior:'smooth'});
 });
 
 /* ===== الأسئلة الشائعة ===== */
@@ -1019,10 +863,11 @@ addEventListener('resize',()=>{
 });
 
 /* ===== الهيدر والقائمة ===== */
-const header=document.getElementById('header'), nav=document.getElementById('nav'), burger=document.getElementById('burger'), toTop=document.getElementById('toTop');
+const floatWa=document.querySelector('.float-wa'), header=document.getElementById('header'), nav=document.getElementById('nav'), burger=document.getElementById('burger'), toTop=document.getElementById('toTop');
 function onScroll(){
   header.classList.toggle('scrolled',scrollY>30);
   toTop.classList.toggle('show',scrollY>600);
+  floatWa.classList.toggle('show',scrollY>450);
 }
 addEventListener('scroll',onScroll,{passive:true}); onScroll();
 function setMenu(open){
@@ -1065,7 +910,7 @@ function animateCount(el){
 function observeReveals(){
   if(!('IntersectionObserver' in window)){
     document.querySelectorAll('.reveal').forEach(el=>el.classList.add('in'));
-    document.querySelectorAll('.stat .num').forEach(el=>el.textContent=el.dataset.count+(el.dataset.suffix||''));
+    document.querySelectorAll('.stat .num[data-count]').forEach(el=>el.textContent=el.dataset.count+(el.dataset.suffix||''));
     return;
   }
   if(!io){
@@ -1076,7 +921,7 @@ function observeReveals(){
         /* بعد انتهاء الظهور نزيل كلاساته حتى تعمل تأثيرات المرور */
         const shown = e.target;
         setTimeout(()=>{ shown.classList.remove('reveal','in'); shown.style.transitionDelay=''; },1200);
-        if(e.target.id==='stats') e.target.querySelectorAll('.num').forEach(animateCount);
+        if(e.target.id==='stats') e.target.querySelectorAll('.num[data-count]').forEach(animateCount);
         io.unobserve(e.target);
       });
     },{threshold:.12,rootMargin:'0px 0px -40px 0px'});
@@ -1088,74 +933,57 @@ document.getElementById('moreServices').addEventListener('click',()=>{
   if(wasAll) document.getElementById('services').scrollIntoView({behavior:'smooth'});
 });
 renderServices();
-/* ===== زر عرض الباقات ===== */
-const pkgGrid=document.getElementById('pkgGrid'), pkgToggle=document.getElementById('pkgToggle');
-function setPkgs(open){ pkgGrid.hidden=!open; pkgToggle.setAttribute('aria-expanded',open); pkgToggle.textContent = open ? 'إخفاء الباقات' : 'عرض الباقات (4 باقات)'; }
-pkgToggle.addEventListener('click',()=>setPkgs(pkgGrid.hidden));
-document.querySelectorAll('a[href="#packages"]').forEach(a=>a.addEventListener('click',()=>setPkgs(true)));
-if(location.hash==='#packages') setPkgs(true);
 
 /* ===== نماذج الأعمال ===== */
-const WORK_CATS = {research:'بحوث (PDF)', tech:'برامج وتطبيقات', careers:'التوظيف', design:'تصاميم وعروض'};
 const WORKS = [
   {cat:'careers', title:'سيرة ذاتية بصيغة ATS', desc:'سيرة احترافية متوافقة مع أنظمة فرز السير الذاتية بلغة إنجليزية وإنجازات بالأرقام', img:'cv-ats'},
   {cat:'careers', title:'ملف 50 شركة حسب مدينتك', desc:'ملف Excel منظّم بالشركات المناسبة لتخصصك في مدينتك مع مواقعها الرسمية', img:'companies-50'},
   {cat:'tech', title:'حاسبة تسعير التقسيط', desc:'برنامج لأصحاب المتاجر يحسب سعر البيع بعد عمولة تابي وتمارا والضريبة', img:'installments'},
   {cat:'research', title:'بحث: مراجعة أدبيات بالإنجليزية', desc:'مراجعة 15 دراسة محكّمة في تعلّم الآلة لكشف التسلل الشبكي، بتوثيق IEEE وجداول مقارنة', img:'research-review'},
-  {cat:'tech', title:'تطبيق تحويل العملات', desc:'تطبيق أندرويد (Kotlin) يحوّل بين الدولار والريال  جرّبه مباشرة من هنا', img:'converter', live:'works/currency-converter.html'},
-  {cat:'design', title:'عرض تقديمي مختصر', desc:'عرض من 4 شرائح عن إدارة الوقت للطلاب  تصميم واضح وأفكار مرتبة', img:'presentation'},
+  {cat:'tech', title:'تطبيق تحويل العملات', desc:'تطبيق أندرويد (Kotlin) يحوّل بين الدولار والريال — جرّبه مباشرة من هنا', img:'converter', live:'works/currency-converter.html'},
+  {cat:'design', title:'عرض تقديمي مختصر', desc:'عرض من 4 شرائح عن إدارة الوقت للطلاب — تصميم واضح وأفكار مرتبة', img:'presentation'},
+  {cat:'design', title:'إنفوجرافيك: خطوات كتابة البحث (نموذج توضيحي)', desc:'نموذج توضيحي لأسلوبنا في الإنفوجرافيك: معلومات مرتبة بأيقونات وخط زمني واضح، وتقدر تطلب نفس الفكرة لأي موضوع', img:'infographic-demo'},
+  {cat:'design', title:'خريطة ذهنية: مصادر الطاقة المتجددة (نموذج توضيحي)', desc:'نموذج توضيحي لخرائطنا الذهنية: فكرة رئيسية وفروع ملونة تسهّل الفهم والمراجعة', img:'mindmap-demo'},
+  {cat:'design', title:'جدول مذاكرة أسبوعي (نموذج توضيحي)', desc:'نموذج توضيحي لجدول مذاكرة منظم بالألوان مع أهداف الأسبوع والمواعيد القادمة، جاهز للطباعة', img:'schedule-demo'},
+  {cat:'design', title:'ترجمة ملف من العربية للإنجليزية (نموذج توضيحي)', desc:'نموذج توضيحي: ملخص بحث مترجم للإنجليزية بنفس ترتيب وتنسيق الملف الأصلي', img:'translation-demo'},
+  {cat:'tech', title:'موقع شخصي — CV أونلاين (نموذج توضيحي)', desc:'نموذج توضيحي لموقع شخصي يعرض النبذة والمهارات والخبرات والأعمال، مع زر تحميل السيرة الذاتية', img:'website-demo'},
+  {cat:'design', title:'بطاقة دعوة رسمية (نموذج توضيحي)', desc:'نموذج توضيحي لدعوة حفل تخرج بتصميم رسمي أنيق، وتقدر تطلبها لأي مناسبة', img:'invitation-demo'},
+  {cat:'design', title:'بوستر علمي لمشروع تخرج (نموذج توضيحي)', desc:'نموذج توضيحي لبوستر أكاديمي مقسّم: مقدمة، أهداف، منهجية، نتائج برسم بياني، وخاتمة', img:'poster-demo'},
+  {cat:'design', title:'ملف إنجاز المعلم (نموذج توضيحي)', desc:'نموذج توضيحي: غلاف وفهرس محاور ملف الإنجاز حسب عناصر تقييم الأداء الوظيفي', img:'portfolio-demo'},
+  {cat:'tech', title:'سجل درجات Excel (نموذج توضيحي)', desc:'نموذج توضيحي: سجل يحسب المجموع والتقدير ومتوسط الفصل ونسبة النجاح تلقائيًا', img:'grades-demo'},
+  {cat:'design', title:'تقرير تنفيذ برنامج مدرسي (نموذج توضيحي)', desc:'نموذج توضيحي: تقرير بالأهداف والإجراءات والشواهد والتوصيات مع خانات التوقيع', img:'report-demo'},
+  {cat:'tech', title:'لوحة مؤشرات Excel (نموذج توضيحي)', desc:'نموذج توضيحي بأرقام افتراضية: مؤشرات رئيسية ورسوم للمبيعات الشهرية وحسب المنطقة', img:'dashboard-demo'},
+  {cat:'design', title:'ملخص تنفيذي لتقرير (نموذج توضيحي)', desc:'نموذج توضيحي: تقرير من 40 صفحة يتلخّص في صفحة واحدة بالخلاصة والأرقام والتوصيات', img:'execsum-demo'},
   {cat:'design', title:'شهادة شكر وتقدير', desc:'تصميم رسمي بهوية مدرسية جاهز للطباعة بمقاس A4 مع إضافة الأسماء', img:'certificate'}
 ];
-const workFiltersEl = document.getElementById('workFilters');
-const worksGrid = document.getElementById('worksGrid');
-workFiltersEl.innerHTML = [['all','الكل',WORKS.length], ...Object.entries(WORK_CATS).map(([k,v])=>[k,v,WORKS.filter(w=>w.cat===k).length])]
-  .map(([k,label,n],i)=>`<button class="filter-btn${i===0?' active':''}" role="tab" aria-selected="${i===0}" data-cat="${k}">${label}<span class="cnt">${n}</span></button>`).join('');
-const WORKS_FIRST = 3; let worksAll = false, worksFilter = 'all';
-function renderWorks(filter='all'){
-  worksFilter = filter;
-  let list = WORKS.map((w,i)=>({w,i})).filter(({w})=>filter==='all'||w.cat===filter);
-  const limited = filter==='all' && !worksAll && list.length>WORKS_FIRST;
-  document.getElementById('worksMoreWrap').hidden = !(filter==='all' && list.length>WORKS_FIRST);
-  document.getElementById('worksMore').textContent = limited ? `عرض المزيد (${list.length-WORKS_FIRST} أعمال)` : 'عرض أقل';
-  if(limited) list = list.slice(0,WORKS_FIRST);
-  worksGrid.innerHTML = list.map(({w,i},n)=>`
-    <button class="work-card reveal" style="transition-delay:${Math.min(n,6)*50}ms" data-i="${i}" aria-label="عرض ${w.title}">
-      <div class="work-thumb"><img src="works/${w.img}-thumb.jpg" alt="${w.title}" loading="lazy" width="800" height="500"><span class="zoom">عرض العمل</span></div>
-      <div class="work-body"><span class="card-cat">${WORK_CATS[w.cat]}</span><h3>${w.title}</h3><p>${w.desc}</p></div>
-    </button>`).join('');
-  observeReveals();
-}
-workFiltersEl.addEventListener('click',e=>{
-  const btn=e.target.closest('.filter-btn'); if(!btn) return;
-  workFiltersEl.querySelectorAll('.filter-btn').forEach(b=>{b.classList.remove('active');b.setAttribute('aria-selected','false');});
-  btn.classList.add('active'); btn.setAttribute('aria-selected','true');
-  worksAll=false; renderWorks(btn.dataset.cat);
-});
-const lb=document.getElementById('lightbox'), lbImg=document.getElementById('lbImg'), lbLive=document.getElementById('lbLive');
-let lbReturn=null;
-function openLb(w,ret){
-  lbReturn=ret||null;
+const lbNav=document.getElementById('lbNav'), lb=document.getElementById('lightbox'), lbImg=document.getElementById('lbImg'), lbLive=document.getElementById('lbLive');
+let lbReturn=null, lbList=[], lbIdx=0;
+function showLb(w){
   lbImg.src=`works/${w.img}.jpg`; lbImg.alt=w.title;
   document.getElementById('lbTitle').textContent=w.title;
   document.getElementById('lbDesc').textContent=w.desc;
   if(w.live){lbLive.href=w.live; lbLive.hidden=false;} else lbLive.hidden=true;
+  const many=lbList.length>1; lbNav.hidden=!many;
+  if(many) document.getElementById('lbCount').textContent=`${lbIdx+1} / ${lbList.length}`;
+}
+function openLb(w,ret,list){
+  lbReturn=ret||null; lbList=list||[w]; lbIdx=0; showLb(w);
   lb.hidden=false; document.body.style.overflow='hidden'; document.getElementById('lbClose').focus();
 }
-worksGrid.addEventListener('click',e=>{
-  const card=e.target.closest('.work-card'); if(!card) return;
-  openLb(WORKS[+card.dataset.i],card);
+grid.addEventListener('click',e=>{
+  const b=e.target.closest('.sample-btn'); if(!b) return;
+  const list=b.dataset.sample.split(',').map(k=>WORKS.find(x=>x.img===k)).filter(Boolean);
+  if(list.length) openLb(list[0],b,list);
 });
 const credBtn=document.getElementById('credDoc');
-if(credBtn) credBtn.addEventListener('click',()=>openLb({img:'freelance-doc',title:'وثيقة العمل الحر — تصميم الجرافيك',desc:'صادرة من وزارة الموارد البشرية والتنمية الاجتماعية. أُخفيت البيانات الشخصية (الاسم ورقم الهوية ورمز الوثيقة).'},credBtn));
+if(credBtn) credBtn.addEventListener('click',()=>openLb({img:'freelance-doc',title:'وثيقة العمل الحر — تصميم الجرافيك',desc:'صادرة من وزارة الموارد البشرية والتنمية الاجتماعية، وسارية حتى يونيو 2027. أخفينا الاسم ورقم الهوية فقط — امسح الباركود للتحقق من صحتها.'},credBtn));
+function stepLb(d){ lbIdx=(lbIdx+d+lbList.length)%lbList.length; showLb(lbList[lbIdx]); }
+document.getElementById('lbNext').addEventListener('click',()=>stepLb(1));
+document.getElementById('lbPrev').addEventListener('click',()=>stepLb(-1));
 function closeLb(){lb.hidden=true; document.body.style.overflow=''; if(lbReturn) lbReturn.focus();}
 document.getElementById('lbClose').addEventListener('click',closeLb);
 lb.addEventListener('click',e=>{if(e.target===lb) closeLb();});
 document.addEventListener('keydown',e=>{if(e.key==='Escape'&&!lb.hidden) closeLb();});
-document.getElementById('worksMore').addEventListener('click',()=>{
-  const was=worksAll; worksAll=!worksAll; renderWorks(worksFilter);
-  if(was) document.getElementById('works').scrollIntoView({behavior:'smooth'});
-});
-renderWorks();
 
 /* ===== نجوم خلفية خفيفة (للشاشات الكبيرة فقط) ===== */
 const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -1178,6 +1006,18 @@ if(!reduce && innerWidth>=768){
     d.style.cssText=`left:${spots[i][0]}%;top:${spots[i][1]}%;width:${sz}px;height:${sz}px;--o:${(.07+Math.random()*.13).toFixed(2)};--d:${14+Math.random()*12}s;--r:${30+Math.random()*40}s;--x:${(Math.random()*80-40)|0}px;--y:${-(30+Math.random()*60)|0}px;animation-delay:-${(Math.random()*10).toFixed(1)}s`;
     d.innerHTML='<svg viewBox="0 0 100 100"><use href="#seen-star"/></svg>'; sky.appendChild(d);}
 })();
+
+/* ===== آراء العملاء =====
+   أضف كل رأي هكذا: {text:'نص الرأي', who:'طالبة جامعية — بحث', stars:5}
+   القسم يظهر تلقائيًا أول ما تضيف رأي واحد */
+const REVIEWS = [];
+if(REVIEWS.length){
+  document.getElementById('reviewsGrid').innerHTML = REVIEWS.map(v=>`<div class="review reveal"><div class="stars">${'★'.repeat(v.stars||5)}</div><p>«${v.text}»</p><small>${v.who||''}</small></div>`).join('');
+  document.getElementById('reviews').hidden=false; observeReveals();
+}
+
+/* رابط لقسم محذوف (مثل #payment أو #works) يفتح الموقع من البداية وينظف الرابط */
+(()=>{const h=location.hash.slice(1); if(h && !document.getElementById(h)){ history.replaceState(null,'',location.pathname+location.search); scrollTo(0,0); }})();
 
 document.getElementById('year').textContent=new Date().getFullYear();
 </script>
