@@ -26,7 +26,8 @@
 </head>
 <body>
 <header class="top"><div class="in">
-  <a class="brand" href="index.html"><img src="logo.png" alt=""><span data-l="ar">سين</span><span data-l="en" lang="en" dir="ltr">Seen</span></a>
+  <div class="top-start"><a class="back" id="backBtn" href="index.html#services" aria-label="رجوع"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-l="ar">رجوع</span><span data-l="en">Back</span></a>
+  <a class="brand" href="index.html"><img src="logo.png" alt=""><span data-l="ar">سين</span><span data-l="en" lang="en" dir="ltr">Seen</span></a></div>
   <div class="top-act"><button type="button" class="lang" id="langBtn" aria-label="English / العربية"><span data-l="ar" lang="en">EN</span><span data-l="en" lang="ar">ع</span></button>
   <a class="cta" data-l="ar" href="https://wa.me/966594827253?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%20%D8%B3%D9%8A%D9%86%D8%8C%20%D8%A3%D8%B1%D8%BA%D8%A8%20%D9%81%D9%8A%20%D8%B7%D9%84%D8%A8%3A%20%D8%A7%D8%AE%D8%AA%D8%A8%D8%A7%D8%B1%D8%A7%D8%AA%20-%20%D9%8A%D8%A8%D8%AF%D8%A3%20%D9%85%D9%86%2060%20%D8%B1.%D8%B3" target="_blank" rel="noopener">اطلب الآن</a><a class="cta" data-l="en" href="https://wa.me/966594827253?text=Hello%20Seen%2C%20I%27d%20like%20to%20order%3A%20Exams%20-%20from%2060%20SAR" target="_blank" rel="noopener">Order now</a></div>
 </div></header>
@@ -38,6 +39,9 @@
   <div style="margin-top:6px"><span data-l="ar">© سين — جميع الحقوق محفوظة</span><span data-l="en" lang="en" dir="ltr">© Seen — All rights reserved</span></div>
 </footer>
 <script>
+document.getElementById('backBtn').addEventListener('click',function(e){
+  try{var r=document.referrer&&new URL(document.referrer);if(r&&r.origin===location.origin&&history.length>1){e.preventDefault();history.back();}}catch(_){}
+});
 document.getElementById('langBtn').addEventListener('click',function(){
   var h=document.documentElement,en=!h.classList.contains('en');
   h.classList.toggle('en',en);h.lang=en?'en':'ar';h.dir=en?'ltr':'rtl';

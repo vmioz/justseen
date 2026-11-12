@@ -616,6 +616,12 @@ html[dir="ltr"] .service-card::after{background:linear-gradient(225deg,rgba(203,
 .service-card .sample-btn,.service-card .order-link{position:relative;z-index:2;}
 .card-link:focus-visible{outline:none;}
 .service-card:has(.card-link:focus-visible){outline:2px solid var(--gold);outline-offset:3px;}
+@view-transition{navigation:auto}
+::view-transition-old(root){animation:vt-out .22s ease both}
+::view-transition-new(root){animation:vt-in .38s cubic-bezier(.2,.7,.2,1) both}
+@keyframes vt-out{to{opacity:0;transform:translateY(-8px)}}
+@keyframes vt-in{from{opacity:0;transform:translateY(14px)}}
+@media (prefers-reduced-motion:reduce){::view-transition-old(root),::view-transition-new(root){animation:none}}
 </style>
 </head>
 <body>
