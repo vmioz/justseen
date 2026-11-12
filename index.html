@@ -21,6 +21,7 @@
 <meta property="og:url" content="https://justseensa.com/">
 <meta property="og:locale" content="ar_SA">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@justseensa">
 <meta name="twitter:title" content="سين — خدمات للطلاب والموظفين والمعلمين">
 <meta name="twitter:description" content="بحوث • تلخيص مناهج • عروض تقديمية • سير ذاتية • تصاميم ⚡ تسليم خلال ساعات — والطلب على واتساب">
 <meta name="twitter:image" content="https://justseensa.com/og-image.jpg">
@@ -779,9 +780,6 @@ footer{margin-top:0;}
   .hero .about-text{font-size:13.5px;margin:10px auto 22px;max-width:320px;}
   .hero-btns{flex-direction:column!important;max-width:300px!important;margin:0 auto;gap:10px!important;}
   .hero-btns .btn{padding:13px 10px!important;font-size:14.5px!important;}
-  .hero::after{content:"";position:absolute;bottom:30px;left:50%;width:22px;height:34px;border:1.5px solid rgba(203,182,130,.4);border-radius:12px;transform:translateX(-50%);}
-  .hero::before{content:"";position:absolute;bottom:50px;left:50%;width:3px;height:7px;border-radius:2px;background:var(--gold);transform:translateX(-50%);animation:scrollDot 1.8s ease-in-out infinite;}
-  @keyframes scrollDot{0%{opacity:0;transform:translate(-50%,-6px)}40%{opacity:1}100%{opacity:0;transform:translate(-50%,8px)}}
   /* علامة الأكثر مبيعًا في الصف */
   .hot-m{display:inline-flex;align-items:center;font-size:10.5px;font-weight:700;color:var(--green-900);background:linear-gradient(135deg,var(--gold-bright),var(--gold-soft));border-radius:20px;padding:1px 8px;margin-bottom:4px;line-height:1.7;}
   .services-grid .service-card.is-hot{border-color:rgba(203,182,130,.4);}
@@ -804,6 +802,15 @@ html[dir="ltr"] .pkg-more .ico{transform:scaleX(-1);}
   .pkg-more{font-size:13px;}
 }
 @media (prefers-reduced-motion:reduce){.tap-ic{animation:none;}}
+/* علامة «اسحب لتحت» للجوال */
+.swipe-hint{display:none;}
+@media (max-width:640px){
+  .swipe-hint{display:flex;flex-direction:column;align-items:center;gap:4px;position:absolute;left:50%;bottom:30px;transform:translateX(-50%);color:var(--gold-bright);font-size:12px;text-decoration:none;opacity:.85;}
+  .swipe-hint .sw-hand{width:30px;height:30px;display:block;animation:swipeDown 1.9s ease-in-out infinite;}
+  .swipe-hint svg{width:30px;height:30px;}
+  @keyframes swipeDown{0%{transform:translateY(-6px);opacity:0}25%{opacity:1}70%{transform:translateY(10px);opacity:1}100%{transform:translateY(14px);opacity:0}}
+}
+@media (prefers-reduced-motion:reduce){.swipe-hint .sw-hand{animation:none}}
 </style>
 </head>
 <body>
@@ -863,6 +870,7 @@ html[dir="ltr"] .pkg-more .ico{transform:scaleX(-1);}
       <a href="#services" class="btn btn-ghost"><span data-i18n="heroBrowse">تصفّح الخدمات</span> <i data-icon="down"></i></a>
     </div>
     </div>
+    <a href="#services" class="swipe-hint" aria-label="انزل للخدمات"><span class="sw-hand"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 11V5.5a1.5 1.5 0 0 1 3 0V10m0-.5a1.5 1.5 0 0 1 3 0V11m0-.5a1.5 1.5 0 0 1 3 0V15a6 6 0 0 1-6 6h-1a6 6 0 0 1-5-2.7L3.6 14a1.5 1.5 0 0 1 2.4-1.8L9 15" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span data-i18n="swipe">اسحب لتحت</span></a>
 
     <div class="stats reveal" id="stats">
       <div class="stat"><span class="st-ic"><i data-icon="clock"></i></span><div class="num num-word" data-i18n="st1n">دقائق</div><div class="lbl" data-i18n="st1">إلى 5 ساعات</div></div>
@@ -1138,7 +1146,7 @@ const EN={
   c1h:'Officially certified', c1p:'Seen\'s founder holds a <span class="hl">Freelance Certificate in Graphic Design</span> from the Ministry of Human Resources and Social Development.', c1code:'Certificate ID:', c1tap:'tap to view and verify it',
   c2h:'Full privacy', c1s:'Freelance certificate · tap to view', c2s:'Your files stay confidential', c2p:'Your data, files and order details stay confidential and are never shared. We deal with you directly from start to delivery.',
   pEy:'Exclusive offers', pH:'Packages that save you more', pP:'Combine several services in one package for less',
-  hot:'Best seller 🔥', tapS:'Tap any service to see its details, samples and how to order', tapP:'Tap a package to see everything included', pkDet:'Package details', svcDet:'Details', from:'From', sar:'SAR', pkBtn:'Order package', pkMore:'More packages (2)',
+  hot:'Best seller 🔥', swipe:'Swipe down', tapS:'Tap any service to see its details, samples and how to order', tapP:'Tap a package to see everything included', pkDet:'Package details', svcDet:'Details', from:'From', sar:'SAR', pkBtn:'Order package', pkMore:'More packages (2)',
   pk1:'Job Package', pk1i1:'ATS-friendly professional CV', pk1i2:'50 companies list for your major and city', pk1i3:'Professional cover letter', pk1i4:'Interview preparation tips', pk1i5:'LinkedIn profile makeover', save1:'Save 60 SAR', save2:'Save 31 SAR',
   pk2:'Teacher Package', pk2i1:'Teacher portfolio based on review criteria', pk2i2:'Automatic gradebook', pk2i3:'School activity report with school branding', pk2i4:'3 free revisions',
   rEy:'Testimonials', rH:'What our clients say', rP:'Real messages from our clients — names hidden for privacy',
@@ -1191,13 +1199,13 @@ const CATS = {research:'الأبحاث والمشاريع', writing:'الكتا�
 const CATS_EN = {research:'Research', writing:'Writing', careers:'Careers', teachers:'Teachers', design:'Design & Tech'};
 const services = [
   {name:'بحوث جامعية',page:'research.html',desc:'بحوث أكاديمية متكاملة بمراجع موثقة',price:40,cat:'research',icon:'book',sample:'research-review',hot:true, en:['University Research','Complete academic research with proper references']},
-  {name:'مشاريع مقررات',page:'course-projects.html',desc:'مشروع متكامل حسب متطلبات الدكتور من الفكرة حتى التقرير',price:60,cat:'research',icon:'project',hot:true, en:['Course Projects','A full project to your instructor\'s requirements from idea to report']},
-  {name:'تلخيص مناهج',page:'summaries.html',desc:'ملخصات مرتبة ومختصرة تسهّل عليك المذاكرة',price:30,cat:'writing',icon:'notebook',hot:true, en:['Course Summaries','Clear and concise summaries that make studying easier']},
+  {name:'مشاريع مقررات',page:'course-projects.html',desc:'مشروع متكامل حسب متطلبات الدكتور من الفكرة حتى التقرير',price:60,cat:'research',icon:'project', en:['Course Projects','A full project to your instructor\'s requirements from idea to report']},
+  {name:'تلخيص مناهج',page:'summaries.html',desc:'ملخصات مرتبة ومختصرة تسهّل عليك المذاكرة',price:30,cat:'writing',icon:'notebook', en:['Course Summaries','Clear and concise summaries that make studying easier']},
   {name:'حل واجبات',page:'homework.html',desc:'حل واجبات جميع المواد بخطوات واضحة ومراجعة دقيقة قبل التسليم',price:30,cat:'writing',icon:'checks', en:['Homework Help','Homework for all subjects solved with clear steps and checked before delivery']},
   {name:'ترجمة ملفات',page:'translation.html',desc:'ترجمة احترافية من الإنجليزية إلى العربية',price:30,cat:'writing',icon:'translate',sample:'translation-demo', en:['File Translation','Professional translation between English and Arabic']},
   {name:'سيرة ذاتية احترافية',page:'cv.html',desc:'سيرة بالعربي والإنجليزي متوافقة مع أنظمة التوظيف',price:50,cat:'careers',icon:'resume',sample:'cv-ats-ar,cv-ats',hot:true, en:['Professional CV','An Arabic and English CV built for hiring systems']},
-  {name:'تحسين حساب لينكدإن',page:'linkedin.html',desc:'ترتيب حسابك بعنوان ونبذة وخبرات تلفت انتباه الشركات والشامل يضيف غلافًا ونسخة إنجليزية',price:79,cat:'careers',icon:'profile',tiers:[['أساسي','Basic',79],['شامل','Full',100]], en:['LinkedIn Profile Makeover','A headline summary and experience that attract recruiters and Full adds a cover and an English version']},
-  {name:'ملف 50 شركة',page:'companies-list.html',desc:'50 شركة حسب تخصصك ومدينتك في جدول جاهز',price:50,cat:'careers',icon:'building',sample:'companies-50', en:['50 Companies List','50 companies matched to your major and city in a ready sheet']},
+  {name:'تحسين حساب لينكدإن',page:'linkedin.html',desc:'ترتيب حسابك بعنوان ونبذة وخبرات تلفت انتباه الشركات والشامل يضيف غلافًا ونسخة إنجليزية',price:79,cat:'careers',icon:'profile',hot:true,tiers:[['أساسي','Basic',79],['شامل','Full',100]], en:['LinkedIn Profile Makeover','A headline summary and experience that attract recruiters and Full adds a cover and an English version']},
+  {name:'ملف 50 شركة',page:'companies-list.html',desc:'50 شركة حسب تخصصك ومدينتك في جدول جاهز',price:50,cat:'careers',icon:'building',hot:true,sample:'companies-50', en:['50 Companies List','50 companies matched to your major and city in a ready sheet']},
   {name:'لوحة مؤشرات إكسل',page:'excel-dashboard.html',desc:'بياناتك في رسوم ومؤشرات واضحة تتحدث تلقائيًا',price:100,cat:'careers',icon:'chart',sample:'dashboard-demo', en:['Excel Dashboard','Your data in clear charts and indicators that update automatically']},
   {name:'ملخص تنفيذي للتقارير',page:'executive-summary.html',desc:'تقريرك الطويل في صفحة واحدة بالأرقام والتوصيات',price:50,cat:'careers',icon:'notebook',sample:'execsum-demo', en:['Executive Summary','Your long report on one page with key numbers and recommendations']},
   {name:'موقع شخصي',page:'personal-website.html',desc:'موقع احترافي يعرض سيرتك وأعمالك في رابط واحد',price:100,cat:'careers',icon:'globe',sample:'website-demo', en:['Personal Website','A professional site showing your CV and work in one link']},
