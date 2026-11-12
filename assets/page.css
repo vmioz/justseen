@@ -75,3 +75,37 @@ main>*:nth-child(1){animation-delay:.03s}main>*:nth-child(2){animation-delay:.09
 main>*:nth-child(4){animation-delay:.21s}main>*:nth-child(5){animation-delay:.27s}main>*:nth-child(6){animation-delay:.33s}
 main>*:nth-child(n+7){animation-delay:.38s}
 @media (prefers-reduced-motion:reduce){main>*{animation:none}::view-transition-old(root),::view-transition-new(root){animation:none}}
+
+/* الجوال: صفحة مدمجة */
+@media (max-width:640px){
+  body{font-size:14.5px;line-height:1.8}
+  .top .in{padding:8px 14px}
+  .brand{font-size:19px;gap:8px}
+  .cta{padding:8px 12px;font-size:13.5px;border-radius:11px}
+  main{padding:14px 16px 40px}
+  .crumbs{font-size:11.5px;margin-bottom:10px}
+  h1{font-size:25px;margin-bottom:8px}
+  .lead{font-size:14.5px;line-height:1.85;margin-bottom:14px}
+  .price{padding:7px 12px;margin:2px 0 12px;border-radius:12px;gap:6px}
+  .price b{font-size:23px}
+  .price span{font-size:12.5px}
+  .tiers{gap:8px}
+  .btns{gap:8px}
+  .btns .cta{flex:1;justify-content:center;padding:11px 10px}
+  h2{font-size:19px;margin:26px 0 8px}
+  .card{padding:10px 14px;border-radius:14px;margin:8px 0}
+  ul.check li{padding-block:4px;padding-inline-start:22px;font-size:14px}
+  ul.check li::before{top:4px}
+  ol.steps li{padding-block:5px;padding-inline-start:38px;min-height:30px;font-size:14px}
+  ol.steps li::before{width:26px;height:26px;font-size:12.5px;top:4px}
+  details{padding:10px 13px;border-radius:12px;margin:6px 0}
+  details summary{font-size:14px}
+  details p{font-size:13.5px}
+  .related{grid-template-columns:1fr 1fr;gap:8px}
+  .related a{padding:10px 11px;border-radius:12px;font-size:12.5px}
+  .related a b{font-size:13.5px;line-height:1.5}
+  .btns.end{margin-top:22px}
+  .btns.end .cta{flex:none;width:100%}
+  footer{font-size:12px;padding:18px 14px calc(18px + env(safe-area-inset-bottom))}
+  figure img{border-radius:12px}
+}

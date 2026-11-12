@@ -626,6 +626,35 @@ html[dir="ltr"] .service-card::after{background:linear-gradient(225deg,rgba(203,
 @keyframes vt-out{to{opacity:0;transform:translateY(-8px)}}
 @keyframes vt-in{from{opacity:0;transform:translateY(14px)}}
 @media (prefers-reduced-motion:reduce){::view-transition-old(root),::view-transition-new(root){animation:none}}
+/* ===== قائمة الجوال: صفحة كاملة ===== */
+.nav-m,.nav-foot,.nav-star{display:none;}
+@media (max-width:960px){
+  nav{position:absolute;top:100%;left:0;right:0;height:calc(100dvh - var(--hh,64px));overflow-y:auto;overscroll-behavior:contain;
+    display:flex;flex-direction:column;justify-content:center;align-items:center;gap:4px;
+    padding:20px var(--pad) calc(26px + env(safe-area-inset-bottom));
+    background:radial-gradient(ellipse 120% 70% at 50% 30%,#14302a 0%,#0b1a15 55%,#08120f 100%);
+    border-bottom:0;box-shadow:none;transform:none;transition:opacity .3s, visibility .3s;}
+  nav > a{font-family:'El Messiri',serif;font-size:clamp(24px,7vw,30px);font-weight:600;color:var(--cream);padding:10px 24px;
+    opacity:0;transform:translateY(14px);transition:opacity .4s, transform .5s var(--ease), color .2s;}
+  nav > a.active{color:var(--gold-bright);background:none;}
+  nav.open > a{opacity:1;transform:none;}
+  nav.open > a:nth-child(1){transition-delay:.05s}nav.open > a:nth-child(2){transition-delay:.1s}
+  nav.open > a:nth-child(3){transition-delay:.15s}nav.open > a:nth-child(4){transition-delay:.2s}nav.open > a:nth-child(5){transition-delay:.25s}
+  .nav-m{display:block;}
+  .nav-foot{display:flex;flex-direction:column;align-items:center;gap:18px;margin-top:26px;width:100%;
+    opacity:0;transform:translateY(14px);transition:opacity .4s .3s, transform .5s .3s var(--ease);}
+  nav.open .nav-foot{opacity:1;transform:none;}
+  .nav-foot .btn{width:100%;max-width:320px;justify-content:center;}
+  .nav-soc{display:flex;gap:12px;}
+  .nav-soc a{width:46px;height:46px;border-radius:14px;display:grid;place-items:center;color:var(--gold-bright);background:rgba(255,255,255,.05);border:1px solid var(--glass-line);}
+  .nav-soc a .ico{width:21px;height:21px;}
+  .nav-star{display:block;position:absolute;left:50%;top:44%;width:min(420px,90vw);transform:translate(-50%,-50%);color:var(--gold);opacity:.05;pointer-events:none;z-index:-1;}
+  nav{isolation:isolate;}
+  html.menu-open,html.menu-open body{overflow:hidden;}
+  .nav-cta{transition:opacity .2s;}
+  html.menu-open .nav-cta{opacity:0;pointer-events:none;}
+}
+@media (prefers-reduced-motion:reduce){nav > a,.nav-foot{transition:none!important;transform:none!important;}}
 </style>
 </head>
 <body>
@@ -654,6 +683,16 @@ html[dir="ltr"] .service-card::after{background:linear-gradient(225deg,rgba(203,
       <a href="#how" data-i18n="nav2">كيف نعمل</a>
       <a href="#packages" data-i18n="nav3">الباقات</a>
       <a href="#faq" data-i18n="nav4">الأسئلة</a>
+      <a href="blog.html" class="nav-m" data-i18n="nav6">مقالات</a>
+      <div class="nav-foot">
+        <a href="https://wa.me/966594827253" target="_blank" rel="noopener" class="btn btn-primary"><i data-icon="whatsapp"></i> <span data-i18n="heroCta">اطلب خدمتك الآن</span></a>
+        <div class="nav-soc">
+          <a href="https://x.com/justseensa" target="_blank" rel="noopener" aria-label="X"><i data-icon="xlogo"></i></a>
+          <a href="https://www.tiktok.com/@justseenn" target="_blank" rel="noopener" aria-label="TikTok"><i data-icon="tiktok"></i></a>
+          <a href="https://wa.me/966594827253" target="_blank" rel="noopener" aria-label="WhatsApp"><i data-icon="whatsapp"></i></a>
+        </div>
+      </div>
+      <svg class="nav-star" viewBox="0 0 100 100" aria-hidden="true"><use href="#seen-star"/></svg>
     </nav>
     <a href="https://wa.me/966594827253" target="_blank" rel="noopener" class="nav-cta"><i data-icon="whatsapp"></i><span data-i18n="cta">اطلب<span class="lbl-long"> الآن</span></span></a>
     <button class="lang-btn" id="langBtn" type="button" aria-label="English" lang="en">EN</button>
@@ -926,7 +965,7 @@ const TXT={
 const T=k=>(TXT[LANG]&&TXT[LANG][k])||TXT.ar[k]||k;
 const EN={
   brand:'Seen', tagline:'For students, employees & teachers',
-  nav1:'Services', nav2:'How it works', nav3:'Packages', nav4:'FAQ', nav5:'Order', cta:'Order<span class="lbl-long"> now</span>',
+  nav1:'Services', nav2:'How it works', nav3:'Packages', nav4:'FAQ', nav5:'Order', nav6:'Articles', cta:'Order<span class="lbl-long"> now</span>',
   kw:'Research • Summaries • CVs • Presentations',
   h1:'Your step to <span class="glow">excellence</span><br>starts here',
   about:'Professional services for students, job seekers, employees and teachers with high quality and fast delivery',
@@ -1123,6 +1162,8 @@ function onScroll(){
 }
 addEventListener('scroll',onScroll,{passive:true}); onScroll();
 function setMenu(open){
+  if(open) document.documentElement.style.setProperty('--hh',header.offsetHeight+'px');
+  document.documentElement.classList.toggle('menu-open',open);
   nav.classList.toggle('open',open);
   burger.setAttribute('aria-expanded',open);
   burger.setAttribute('aria-label',open?'إغلاق القائمة':'فتح القائمة');

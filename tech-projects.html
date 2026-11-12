@@ -39,6 +39,8 @@
   <div style="margin-top:6px"><span data-l="ar">© سين — جميع الحقوق محفوظة</span><span data-l="en" lang="en" dir="ltr">© Seen — All rights reserved</span></div>
 </footer>
 <script>
+try{history.scrollRestoration='manual'}catch(e){}
+scrollTo(0,0);addEventListener('pageshow',function(){scrollTo(0,0)});
 document.getElementById('backBtn').addEventListener('click',function(e){
   try{var r=document.referrer&&new URL(document.referrer);if(r&&r.origin===location.origin&&history.length>1){e.preventDefault();history.back();}}catch(_){}
 });
