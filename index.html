@@ -708,7 +708,6 @@ footer{margin-top:0;}
   .services-grid .service-card .hot-tag{display:none;}
   .services-grid .service-card .sc-body{margin:0;min-width:0;}
   .services-grid .service-card h3{font-size:14.5px;margin:0 0 2px;line-height:1.5;}
-  .services-grid .service-card.is-hot h3::after{content:" 🔥";font-size:11px;}
   .services-grid .service-card p{font-size:12px;line-height:1.6;margin:0;color:var(--muted);}
   .services-grid .service-card .tiers{display:none;}
   .services-grid .service-card .sc-sample{display:none;}
@@ -766,6 +765,27 @@ footer{margin-top:0;}
 }
 .creds .cred .cred-s{display:none;}
 @media (max-width:640px){.creds .cred .cred-s{display:block;}}
+/* ===== تناسق: ظهور البطاقات مع بعض بدون انحراف ===== */
+.js .services-grid .reveal,.js .steps .reveal,.js .creds.reveal,.js .pkg-grid .reveal{transform:none;transition:opacity .5s var(--ease);transition-delay:0s!important;}
+.hot-m{display:none;}
+.creds{align-items:stretch;}
+@media (max-width:640px){
+  /* الواجهة: صفحة كاملة لحالها */
+  .hero{min-height:calc(100svh - var(--hh,57px));display:flex;flex-direction:column;justify-content:center;padding:20px 0 28px;}
+  .hero .stats{display:none;}
+  .hero .bg-star{top:50%;}
+  .hero h1{font-size:28px;gap:12px;}
+  .hero h1 .h1-kw{font-size:11.5px;}
+  .hero .about-text{font-size:13.5px;margin:10px auto 22px;max-width:320px;}
+  .hero-btns{flex-direction:column!important;max-width:300px!important;margin:0 auto;gap:10px!important;}
+  .hero-btns .btn{padding:13px 10px!important;font-size:14.5px!important;}
+  .hero::after{content:"";position:absolute;bottom:30px;left:50%;width:22px;height:34px;border:1.5px solid rgba(203,182,130,.4);border-radius:12px;transform:translateX(-50%);}
+  .hero::before{content:"";position:absolute;bottom:50px;left:50%;width:3px;height:7px;border-radius:2px;background:var(--gold);transform:translateX(-50%);animation:scrollDot 1.8s ease-in-out infinite;}
+  @keyframes scrollDot{0%{opacity:0;transform:translate(-50%,-6px)}40%{opacity:1}100%{opacity:0;transform:translate(-50%,8px)}}
+  /* علامة الأكثر مبيعًا في الصف */
+  .hot-m{display:inline-flex;align-items:center;font-size:10.5px;font-weight:700;color:var(--green-900);background:linear-gradient(135deg,var(--gold-bright),var(--gold-soft));border-radius:20px;padding:1px 8px;margin-bottom:4px;line-height:1.7;}
+  .services-grid .service-card.is-hot{border-color:rgba(203,182,130,.4);}
+}
 </style>
 </head>
 <body>
@@ -906,7 +926,7 @@ footer{margin-top:0;}
     </div>
     <div class="pkg-grid" id="pkgGrid">
       <div class="pkg featured reveal">
-        <span class="pkg-tag" data-i18n="hot">الأكثر طلبًا 🔥</span>
+        <span class="pkg-tag" data-i18n="hot">الأكثر مبيعًا 🔥</span>
         <h3><a class="card-link" href="job-package.html" data-i18n="pk1">باقة الوظيفة</a></h3>
         <div class="pkg-price"><span data-i18n="from">من</span> <b>149</b> <span data-i18n="sar">ر.س</span> <s class="was" aria-label="بدل 209">209</s></div>
         <span class="save" data-i18n="save1">وفّر 60 ر.س</span>
@@ -1074,8 +1094,8 @@ paintIcons();
 let LANG='ar';
 try{ if(localStorage.getItem('seen-lang')==='en') LANG='en'; }catch(e){}
 const TXT={
-  ar:{all:'الكل',hot:'الأكثر طلبًا 🔥',sample:'نموذج من أعمالنا',samples:'نماذج من أعمالنا',sampleS:'نموذج',samplesS:'نماذج',from2:'يبدأ من',sar:'ر.س',order:'اطلب الآن',more:'عرض المزيد ({n} خدمة)',less:'عرض أقل',pkMore:'عرض باقات أكثر (2)',pkLess:'إخفاء الباقات الإضافية',title:'سين — بحوث، تلخيص مناهج، عروض تقديمية وسير ذاتية'},
-  en:{all:'All',hot:'Most requested 🔥',sample:'See a sample',samples:'See samples',sampleS:'Sample',samplesS:'Samples',from2:'From',sar:'SAR',order:'Order now',more:'Show more ({n} services)',less:'Show less',pkMore:'More packages (2)',pkLess:'Hide extra packages',title:'Seen — Research, Summaries, Presentations & CVs'}
+  ar:{all:'الكل',hot:'الأكثر مبيعًا 🔥',sample:'نموذج من أعمالنا',samples:'نماذج من أعمالنا',sampleS:'نموذج',samplesS:'نماذج',from2:'يبدأ من',sar:'ر.س',order:'اطلب الآن',more:'عرض المزيد ({n} خدمة)',less:'عرض أقل',pkMore:'عرض باقات أكثر (2)',pkLess:'إخفاء الباقات الإضافية',title:'سين — بحوث، تلخيص مناهج، عروض تقديمية وسير ذاتية'},
+  en:{all:'All',hot:'Best seller 🔥',sample:'See a sample',samples:'See samples',sampleS:'Sample',samplesS:'Samples',from2:'From',sar:'SAR',order:'Order now',more:'Show more ({n} services)',less:'Show less',pkMore:'More packages (2)',pkLess:'Hide extra packages',title:'Seen — Research, Summaries, Presentations & CVs'}
 };
 const T=k=>(TXT[LANG]&&TXT[LANG][k])||TXT.ar[k]||k;
 const EN={
@@ -1096,7 +1116,7 @@ const EN={
   c1h:'Officially certified', c1p:'Seen\'s founder holds a <span class="hl">Freelance Certificate in Graphic Design</span> from the Ministry of Human Resources and Social Development.', c1code:'Certificate ID:', c1tap:'tap to view and verify it',
   c2h:'Full privacy', c1s:'Freelance certificate · tap to view', c2s:'Your files stay confidential', c2p:'Your data, files and order details stay confidential and are never shared. We deal with you directly from start to delivery.',
   pEy:'Exclusive offers', pH:'Packages that save you more', pP:'Combine several services in one package for less',
-  hot:'Most requested 🔥', from:'From', sar:'SAR', pkBtn:'Order package', pkMore:'More packages (2)',
+  hot:'Best seller 🔥', from:'From', sar:'SAR', pkBtn:'Order package', pkMore:'More packages (2)',
   pk1:'Job Package', pk1i1:'ATS-friendly professional CV', pk1i2:'50 companies list for your major and city', pk1i3:'Professional cover letter', pk1i4:'Interview preparation tips', pk1i5:'LinkedIn profile makeover', save1:'Save 60 SAR', save2:'Save 31 SAR',
   pk2:'Teacher Package', pk2i1:'Teacher portfolio based on review criteria', pk2i2:'Automatic gradebook', pk2i3:'School activity report with school branding', pk2i4:'3 free revisions',
   rEy:'Testimonials', rH:'What our clients say', rP:'Real messages from our clients — names hidden for privacy',
@@ -1217,6 +1237,7 @@ function renderServices(filter='all'){
     <article class="service-card${s.hot?' is-hot':''} reveal" style="transition-delay:${Math.min(i,8)*40}ms">
       <div class="sc-top"><div class="icon-badge">${svg(s.icon)}</div>${s.hot?`<span class="hot-tag">${T('hot')}</span>`:''}</div>
       <div class="sc-body">
+        ${s.hot?`<span class="hot-m">${T('hot')}</span>`:''}
         <h3><a class="card-link" href="${s.page}">${nm}</a></h3>
         <p>${ds}</p>
         ${s.tiers?`<div class="tiers">${s.tiers.map(t=>`<span><b>${t[2]}</b> ${en?t[1]:t[0]}</span>`).join('')}</div>`:''}
@@ -1276,6 +1297,7 @@ function onScroll(){
   floatWa.classList.toggle('show',scrollY>450);
 }
 addEventListener('scroll',onScroll,{passive:true}); onScroll();
+document.documentElement.style.setProperty('--hh',header.offsetHeight+'px');
 function setMenu(open){
   if(open) document.documentElement.style.setProperty('--hh',header.offsetHeight+'px');
   document.documentElement.classList.toggle('menu-open',open);
