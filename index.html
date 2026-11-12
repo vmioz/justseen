@@ -470,13 +470,6 @@ footer{margin-top:20px;border-top:1px solid rgba(203,182,130,.12);background:rgb
 .lb-close{position:absolute;top:14px;inset-inline-end:18px;width:44px;height:44px;border-radius:50%;border:1px solid var(--glass-line);background:var(--glass-2);color:var(--text);font-size:26px;line-height:1;cursor:pointer;}
 @media (max-width:640px){.lightbox{padding:14px;}}
 
-/* ===== آراء العملاء ===== */
-#reviews[hidden]{display:none;}
-.reviews-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:18px;}
-.review{background:var(--glass);border:1px solid var(--glass-line);border-radius:var(--radius);padding:22px;}
-.review .stars{color:var(--gold);letter-spacing:2px;margin-bottom:8px;}
-.review p{color:var(--cream);font-size:15px;margin-bottom:12px;}
-.review small{color:var(--muted);font-size:13px;}
 /* ===== الاعتمادات ===== */
 
 .creds{max-width:1180px;margin:0 auto;display:grid;grid-template-columns:1.4fr 1fr;gap:18px;}
@@ -616,18 +609,6 @@ html[dir="ltr"] .service-card::after{background:linear-gradient(225deg,rgba(203,
 .tiers span{font-size:12px;color:var(--muted);border:1px solid var(--glass-line);border-radius:10px;padding:3px 8px;background:rgba(203,182,130,.05);}
 .tiers b{color:var(--gold-bright);font-family:'El Messiri','Tajawal',sans-serif;}
 @media (max-width:640px){ .tiers{justify-content:center;gap:4px;margin:-2px 0 8px;} .tiers span{font-size:11px;padding:2px 6px;} }
-.order-form{max-width:760px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:14px;background:var(--glass);border:1px solid var(--glass-line);border-radius:20px;padding:24px;}
-.order-form label{display:flex;flex-direction:column;gap:6px;font-size:13.5px;color:var(--muted);}
-.order-form .full{grid-column:1/-1;}
-.order-form select,.order-form input,.order-form textarea{font:inherit;font-size:15px;color:var(--cream);background:rgba(9,19,16,.6);border:1px solid var(--glass-line);border-radius:12px;padding:11px 12px;outline:none;width:100%;box-sizing:border-box;}
-.order-form textarea{resize:vertical;min-height:84px;}
-.order-form select:focus,.order-form input:focus,.order-form textarea:focus{border-color:var(--gold);}
-.order-form select option,.order-form select optgroup{background:#0d2019;color:#ece3d2;}
-.order-form button{align-self:end;justify-content:center;}
-.order-form .err{border-color:#d9776b!important;}
-.review .tagdemo{display:inline-block;font-size:11px;color:#0d2019;background:var(--gold);border-radius:8px;padding:2px 8px;margin-bottom:8px;}
-.demo-note{text-align:center;color:var(--gold-bright);font-size:13px;margin:-6px 0 16px;}
-@media (max-width:640px){ .order-form{grid-template-columns:1fr;padding:16px;gap:12px;border-radius:16px;} .order-form button{width:100%;} }
 @media (max-width:640px){ .foot-grid{grid-template-columns:1fr 1fr;text-align:center;} .foot-grid .foot-col:first-child,.foot-grid .foot-col:last-child{grid-column:1 / -1;} }
 </style>
 </head>
@@ -656,7 +637,6 @@ html[dir="ltr"] .service-card::after{background:linear-gradient(225deg,rgba(203,
       <a href="#services" data-i18n="nav1">الخدمات</a>
       <a href="#how" data-i18n="nav2">كيف نعمل</a>
       <a href="#packages" data-i18n="nav3">الباقات</a>
-      <a href="#order" data-i18n="nav5">اطلب</a>
       <a href="#faq" data-i18n="nav4">الأسئلة</a>
     </nav>
     <a href="https://wa.me/966594827253" target="_blank" rel="noopener" class="nav-cta"><i data-icon="whatsapp"></i><span data-i18n="cta">اطلب<span class="lbl-long"> الآن</span></span></a>
@@ -785,38 +765,6 @@ html[dir="ltr"] .service-card::after{background:linear-gradient(225deg,rgba(203,
     </div>
   </div>
 </section>
-
-
-<!-- ===== اطلب في دقيقة ===== -->
-<section class="block" id="order">
-  <div class="wrap">
-    <div class="section-head reveal">
-      <span class="eyebrow"><svg class="star" viewBox="0 0 100 100" aria-hidden="true"><use href="#seen-star"/></svg> <span data-i18n="oEy">اطلب في دقيقة</span></span>
-      <h2 data-i18n="oH">اكتب طلبك ونرسله لنا على واتساب</h2>
-      <p data-i18n="oP">عبّئ التفاصيل وتنفتح لك رسالة واتساب جاهزة بطلبك كامل</p>
-    </div>
-    <form class="order-form reveal" id="orderForm" novalidate>
-      <label><span data-i18n="oSvc">الخدمة</span><select id="oSvc" required></select></label>
-      <label><span data-i18n="oWhen">متى تحتاجها؟</span><select id="oWhen"></select></label>
-      <label class="full"><span data-i18n="oDet">التفاصيل</span><textarea id="oDet" rows="3" placeholder="مثال: مادة الإدارة، 10 صفحات"></textarea></label>
-      <label><span data-i18n="oName">اسمك (اختياري)</span><input id="oName" type="text" autocomplete="given-name"></label>
-      <button type="submit" class="btn btn-primary"><i data-icon="whatsapp"></i> <span data-i18n="oSend">أرسل الطلب على واتساب</span></button>
-    </form>
-  </div>
-</section>
-
-<!-- ===== آراء العملاء (تظهر تلقائيًا لما تنضاف آراء في REVIEWS) ===== -->
-<section class="block" id="reviews" hidden>
-  <div class="wrap">
-    <div class="section-head reveal">
-      <span class="eyebrow"><svg class="star" viewBox="0 0 100 100" aria-hidden="true"><use href="#seen-star"/></svg> <span data-i18n="rEy">آراء عملائنا</span></span>
-      <h2 data-i18n="rH">ماذا قال عملاؤنا؟</h2>
-      <p data-i18n="rP">رسائل حقيقية من عملائنا — أخفينا أسماءهم حفاظًا على خصوصيتهم</p>
-    </div>
-    <div class="reviews-grid" id="reviewsGrid"></div>
-  </div>
-</section>
-
 
 
 
@@ -1016,7 +964,7 @@ function setLang(l, first){
   lb.textContent = l==='en'?'ع':'EN';
   lb.setAttribute('aria-label', l==='en'?'العربية':'English');
   lb.setAttribute('lang', l==='en'?'ar':'en');
-  if(!first){ renderFilters(); renderServices(curFilter); renderOrderForm();
+  if(!first){ renderFilters(); renderServices(curFilter);
     const pm=document.getElementById('pkgMore'); if(pm){ const op=pm.getAttribute('aria-expanded')==='true';
     pm.innerHTML=`<span>${T(op?'pkLess':'pkMore')}</span> `+svg('down'); } }
 }
@@ -1298,63 +1246,13 @@ if(!reduce && innerWidth>=768){
     d.innerHTML='<svg viewBox="0 0 100 100"><use href="#seen-star"/></svg>'; sky.appendChild(d);}
 })();
 
-/* ===== نموذج الطلب السريع ===== */
-var WHEN={ar:['خلال ساعات','اليوم','بكرة','خلال يومين أو أكثر'],en:['Within hours','Today','Tomorrow','In 2+ days']};
-function renderOrderForm(){
-  const en=LANG==='en', sel=document.getElementById('oSvc'), cur=sel.value;
-  const C=en?CATS_EN:CATS;
-  let h=`<option value="">${en?'Choose a service':'اختر الخدمة'}</option>`;
-  for(const k of Object.keys(C)){
-    h+=`<optgroup label="${C[k]}">`+services.filter(x=>x.cat===k).map(x=>`<option value="${x.name}">${en?x.en[0]:x.name} — ${en?'from':'من'} ${x.price} ${en?'SAR':'ر.س'}</option>`).join('')+'</optgroup>';
-  }
-  const pk=[...document.querySelectorAll('.pkg')].map(e=>[e.querySelector('.pkg-btn').dataset.pkg,e.querySelector('h3').textContent,e.querySelector('.pkg-price b').textContent]);
-  h+=`<optgroup label="${en?'Packages':'الباقات'}">`+pk.map(([v,t,pr])=>`<option value="${v}">${t} — ${pr} ${en?'SAR':'ر.س'}</option>`).join('')+'</optgroup>';
-  sel.innerHTML=h; sel.value=cur;
-  const w=document.getElementById('oWhen'), wc=w.selectedIndex;
-  w.innerHTML=WHEN[LANG].map(x=>`<option>${x}</option>`).join(''); if(wc>0) w.selectedIndex=wc;
-  const det=document.getElementById('oDet'); det.placeholder=en?'e.g. Management course, 10 pages':'مثال: مادة الإدارة، 10 صفحات';
-}
-document.getElementById('orderForm').addEventListener('submit',e=>{
-  e.preventDefault();
-  const sel=document.getElementById('oSvc'); if(!sel.value){ sel.classList.add('err'); sel.focus(); return; } sel.classList.remove('err');
-  const en=LANG==='en', o=sel.selectedOptions[0].textContent, when=document.getElementById('oWhen').value, det=document.getElementById('oDet').value.trim(), nm=document.getElementById('oName').value.trim();
-  const msg=en?`Hello Seen 👋\nI'd like to order: ${o}\nNeeded: ${when}`+(det?`\nDetails: ${det}`:'')+(nm?`\nName: ${nm}`:'')
-             :`مرحباً سين 👋\nأرغب في طلب: ${o}\nالموعد: ${when}`+(det?`\nالتفاصيل: ${det}`:'')+(nm?`\nالاسم: ${nm}`:'');
-  try{ if(window.gtag) gtag('event','order_form_submit',{service:sel.value}); }catch(_){}
-  window.open(wa(msg),'_blank');
-});
-renderOrderForm();
 
 
-/* ===== آراء العملاء =====
-   أضف كل رأي هكذا: {text:'نص الرأي', who:'طالبة جامعية — بحث', stars:5}
-   القسم يظهر تلقائيًا أول ما تضيف رأي واحد */
-const REVIEWS = [];
-/* أمثلة شكلية تظهر في المعاينة فقط (أي رابط غير justseensa.com) — ما تظهر في الموقع الحقيقي أبدًا */
-const IS_LIVE = /(^|\.)justseensa\.com$|github\.io$/.test(location.hostname);
-const DEMO = IS_LIVE ? [] : [
-  {text:'مثال: هنا يوضع نص رأي العميل كما كتبه في واتساب', who:'مثال — طالبة جامعية', stars:5},
-  {text:'مثال: رأي ثاني من عميل حقيقي بعد موافقته', who:'مثال — باحث عن عمل', stars:5},
-  {text:'مثال: رأي ثالث مختصر عن سرعة التسليم والجودة', who:'مثال — معلمة', stars:5}];
-const RV = REVIEWS.length ? REVIEWS : DEMO;
-if(RV.length){
-  if(!REVIEWS.length) document.querySelector('#reviews .section-head').insertAdjacentHTML('beforeend','<p class="demo-note">⚠️ معاينة فقط: هذي أمثلة لشكل القسم وتنستبدل بآراء حقيقية</p>');
-  document.getElementById('reviewsGrid').innerHTML = RV.map(v=>`<div class="review reveal">${REVIEWS.length?'':'<span class="tagdemo">مثال</span>'}<div class="stars">${'★'.repeat(v.stars||5)}</div><p>«${v.text}»</p><small>${v.who||''}</small></div>`).join('');
-  document.getElementById('reviews').hidden=false; observeReveals();
-}
 
 /* رابط لقسم محذوف (مثل #payment أو #works) يفتح الموقع من البداية وينظف الرابط */
 (()=>{const h=location.hash.slice(1); if(h && !document.getElementById(h)){ history.replaceState(null,'',location.pathname+location.search); scrollTo(0,0); }})();
 
 
-/* ===== عداد الزوار (Google Analytics) =====
-   يشتغل لحاله أول ما ينحط رقم القياس هنا (يبدأ بـ G-). يحسب: الزيارات، الضغط على أي زر واتساب، وإرسال نموذج الطلب. */
-const GA_ID = '';
-if(GA_ID && /(^|\.)justseensa\.com$/.test(location.hostname)){
-  const sc=document.createElement('script'); sc.async=true; sc.src='https://www.googletagmanager.com/gtag/js?id='+GA_ID; document.head.appendChild(sc);
-  window.dataLayer=window.dataLayer||[]; window.gtag=function(){dataLayer.push(arguments)}; gtag('js',new Date()); gtag('config',GA_ID,{anonymize_ip:true});
-}
-document.addEventListener('click',e=>{const a=e.target.closest('a[href*="wa.me"]'); if(a&&window.gtag){ try{gtag('event','whatsapp_click',{location:(a.closest('section')||{}).id||a.className||'other'})}catch(_){}}});
 document.getElementById('year').textContent=new Date().getFullYear();
 </script>
 </body>
