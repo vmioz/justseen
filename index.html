@@ -670,6 +670,31 @@ footer{margin-top:0;}
   section.block,.how-block{padding:44px 0;}
   .section-head,.how-block .section-head{margin-bottom:22px;}
 }
+/* الباقات تفتح صفحتها */
+.pkg{position:relative;}
+.pkg .pkg-btn,.pkg .pkg-tag{position:relative;z-index:2;}
+.pkg:has(.card-link:hover){border-color:rgba(203,182,130,.45);}
+/* ===== الجوال: أخف وأقصر ===== */
+@media (max-width:640px){
+  .nav-inner{padding-block:7px;}
+  .logo-wrap{width:40px;height:40px;}
+  .hero{padding:26px 0 24px;}
+  .hero h1{font-size:25px;gap:8px;}
+  .hero h1 .h1-kw{font-size:11px;}
+  .hero .about-text{font-size:12.5px;margin:6px auto 14px;}
+  .hero-btns .btn{padding:10px 8px;font-size:13px;}
+  .stats{margin-top:16px;padding:10px 4px;border-radius:16px;}
+  .stats .st-ic{width:28px;height:28px;border-radius:8px;margin-bottom:2px;}
+  .stats .st-ic .ico{width:15px;height:15px;}
+  .stats .stat .num{font-size:17px;}
+  .stats .stat .lbl{font-size:10.5px;}
+  section.block,.how-block{padding:34px 0;}
+  .section-head,.how-block .section-head{margin-bottom:16px;}
+  .section-head h2{font-size:20px;}
+  .eyebrow{margin-bottom:8px;}
+  .filters{margin-bottom:10px;}
+  .note{margin-bottom:14px;}
+}
 </style>
 </head>
 <body>
@@ -811,7 +836,7 @@ footer{margin-top:0;}
     <div class="pkg-grid" id="pkgGrid">
       <div class="pkg featured reveal">
         <span class="pkg-tag" data-i18n="hot">الأكثر طلبًا 🔥</span>
-        <h3 data-i18n="pk1">باقة الوظيفة</h3>
+        <h3><a class="card-link" href="job-package.html" data-i18n="pk1">باقة الوظيفة</a></h3>
         <div class="pkg-price"><span data-i18n="from">من</span> <b>149</b> <span data-i18n="sar">ر.س</span> <s class="was" aria-label="بدل 209">209</s></div>
         <span class="save" data-i18n="save1">وفّر 60 ر.س</span>
         <ul>
@@ -824,7 +849,7 @@ footer{margin-top:0;}
         <button class="btn btn-primary pkg-btn" data-pkg="باقة الوظيفة" data-i18n="pkBtn">اطلب الباقة</button>
       </div>
       <div class="pkg reveal">
-        <h3 data-i18n="pk2">باقة المعلم</h3>
+        <h3><a class="card-link" href="teacher-package.html" data-i18n="pk2">باقة المعلم</a></h3>
         <div class="pkg-price"><span data-i18n="from">من</span> <b>99</b> <span data-i18n="sar">ر.س</span> <s class="was" aria-label="بدل 130">130</s></div>
         <span class="save" data-i18n="save2">وفّر 31 ر.س</span>
         <ul>

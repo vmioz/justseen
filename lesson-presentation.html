@@ -25,6 +25,7 @@
 <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Service", "name": "عرض تقديمي تعليمي", "alternateName": "Lesson Presentation", "description": "شرائح تعليمية جذابة تناسب الدرس والمرحلة بأهداف وأنشطة وأسئلة تقويم. 60 ريال.", "url": "https://justseensa.com/lesson-presentation.html", "category": "المعلمين والإداريين", "provider": {"@type": "ProfessionalService", "name": "سين", "url": "https://justseensa.com/"}, "areaServed": "SA", "offers": {"@type": "Offer", "priceSpecification": {"@type": "PriceSpecification", "minPrice": 60, "priceCurrency": "SAR"}}}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "هل يناسب الابتدائي؟", "acceptedAnswer": {"@type": "Answer", "text": "نعم نختار الأسلوب والألوان حسب عمر الطلاب"}}, {"@type": "Question", "name": "أقدر أطلب وحدة كاملة؟", "acceptedAnswer": {"@type": "Answer", "text": "نعم ونعطيك سعر خاص للوحدة"}}, {"@type": "Question", "name": "هل أقدر أعدل عليه؟", "acceptedAnswer": {"@type": "Answer", "text": "نعم نسلمك ملف قابل للتعديل"}}]}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "الرئيسية", "item": "https://justseensa.com/"}, {"@type": "ListItem", "position": 2, "name": "المعلمين والإداريين", "item": "https://justseensa.com/#services"}, {"@type": "ListItem", "position": 3, "name": "عرض تقديمي تعليمي", "item": "https://justseensa.com/lesson-presentation.html"}]}]}</script>
 </head>
 <body>
+<div class="sky" aria-hidden="true"><svg width="0" height="0" style="position:absolute"><defs><path id="st" d="M50 2 C54 34 66 46 98 50 C66 54 54 66 50 98 C46 66 34 54 2 50 C34 46 46 34 50 2 Z" fill="currentColor"/></defs></svg></div>
 <header class="top"><div class="in">
   <div class="top-start"><a class="back" id="backBtn" href="index.html#services" aria-label="رجوع"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-l="ar">رجوع</span><span data-l="en">Back</span></a>
   <a class="brand" href="index.html"><img src="logo.png" alt=""><span data-l="ar">سين</span><span data-l="en" lang="en" dir="ltr">Seen</span></a></div>
@@ -41,6 +42,10 @@
 <script>
 try{history.scrollRestoration='manual'}catch(e){}
 scrollTo(0,0);addEventListener('pageshow',function(){scrollTo(0,0)});
+(function(){var k=document.querySelector('.sky'),sm=innerWidth<640,n=sm?6:10,P=[[6,12],[90,9],[16,40],[82,34],[48,66],[93,72],[8,84],[62,20],[30,90],[72,52]];
+for(var i=0;i<n;i++){var d=document.createElement('div'),z=(sm?8:10)+Math.random()*(sm?10:16);d.className='fs';
+d.style.cssText='left:'+P[i][0]+'%;top:'+P[i][1]+'%;width:'+z+'px;height:'+z+'px;--o:'+(.07+Math.random()*.13).toFixed(2)+';--d:'+(14+Math.random()*12)+'s;--r:'+(30+Math.random()*40)+'s;--x:'+((Math.random()*80-40)|0)+'px;--y:'+(-(30+Math.random()*60)|0)+'px;animation-delay:-'+(Math.random()*10).toFixed(1)+'s';
+d.innerHTML='<svg viewBox="0 0 100 100"><use href="#st"/></svg>';k.appendChild(d);}})();
 document.getElementById('backBtn').addEventListener('click',function(e){
   try{var r=document.referrer&&new URL(document.referrer);if(r&&r.origin===location.origin&&history.length>1){e.preventDefault();history.back();}}catch(_){}
 });
