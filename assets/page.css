@@ -23,11 +23,11 @@ h3{color:var(--cream);font-size:18px;margin:22px 0 6px}
 .btns{display:flex;flex-wrap:wrap;gap:10px;margin:10px 0 8px}
 .card{background:var(--glass);border:1px solid var(--line);border-radius:18px;padding:18px 20px;margin:14px 0}
 ul.check{list-style:none;padding:0;margin:8px 0}
-ul.check li{position:relative;padding:6px 26px 6px 0}
-ul.check li::before{content:"✦";position:absolute;right:0;top:6px;color:var(--gold)}
+ul.check li{position:relative;padding-block:6px;padding-inline-start:26px}
+ul.check li::before{content:"✦";position:absolute;inset-inline-start:0;top:6px;color:var(--gold)}
 ol.steps{counter-reset:s;list-style:none;padding:0;margin:8px 0}
-ol.steps li{counter-increment:s;position:relative;padding:8px 46px 8px 0;min-height:36px}
-ol.steps li::before{content:counter(s);position:absolute;right:0;top:6px;width:32px;height:32px;border-radius:50%;display:grid;place-items:center;background:rgba(203,182,130,.14);color:var(--gold2);font-weight:700;font-size:14px}
+ol.steps li{counter-increment:s;position:relative;padding-block:8px;padding-inline-start:46px;min-height:36px}
+ol.steps li::before{content:counter(s);position:absolute;inset-inline-start:0;top:6px;width:32px;height:32px;border-radius:50%;display:grid;place-items:center;background:rgba(203,182,130,.14);color:var(--gold2);font-weight:700;font-size:14px}
 figure{margin:18px 0}
 figure img{width:100%;border-radius:14px;border:1px solid var(--line);display:block}
 figcaption{font-size:13px;color:var(--muted);margin-top:6px;text-align:center}
@@ -43,3 +43,16 @@ details p{margin:8px 0 0;color:var(--muted)}
 footer{border-top:1px solid var(--line);text-align:center;color:var(--muted);font-size:13px;padding:22px var(--pad) calc(22px + env(safe-area-inset-bottom))}
 footer a{color:var(--muted);margin:0 6px}
 @media (max-width:640px){body{font-size:15.5px}.lead{font-size:16px}.cta{padding:9px 13px;font-size:14px}.brand{font-size:20px}}
+
+/* لغتين في الصفحة */
+html:not(.en) [data-l="en"],html.en [data-l="ar"]{display:none!important}
+html.en body{font-family:'Tajawal',system-ui,sans-serif}
+.top-act{display:flex;align-items:center;gap:8px}
+.lang{font:700 13px 'Tajawal',sans-serif;color:var(--gold2);background:transparent;border:1px solid var(--line);border-radius:10px;padding:8px 11px;cursor:pointer;min-width:40px}
+.tiers{display:flex;flex-wrap:wrap;gap:10px}
+.gal{display:grid;gap:14px}
+.gal.two{grid-template-columns:1fr 1fr}
+.gal figure{margin:0}
+.btns.end{margin-top:28px}
+.related a span[data-l]{color:var(--muted);font-size:13.5px}
+@media (max-width:640px){.gal.two{grid-template-columns:1fr}.lang{padding:7px 9px}}
