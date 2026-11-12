@@ -786,6 +786,24 @@ footer{margin-top:0;}
   .hot-m{display:inline-flex;align-items:center;font-size:10.5px;font-weight:700;color:var(--green-900);background:linear-gradient(135deg,var(--gold-bright),var(--gold-soft));border-radius:20px;padding:1px 8px;margin-bottom:4px;line-height:1.7;}
   .services-grid .service-card.is-hot{border-color:rgba(203,182,130,.4);}
 }
+/* ===== تلميح: اضغط لتشوف التفاصيل ===== */
+.tap-hint{display:flex;align-items:center;justify-content:center;gap:7px;margin:0 auto 18px;color:var(--gold-bright);font-size:14px;font-weight:500;text-align:center;}
+.section-head .tap-hint{margin:12px auto 0;}
+.tap-ic{width:18px;height:18px;flex:none;animation:tapNudge 2.4s ease-in-out infinite;}
+@keyframes tapNudge{0%,70%,100%{transform:none}80%{transform:translateY(-3px)}90%{transform:translateY(1px)}}
+.pkg-more{position:relative;z-index:2;display:flex;align-items:center;justify-content:center;gap:6px;margin-top:10px;color:var(--gold-bright);font-size:14px;font-weight:600;text-decoration:none;}
+.pkg-more .ico{width:16px;height:16px;}
+html[dir="ltr"] .pkg-more .ico{transform:scaleX(-1);}
+.service-card .card-link::before{content:"";}
+@media (hover:hover){.service-card:hover h3 .card-link{text-decoration:underline;text-decoration-color:rgba(203,182,130,.5);text-underline-offset:5px;}}
+@media (max-width:640px){
+  .tap-hint{font-size:12.5px;margin-bottom:12px;}
+  .services-grid .service-card{padding-inline-end:28px;}
+  .services-grid .service-card::after{content:"";position:absolute;inset:auto;left:12px;top:50%;width:8px;height:8px;border:0;border-top:2px solid var(--gold);border-left:2px solid var(--gold);transform:translateY(-50%) rotate(-45deg);opacity:.75;background:none;z-index:0;}
+  html[dir="ltr"] .services-grid .service-card::after{left:auto;right:12px;border-left:0;border-right:2px solid var(--gold);transform:translateY(-50%) rotate(45deg);}
+  .pkg-more{font-size:13px;}
+}
+@media (prefers-reduced-motion:reduce){.tap-ic{animation:none;}}
 </style>
 </head>
 <body>
@@ -862,10 +880,11 @@ footer{margin-top:0;}
     <div class="section-head reveal">
       <span class="eyebrow"><svg class="star" viewBox="0 0 100 100" aria-hidden="true"><use href="#seen-star"/></svg> <span data-i18n="sEy">خدماتنا</span></span>
       <h2 data-i18n="sH">كل ما تحتاجه في مكان واحد</h2>
-      <p data-i18n="sP">اختر القسم المناسب ثم اضغط على أي خدمة لتشوف تفاصيلها وتطلبها</p>
+      <p data-i18n="sP">اختر القسم المناسب لك</p>
     </div>
 
     <div class="filters reveal" id="filters" role="tablist" aria-label="أقسام الخدمات"></div>
+    <p class="tap-hint"><svg class="tap-ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 11V5.5a1.5 1.5 0 0 1 3 0V10m0-.5a1.5 1.5 0 0 1 3 0V11m0-.5a1.5 1.5 0 0 1 3 0V15a6 6 0 0 1-6 6h-1a6 6 0 0 1-5-2.7L3.6 14a1.5 1.5 0 0 1 2.4-1.8L9 15" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-i18n="tapS">اضغط على أي خدمة لتشوف تفاصيلها ونماذجها وطريقة الطلب</span></p>
 
     <p class="note reveal" data-i18n="note">💡 الأسعار تبدأ من المبلغ الموضّح و<b>قابلة للزيادة</b> حسب حجم العمل وتفاصيله ونأكد لك السعر النهائي قبل البدء</p>
 
@@ -923,6 +942,7 @@ footer{margin-top:0;}
       <span class="eyebrow"><svg class="star" viewBox="0 0 100 100" aria-hidden="true"><use href="#seen-star"/></svg> <span data-i18n="pEy">عروض حصرية</span></span>
       <h2 data-i18n="pH">باقات توفّر عليك أكثر</h2>
       <p data-i18n="pP">اجمع أكثر من خدمة في باقة واحدة بسعر أقل</p>
+      <p class="tap-hint"><svg class="tap-ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 11V5.5a1.5 1.5 0 0 1 3 0V10m0-.5a1.5 1.5 0 0 1 3 0V11m0-.5a1.5 1.5 0 0 1 3 0V15a6 6 0 0 1-6 6h-1a6 6 0 0 1-5-2.7L3.6 14a1.5 1.5 0 0 1 2.4-1.8L9 15" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-i18n="tapP">اضغط على الباقة لتشوف وش فيها بالتفصيل</span></p>
     </div>
     <div class="pkg-grid" id="pkgGrid">
       <div class="pkg featured reveal">
@@ -938,6 +958,7 @@ footer{margin-top:0;}
           <li data-i18n="pk1i4">نصائح لتجهيز المقابلة</li>
         </ul>
         <button class="btn btn-primary pkg-btn" data-pkg="باقة الوظيفة" data-i18n="pkBtn">اطلب الباقة</button>
+        <a class="pkg-more" href="job-package.html"><span data-i18n="pkDet">تفاصيل الباقة</span> <i data-icon="arrow"></i></a>
       </div>
       <div class="pkg reveal">
         <h3><a class="card-link" href="teacher-package.html" data-i18n="pk2">باقة المعلم</a></h3>
@@ -950,6 +971,7 @@ footer{margin-top:0;}
           <li data-i18n="pk2i4">3 تعديلات مجانية</li>
         </ul>
         <button class="btn btn-ghost pkg-btn" data-pkg="باقة المعلم" data-i18n="pkBtn">اطلب الباقة</button>
+        <a class="pkg-more" href="teacher-package.html"><span data-i18n="pkDet">تفاصيل الباقة</span> <i data-icon="arrow"></i></a>
       </div>
     </div>
   </div>
@@ -1106,7 +1128,7 @@ const EN={
   about:'Professional services for students, job seekers, employees and teachers with high quality and fast delivery',
   heroCta:'Order your service', heroBrowse:'Browse services',
   st1n:'Minutes', st1:'up to 5 hours', st2:'services', st3:'free revisions', st4n:'Verified', st4:'officially',
-  sEy:'Our services', sH:'Everything you need in one place', sP:'Pick a category, then tap any service to see its details and order',
+  sEy:'Our services', sH:'Everything you need in one place', sP:'Pick the category that suits you',
   note:'💡 Prices start from the amount shown and <b>may increase</b> with the size and details of the work, and we confirm the final price before starting',
   hEy:'The process', hH:'How it works', hP:'Four simple steps to get your task done',
   step1h:'Choose a service', step1p:'Browse the categories and tap the service you need',
@@ -1116,7 +1138,7 @@ const EN={
   c1h:'Officially certified', c1p:'Seen\'s founder holds a <span class="hl">Freelance Certificate in Graphic Design</span> from the Ministry of Human Resources and Social Development.', c1code:'Certificate ID:', c1tap:'tap to view and verify it',
   c2h:'Full privacy', c1s:'Freelance certificate · tap to view', c2s:'Your files stay confidential', c2p:'Your data, files and order details stay confidential and are never shared. We deal with you directly from start to delivery.',
   pEy:'Exclusive offers', pH:'Packages that save you more', pP:'Combine several services in one package for less',
-  hot:'Best seller 🔥', from:'From', sar:'SAR', pkBtn:'Order package', pkMore:'More packages (2)',
+  hot:'Best seller 🔥', tapS:'Tap any service to see its details, samples and how to order', tapP:'Tap a package to see everything included', pkDet:'Package details', svcDet:'Details', from:'From', sar:'SAR', pkBtn:'Order package', pkMore:'More packages (2)',
   pk1:'Job Package', pk1i1:'ATS-friendly professional CV', pk1i2:'50 companies list for your major and city', pk1i3:'Professional cover letter', pk1i4:'Interview preparation tips', pk1i5:'LinkedIn profile makeover', save1:'Save 60 SAR', save2:'Save 31 SAR',
   pk2:'Teacher Package', pk2i1:'Teacher portfolio based on review criteria', pk2i2:'Automatic gradebook', pk2i3:'School activity report with school branding', pk2i4:'3 free revisions',
   rEy:'Testimonials', rH:'What our clients say', rP:'Real messages from our clients — names hidden for privacy',
