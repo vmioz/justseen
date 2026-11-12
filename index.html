@@ -672,7 +672,8 @@ footer{margin-top:0;}
 }
 /* الباقات تفتح صفحتها */
 .pkg{position:relative;}
-.pkg .pkg-btn,.pkg .pkg-tag{position:relative;z-index:2;}
+.pkg .pkg-btn{position:relative;z-index:2;}
+.pkg .pkg-tag{z-index:2;}
 .pkg:has(.card-link:hover){border-color:rgba(203,182,130,.45);}
 /* ===== الجوال: أخف وأقصر ===== */
 @media (max-width:640px){
@@ -695,6 +696,76 @@ footer{margin-top:0;}
   .filters{margin-bottom:10px;}
   .note{margin-bottom:14px;}
 }
+/* ======== الجوال فقط: ترتيب مدمج ======== */
+.m-only,.cred-s,.foot-mini{display:none;}
+@media (max-width:640px){
+  /* 1) الخدمات صفوف */
+  .services-grid{grid-template-columns:1fr!important;gap:8px!important;}
+  .services-grid .service-card{display:grid;grid-template-columns:42px 1fr auto;align-items:center;gap:12px;padding:12px 12px 12px 10px;text-align:start;border-radius:14px;min-height:0;}
+  .services-grid .service-card .sc-top{margin:0;display:block;position:static;}
+  .services-grid .service-card .icon-badge{width:42px;height:42px;border-radius:12px;margin:0;}
+  .services-grid .service-card .icon-badge .ico{width:20px;height:20px;}
+  .services-grid .service-card .hot-tag{display:none;}
+  .services-grid .service-card .sc-body{margin:0;min-width:0;}
+  .services-grid .service-card h3{font-size:14.5px;margin:0 0 2px;line-height:1.5;}
+  .services-grid .service-card.is-hot h3::after{content:" 🔥";font-size:11px;}
+  .services-grid .service-card p{font-size:12px;line-height:1.6;margin:0;color:var(--muted);}
+  .services-grid .service-card .tiers{display:none;}
+  .services-grid .service-card .sc-sample{display:none;}
+  .services-grid .service-card .card-foot{border:0;padding:0;margin:0;display:flex;flex-direction:column;align-items:center;gap:0;}
+  .services-grid .service-card .service-price{font-size:16px;flex-direction:column;align-items:center;line-height:1.15;gap:0;display:flex;}
+  .services-grid .service-card .service-price small{font-size:10px;}
+  .services-grid .service-card .order-link{display:none;}
+  .services-grid .service-card::before{content:"";position:absolute;inset-inline-end:-2px;top:50%;}
+  .note{display:none;}
+  /* 2) كيف نعمل: خط زمني */
+  .steps{grid-template-columns:1fr!important;gap:0!important;position:relative;max-width:420px;margin:0 auto;}
+  .steps::before{content:"";position:absolute;inset-inline-start:15px;top:18px;bottom:18px;width:1px;background:linear-gradient(var(--gold),rgba(203,182,130,.15));}
+  .steps .step{display:grid;grid-template-columns:32px 1fr;column-gap:14px;text-align:start;background:none;border:0;padding:8px 0;border-radius:0;}
+  .steps .step .ic{display:none;}
+  .steps .step .n{position:relative;grid-row:1 / 3;top:0;inset-inline-end:auto;width:32px;height:32px;border-radius:50%;display:grid;place-items:center;font-size:15px;color:var(--green-900);background:linear-gradient(135deg,var(--gold-bright),var(--gold-soft));z-index:1;}
+  .steps .step h3{font-size:14.5px;margin:3px 0 0;}
+  .steps .step p{font-size:12.5px;margin:0;}
+  /* 3) التوثيق: شريط واحد */
+  .creds{grid-template-columns:1fr 1fr!important;gap:8px!important;}
+  .creds .cred{flex-direction:column;align-items:center;text-align:center;gap:6px;padding:12px 8px;}
+  .creds .cred img,.creds .cred p{display:none;}
+  .creds .m-only{display:grid;}
+  .creds .cred-ic{width:36px;height:36px;border-radius:11px;}
+  .creds .cred-ic .ico{width:18px;height:18px;}
+  .creds .cred b{font-size:13.5px;display:block;}
+  .cred-s{display:block;font-size:11px;color:var(--muted);margin-top:2px;line-height:1.5;}
+  #creds{padding:22px 0;}
+  /* 4) الباقات: سحب يمين ويسار */
+  .pkg-grid{display:flex!important;flex-wrap:nowrap!important;overflow-x:auto;scroll-snap-type:x mandatory;gap:12px!important;padding:16px 4px 6px;margin-inline:calc(var(--pad) * -1);padding-inline:var(--pad);max-width:none!important;scrollbar-width:none;}
+  .pkg-grid::-webkit-scrollbar{display:none;}
+  .pkg-grid .pkg{flex:0 0 84%;scroll-snap-align:center;padding:22px 14px 14px;}
+  .pkg-grid .pkg ul li{padding:4px 0;font-size:12.5px;}
+  .pkg-grid .pkg-tag{top:-11px;}
+  /* 6) الفوتر مختصر */
+  .foot-grid{grid-template-columns:1fr!important;gap:14px!important;margin-bottom:14px!important;}
+  .foot-grid .foot-col:nth-child(2),.foot-grid .foot-col:nth-child(3){display:none;}
+  .foot-grid .foot-col:first-child p,.foot-grid .foot-col:last-child h4,.foot-grid .foot-col:last-child p{display:none;}
+  .foot-grid .foot-brand{margin-bottom:0;}
+  .foot-mini{display:flex;justify-content:center;flex-wrap:wrap;gap:6px 16px;margin:0 0 12px;}
+  .foot-mini a{color:var(--muted);font-size:12.5px;text-decoration:none;}
+  footer{padding-top:24px!important;}
+  .copy-bar{font-size:11.5px;}
+  /* 7) نص ثانوي بمستويين */
+  .section-head p,.hero .about-text{color:var(--muted);}
+}
+@media (max-width:640px){
+  .services-grid .service-card{padding:10px 12px;}
+  .services-grid .service-card .sc-top{padding:0!important;}
+  .services-grid .service-card h3,.services-grid .service-card p{min-height:0!important;text-align:start;display:block;}
+  .services-grid .service-card .service-price{min-width:44px;}
+  .creds .cred small:not(.cred-s){display:none;}
+  .pkg-grid{margin-inline:0!important;padding:16px 2px 6px!important;scroll-padding-inline:2px;}
+  .pkg-grid .pkg{flex:0 0 86%!important;scroll-snap-align:start;}
+  .pkg-grid{justify-content:flex-start!important;}
+}
+.creds .cred .cred-s{display:none;}
+@media (max-width:640px){.creds .cred .cred-s{display:block;}}
 </style>
 </head>
 <body>
@@ -808,11 +879,11 @@ footer{margin-top:0;}
     <div class="creds reveal">
     <button class="cred cred-doc" id="credDoc" aria-label="عرض وثيقة العمل الحر" data-i18n-aria="c1aria">
       <img src="works/freelance-doc-thumb.webp" alt="وثيقة العمل الحر في تصميم الجرافيك (الاسم ورقم الهوية مخفيان)" width="640" height="400" loading="lazy">
-      <div><b data-i18n="c1h">معتمدون رسميًا</b><p data-i18n="c1p">مؤسس سين حاصل على <span class="hl">وثيقة العمل الحر في تخصص تصميم الجرافيك</span> من وزارة الموارد البشرية والتنمية الاجتماعية.</p><small><span data-i18n="c1code">رمز الوثيقة:</span> <span dir="ltr">FL-807258574</span> — <span data-i18n="c1tap">اضغط لعرضها والتحقق منها بالرمز</span></small></div>
+      <div class="cred-ic m-only"><i data-icon="award"></i></div><div><b data-i18n="c1h">معتمدون رسميًا</b><small class="cred-s" data-i18n="c1s">وثيقة العمل الحر · اضغط للعرض</small><p data-i18n="c1p">مؤسس سين حاصل على <span class="hl">وثيقة العمل الحر في تخصص تصميم الجرافيك</span> من وزارة الموارد البشرية والتنمية الاجتماعية.</p><small><span data-i18n="c1code">رمز الوثيقة:</span> <span dir="ltr">FL-807258574</span> — <span data-i18n="c1tap">اضغط لعرضها والتحقق منها بالرمز</span></small></div>
     </button>
     <div class="cred">
       <div class="cred-ic"><i data-icon="shield"></i></div>
-      <div><b data-i18n="c2h">خصوصية تامة</b><p data-i18n="c2p">بياناتك وملفاتك وتفاصيل طلبك سرّية، ولا نشاركها مع أي طرف. نتواصل معك مباشرة من البداية حتى التسليم.</p></div>
+      <div><b data-i18n="c2h">خصوصية تامة</b><small class="cred-s" data-i18n="c2s">ملفاتك سرّية ولا نشاركها</small><p data-i18n="c2p">بياناتك وملفاتك وتفاصيل طلبك سرّية، ولا نشاركها مع أي طرف. نتواصل معك مباشرة من البداية حتى التسليم.</p></div>
     </div>
   </div>
 </section>
@@ -926,6 +997,9 @@ footer{margin-top:0;}
       </div>
     </div>
   </div>
+  <div class="foot-mini">
+    <a href="#services" data-i18n="nav1">الخدمات</a><a href="#packages" data-i18n="nav3">الباقات</a><a href="#faq" data-i18n="nav4">الأسئلة</a><a href="blog.html" data-i18n="nav6">مقالات</a>
+  </div>
   <div class="copy-bar">© <span id="year"></span> <span data-i18n="copy">سين — جميع الحقوق محفوظة</span></div>
 </footer>
 
@@ -1020,7 +1094,7 @@ const EN={
   step3h:'Pay easily', step3p:'We send you the payment details on WhatsApp',
   step4h:'Receive your work', step4p:'Delivered in high quality, on the agreed time',
   c1h:'Officially certified', c1p:'Seen\'s founder holds a <span class="hl">Freelance Certificate in Graphic Design</span> from the Ministry of Human Resources and Social Development.', c1code:'Certificate ID:', c1tap:'tap to view and verify it',
-  c2h:'Full privacy', c2p:'Your data, files and order details stay confidential and are never shared. We deal with you directly from start to delivery.',
+  c2h:'Full privacy', c1s:'Freelance certificate · tap to view', c2s:'Your files stay confidential', c2p:'Your data, files and order details stay confidential and are never shared. We deal with you directly from start to delivery.',
   pEy:'Exclusive offers', pH:'Packages that save you more', pP:'Combine several services in one package for less',
   hot:'Most requested 🔥', from:'From', sar:'SAR', pkBtn:'Order package', pkMore:'More packages (2)',
   pk1:'Job Package', pk1i1:'ATS-friendly professional CV', pk1i2:'50 companies list for your major and city', pk1i3:'Professional cover letter', pk1i4:'Interview preparation tips', pk1i5:'LinkedIn profile makeover', save1:'Save 60 SAR', save2:'Save 31 SAR',
@@ -1125,7 +1199,7 @@ let SHOW_FIRST = 8;
 function fitShowFirst(){ // عدد الخدمات الأولى = صفوف كاملة حسب عدد الأعمدة (بدون بطاقة يتيمة)
   const g=document.getElementById('servicesGrid'); if(!g) return 8;
   const cols=Math.max(1,getComputedStyle(g).gridTemplateColumns.split(' ').filter(Boolean).length);
-  return cols*Math.max(2,Math.ceil(7/cols));
+  return cols===1?8:cols*Math.max(2,Math.ceil(7/cols));
 } let showAll = false, curFilter = 'all';
 function renderServices(filter='all'){
   SHOW_FIRST = fitShowFirst();
