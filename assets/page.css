@@ -122,3 +122,43 @@ main>*:nth-child(n+7){animation-delay:.38s}
 .price .save{color:#8fd3a8;background:rgba(80,170,110,.14);border:1px solid rgba(80,170,110,.3);border-radius:10px;padding:2px 10px;font-size:13px}
 ul.check li a{color:var(--cream);text-decoration-color:rgba(203,182,130,.5);text-underline-offset:4px}
 .price{flex-wrap:wrap}
+
+/* ===== توحيد الشكل مع الرئيسية ===== */
+:root{--gold-soft:#b1a180;--glass-2:rgba(255,255,255,.075);--ease:cubic-bezier(.2,.7,.2,1)}
+/* النجوم فوق الخلفية وتحت المحتوى */
+.sky{z-index:0}
+main,footer{position:relative;z-index:1}
+::selection{background:var(--gold);color:var(--g900)}
+:focus-visible{outline:2px solid var(--gold2);outline-offset:3px;border-radius:8px}
+/* الأزرار مثل الرئيسية */
+.cta{background:linear-gradient(135deg,var(--gold2),var(--gold-soft));transition:transform .25s var(--ease),box-shadow .25s,filter .2s}
+.cta:hover{filter:brightness(1.06)}
+.cta:active{transform:scale(.97)}
+.btns .cta{padding:13px 22px;border-radius:14px;font-size:16px;box-shadow:0 10px 30px rgba(203,182,130,.22)}
+.btns .cta:hover{transform:translateY(-2px)}
+.cta.ghost,.btns .cta.ghost{background:var(--glass);color:var(--cream);border:1px solid var(--line);box-shadow:none}
+.cta.ghost:hover{background:var(--glass-2)}
+a.cta[href*="wa.me"]:not(.ghost)::before{content:"";width:18px;height:18px;flex:none;background:currentColor;-webkit-mask:var(--wa) center/contain no-repeat;mask:var(--wa) center/contain no-repeat}
+:root{--wa:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M3 21l1.65-3.8a9 9 0 1 1 3.4 2.9L3 21'/%3E%3Cpath d='M9 10a.5.5 0 0 0 1 0V9a.5.5 0 0 0-1 0v1a5 5 0 0 0 5 5h1a.5.5 0 0 0 0-1h-1a.5.5 0 0 0 0 1'/%3E%3C/svg%3E")}
+/* الشعار بحلقة ذهبية */
+.brand img{box-shadow:0 0 0 1px rgba(203,182,130,.35),0 0 18px rgba(203,182,130,.12)}
+/* العناوين بنجمة سين */
+main h2{display:flex;align-items:center;gap:10px}
+main h2::before{content:"";width:14px;height:14px;flex:none;background:var(--gold);-webkit-mask:var(--st) center/contain no-repeat;mask:var(--st) center/contain no-repeat}
+:root{--st:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath d='M50 2C54 34 66 46 98 50 66 54 54 66 50 98 46 66 34 54 2 50 34 46 46 34 50 2Z'/%3E%3C/svg%3E")}
+/* البطاقات */
+.card{border-radius:20px}
+.price{border-radius:16px}
+.related a,.posts a{transition:transform .25s var(--ease),border-color .25s,background .25s}
+.related a:hover,.posts a:hover{transform:translateY(-3px);border-color:rgba(203,182,130,.45);background:var(--glass-2)}
+/* فاصل النجمة قبل الفوتر */
+footer{position:relative}
+footer::before{content:"";position:absolute;top:-8px;left:50%;width:16px;height:16px;margin-left:-8px;background:var(--gold);-webkit-mask:var(--st) center/contain no-repeat;mask:var(--st) center/contain no-repeat;filter:drop-shadow(0 0 6px rgba(231,210,154,.5))}
+/* رابط الفحص المجاني */
+.freecheck{display:flex;align-items:center;gap:12px;text-decoration:none;background:linear-gradient(135deg,rgba(231,210,154,.12),rgba(255,255,255,.03));border:1px solid rgba(231,210,154,.32);border-radius:16px;padding:12px 16px;margin:6px 0 4px;color:var(--cream);transition:transform .25s var(--ease),border-color .25s}
+.freecheck:hover{transform:translateY(-2px);border-color:var(--gold2)}
+.freecheck i{flex:none;width:38px;height:38px;border-radius:12px;display:grid;place-items:center;background:linear-gradient(135deg,var(--gold2),var(--gold-soft));color:var(--g900);font-style:normal;font-size:18px}
+.freecheck b{display:block;color:var(--gold2);font-size:15.5px;line-height:1.5}
+.freecheck span{display:block;color:var(--muted);font-size:13px;line-height:1.5}
+.freecheck em{margin-inline-start:auto;font-style:normal;color:var(--gold2);font-size:20px}
+@media (max-width:640px){main h2{gap:8px}main h2::before{width:12px;height:12px}.btns .cta{padding:11px 10px;font-size:14.5px;border-radius:12px}.card{border-radius:16px}.freecheck{padding:10px 12px;border-radius:14px}.freecheck b{font-size:14.5px}.freecheck span{font-size:12.5px}}

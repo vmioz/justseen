@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>افحص سيرتك الذاتية مجانًا: هل تعدّي أنظمة الفرز؟ — سين</title>
+<meta name="description" content="ارفع سيرتك الذاتية وشوف وش يقرأ منها نظام فرز السير: نسبة القراءة، والتطابق مع الوظيفة، وملاحظات واضحة وكيف تصلحها. مجاني والملف ما يطلع من جهازك.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://justseensa.com/ats.html">
+<meta name="theme-color" content="#0d2019">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="ar_SA">
+<meta property="og:site_name" content="سين">
+<meta property="og:title" content="افحص سيرتك الذاتية مجانًا: هل تعدّي أنظمة الفرز؟ — سين">
+<meta property="og:description" content="ارفع سيرتك الذاتية وشوف وش يقرأ منها نظام فرز السير: نسبة القراءة، والتطابق مع الوظيفة، وملاحظات واضحة وكيف تصلحها. مجاني والملف ما يطلع من جهازك.">
+<meta property="og:url" content="https://justseensa.com/ats.html">
+<meta property="og:image" content="https://justseensa.com/og-image.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@justseensa">
+<meta name="twitter:image" content="https://justseensa.com/og-image.jpg">
+<link rel="icon" type="image/png" href="logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=El+Messiri:wght@600;700&family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/page.css">
+<style>
+:root{--deep:#091310;--g:#0d2019;--g3:#1c3b30;--gold:#cbb682;--gold2:#e7d29a;--gold3:#a8874a;--cream:#ece3d2;--mut:#9fb0a6;--line:rgba(203,182,130,.16);--ok:#5cc08a;--warn:#e9b44c;--bad:#e2725b;--tip:#7fb6e6}
+:where(main) :where(*){margin:0;padding:0}
+main h2{margin:0;display:block}
+main h2::before{display:none}
+.badge{display:inline-block;font-size:13px;color:var(--gold2);background:rgba(231,210,154,.08);border:1px solid rgba(231,210,154,.25);padding:4px 14px;border-radius:20px}
+.drop{display:block;border:2px dashed rgba(203,182,130,.35);border-radius:20px;padding:34px 18px;text-align:center;cursor:pointer;transition:.25s}
+.drop:hover,.drop.over{border-color:var(--gold2);background:rgba(231,210,154,.05)}
+.drop .ic{width:62px;height:62px;margin:0 auto 10px;border-radius:18px;background:linear-gradient(135deg,var(--gold),var(--gold2));display:grid;place-items:center;color:var(--deep);font-size:28px}
+.drop b{display:block;font-size:18px;color:#fff}
+.drop small{color:var(--mut);font-size:14px}
+.drop input{display:none}
+.file{display:none;margin-top:12px;font-size:14px;color:var(--gold2);text-align:center}
+details.jd{margin:16px 0 0;background:none;border:0;border-top:1px solid var(--line);border-radius:0;padding:12px 0 0}
+details.jd summary{cursor:pointer;color:var(--gold2);font-weight:700;list-style:none}
+details.jd summary::-webkit-details-marker{display:none}
+details.jd summary span{color:var(--mut);font-weight:400;font-size:13px}
+textarea{width:100%;margin-top:10px;min-height:120px;background:rgba(0,0,0,.25);border:1px solid var(--line);border-radius:14px;color:var(--cream);font:15px Tajawal;padding:12px;resize:vertical}
+textarea:focus{outline:2px solid rgba(231,210,154,.35)}
+.btn{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;margin-top:18px;border:0;border-radius:14px;padding:14px;font:700 16.5px Tajawal;cursor:pointer;background:linear-gradient(135deg,var(--gold2),var(--gold-soft));color:var(--deep);transition:transform .25s var(--ease),box-shadow .25s,filter .2s;text-decoration:none}
+a.btn[href*="wa.me"]::before{content:"";width:19px;height:19px;flex:none;background:currentColor;-webkit-mask:var(--wa) center/contain no-repeat;mask:var(--wa) center/contain no-repeat}
+.btn:hover{transform:translateY(-2px);box-shadow:0 14px 30px rgba(203,182,130,.25)}
+.btn:disabled{opacity:.45;transform:none;box-shadow:none;cursor:default}
+.ghost{background:none;border:1px solid var(--line);color:var(--gold2);font-size:15px;padding:11px;margin-top:10px}
+.trust{display:flex;justify-content:center;flex-wrap:wrap;gap:8px 18px;margin-top:16px;font-size:13.5px;color:var(--mut)}
+.err{display:none;margin-top:12px;color:var(--bad);text-align:center;font-size:14.5px}
+
+#res{display:none}
+.score{display:flex;align-items:center;gap:24px}
+.ring{position:relative;width:150px;height:150px;flex:none}
+.ring svg{width:100%;height:100%;transform:rotate(-90deg)}
+.ring circle{fill:none;stroke-width:11;stroke-linecap:round}
+.ring .tr{stroke:rgba(255,255,255,.07)}
+.ring .pr{stroke-dasharray:408.4;stroke-dashoffset:408.4;transition:stroke-dashoffset 1.2s cubic-bezier(.2,.8,.2,1),stroke .3s}
+.ring div{position:absolute;inset:0;display:grid;place-content:center;text-align:center}
+.ring strong{font:700 40px 'El Messiri';line-height:1}
+.ring span{font-size:12.5px;color:var(--mut)}
+.verdict .lbl{font-size:13px;color:var(--gold2)}
+.verdict h2{font:700 25px 'El Messiri';color:#fff;line-height:1.5}
+.match{margin-top:12px;display:inline-flex;flex-direction:column;gap:2px;background:rgba(255,255,255,.04);border:1px solid var(--line);border-radius:14px;padding:8px 14px}
+.match b{color:var(--gold2);font-size:15.5px}
+.match small{color:var(--mut);font-size:12.5px}
+.gate{margin-top:18px;background:rgba(226,114,91,.1);border:1px solid rgba(226,114,91,.35);border-radius:16px;padding:14px 16px}
+.gate b{display:block;color:#f2a592}
+.gate small{color:#e9cfc8;font-size:14px}
+h3{font:700 19px 'El Messiri';color:var(--gold2);margin:0 0 4px}
+#up,#res .card{padding:22px;margin:16px 0 0}
+.hero .lead{margin-bottom:6px}
+.badge{margin-bottom:10px}
+.sub{color:var(--mut);font-size:14px;margin-bottom:12px}
+.tbl{width:100%;border-collapse:collapse;font-size:14.5px}
+.tbl th{font-weight:500;color:var(--mut);font-size:12.5px;text-align:start;padding:0 6px 8px;border-bottom:1px solid var(--line)}
+.tbl td{padding:12px 6px;border-bottom:1px solid var(--line);vertical-align:top}
+.tbl tr:last-child td{border:0}
+.tbl td:first-child{color:#fff;font-weight:700;white-space:nowrap}
+.tbl .got{color:#cdd6cf;word-break:break-word}
+.tbl .st{font-weight:700;min-width:44px}
+.tbl .why{display:block;font-weight:400;color:var(--mut);font-size:12.5px;margin-top:2px}
+.s-ok{color:var(--ok)}.s-warn{color:var(--warn)}.s-bad{color:var(--bad)}
+.notice{margin-top:12px;font-size:13.5px;color:var(--warn);background:rgba(233,180,76,.08);border-radius:12px;padding:10px 14px}
+.src{padding:22px;margin:16px 0 0}
+.facts{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:4px}
+.facts div{border:1px solid var(--line);border-radius:14px;padding:14px 14px 12px;background:rgba(0,0,0,.18)}
+.facts b{display:block;font:700 27px 'El Messiri';color:var(--gold2);line-height:1.4}
+.facts p{font-size:13.5px;color:#cdd6cf;line-height:1.75}
+.facts a{display:inline-block;margin-top:6px;font-size:12px;color:var(--mut);text-underline-offset:3px}
+.src .fine{margin-top:12px;font-size:12.5px;color:var(--mut);line-height:1.7}
+@media (max-width:640px){.src{padding:16px 14px;margin-top:12px}.facts{grid-template-columns:1fr;gap:8px}.facts div{display:grid;grid-template-columns:86px 1fr;column-gap:10px;align-items:start;padding:12px}.facts b{font-size:23px;grid-row:span 2}.facts a{margin-top:2px}}
+.sky{z-index:0}
+main,footer{position:relative;z-index:1}
+.sky .fl{position:absolute;bottom:-24px;color:var(--gold2);opacity:0;animation:flyup var(--d,20s) linear infinite;will-change:transform,opacity}
+.sky .fl svg{display:block;width:100%;height:100%;filter:drop-shadow(0 0 6px rgba(231,210,154,.5))}
+@keyframes flyup{0%{transform:translate(0,0) rotate(0);opacity:0}12%{opacity:var(--o,.4)}50%{transform:translate(var(--x,20px),-55vh) rotate(90deg)}88%{opacity:var(--o,.4)}100%{transform:translate(0,-112vh) rotate(180deg);opacity:0}}
+.sys{margin-top:16px;border:1px dashed var(--line);border-radius:14px;background:rgba(0,0,0,.28);overflow:hidden;-webkit-user-select:none;user-select:none;-webkit-touch-callout:none}
+.sys-h{padding:10px 14px;font-weight:700;color:var(--gold2);font-size:14px;border-bottom:1px dashed var(--line)}
+.sys pre{padding:12px 14px;white-space:pre-wrap;word-break:break-word;font:13.5px/1.9 Tajawal;color:#cdd6cf;max-height:215px;overflow:hidden;-webkit-mask-image:linear-gradient(#000 40%,transparent);mask-image:linear-gradient(#000 40%,transparent);pointer-events:none}
+.sys-f{padding:4px 14px 14px;font-size:13.5px;color:var(--mut)}
+.sys-f a{font-weight:700;white-space:nowrap}
+.list li{list-style:none;display:flex;gap:13px;padding:14px 0;border-top:1px solid var(--line)}
+.list li:first-child{border:0}
+.dot{flex:none;width:26px;height:26px;border-radius:50%;display:grid;place-items:center;font-size:13px;margin-top:2px}
+.red .dot{background:rgba(226,114,91,.15)}
+.yel .dot{background:rgba(233,180,76,.15)}
+.tip .dot{background:rgba(127,182,230,.15)}
+.list b{display:block;color:#fff}
+.tip b{color:#b9d8f3}
+.list small{display:block;color:var(--mut);font-size:14px;line-height:1.65}
+.fix{display:block;margin-top:4px;color:var(--gold2);font-size:13.5px}
+.tip .fix{color:var(--tip)}
+.empty{color:var(--ok);font-size:15px}
+.kw{display:flex;flex-wrap:wrap;gap:7px;margin-top:8px}
+.kw span{font-size:13px;padding:2px 11px;border-radius:14px;background:rgba(226,114,91,.12);color:#f0a896}
+.kw span.have{background:rgba(92,192,138,.12);color:#8fd8ae}
+.mrows li{list-style:none;padding:10px 0;border-top:1px solid var(--line);font-size:14.5px}
+.mrows li:first-child{border:0}
+.mrows small{display:block;color:var(--mut);font-size:13.5px}
+.sell{text-align:center;background:linear-gradient(160deg,rgba(231,210,154,.12),rgba(255,255,255,.03));border-color:rgba(231,210,154,.35)}
+.sell h2{font:700 24px 'El Messiri';color:var(--gold2)}
+.sell p{color:#cdd6cf}
+.sell .btn{max-width:360px;margin:16px auto 0}
+.note{font-size:13px;color:var(--mut);text-align:center;margin-top:18px;line-height:1.7}
+.loading{display:none;text-align:center;padding:30px 0;color:var(--gold2)}
+.loading svg{width:34px;height:34px;animation:spin 1.4s linear infinite;margin-bottom:6px}
+@keyframes spin{to{transform:rotate(360deg)}}
+@media (max-width:640px){#up,#res .card{padding:16px 14px;margin-top:12px}.drop{padding:26px 14px}.sys pre{font-size:12.5px}.score{flex-direction:column;text-align:center;gap:14px}.ring{width:132px;height:132px}.ring strong{font-size:34px}.tbl{font-size:13.5px}.tbl td{padding:10px 4px}.tbl td:first-child{white-space:normal}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style><!-- GA4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JFNHEZNBXT"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-JFNHEZNBXT');
+document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a[href*="wa.me"]');if(a)gtag('event','whatsapp_click',{link_text:(a.textContent||'').trim().slice(0,60),page_path:location.pathname});},true);</script>
+<!-- /GA4 -->
+</head><body>
+<div class="sky" aria-hidden="true"><svg width="0" height="0" style="position:absolute"><defs><path id="st" d="M50 2 C54 34 66 46 98 50 C66 54 54 66 50 98 C46 66 34 54 2 50 C34 46 46 34 50 2 Z" fill="currentColor"/></defs></svg></div>
+<header class="top"><div class="in">
+  <div class="top-start"><a class="back" id="backBtn" href="index.html#services" aria-label="رجوع"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>رجوع</span></a>
+  <a class="brand" href="index.html"><img src="logo.png" alt=""><span>سين</span></a></div>
+  <div class="top-act"><a class="cta" href="https://wa.me/966594827253?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%20%D8%B3%D9%8A%D9%86%D8%8C%20%D8%A3%D8%B1%D8%BA%D8%A8%20%D9%81%D9%8A%20%D8%B7%D9%84%D8%A8%3A%20%D8%B3%D9%8A%D8%B1%D8%A9%20%D8%B0%D8%A7%D8%AA%D9%8A%D8%A9%20%D8%A7%D8%AD%D8%AA%D8%B1%D8%A7%D9%81%D9%8A%D8%A9%20-%20%D9%8A%D8%A8%D8%AF%D8%A3%20%D9%85%D9%86%2050%20%D8%B1.%D8%B3" target="_blank" rel="noopener">اطلب الآن</a></div>
+</div></header>
+<main>
+<nav class="crumbs"><a href="index.html">الرئيسية</a> ‹ <a href="cv.html">سيرة ذاتية احترافية</a> ‹ افحص سيرتك</nav>
+<section class="hero">
+<span class="badge">✦ أداة مجانية من سين</span>
+<h1>هل تعدّي سيرتك أنظمة الفرز؟</h1>
+<p class="lead">ارفع سيرتك الذاتية وتعرف نسبة تقديرية لتوافقها مع أنظمة ATS، وتشوف بعينك وش يقرأ منها النظام، مع ملاحظات واضحة وكيف تصلح كل وحدة.</p>
+</section>
+
+<section class="card" id="up">
+<label class="drop" id="drop">
+<div class="ic">⇪</div>
+<b>اسحب سيرتك هنا أو اضغط للاختيار</b>
+<small>PDF أو Word ‏(docx) · عربي أو إنجليزي</small>
+<input type="file" id="f" accept=".pdf,.docx,application/pdf,application/vnd.openxmlformats-officedocument.wordprocessingml.document">
+</label>
+<div class="file" id="fname"></div>
+<details class="jd"><summary>+ الصق وصف الوظيفة <span>(اختياري، يطلع لك تطابقك معها)</span></summary>
+<textarea id="jd" placeholder="انسخ إعلان الوظيفة اللي بتقدم عليها والصقه هنا"></textarea>
+</details>
+<button class="btn" id="go" disabled>افحص سيرتي</button>
+<button class="btn ghost" id="demo">جرّب بسيرة نموذجية</button>
+<div class="err" id="err"></div>
+<div class="trust"><span>🔒 الملف ما يطلع من جهازك</span><span>⚡ النتيجة خلال ثواني</span><span>✦ مجاني</span></div>
+</section>
+
+<div class="loading" id="load"><svg viewBox="0 0 100 100"><path d="M50 2 C54 34 66 46 98 50 C66 54 54 66 50 98 C46 66 34 54 2 50 C34 46 46 34 50 2 Z" fill="#cbb682"/></svg><div>نقرأ سيرتك…</div></div>
+
+<div id="res">
+<section class="card">
+<div class="score">
+<div class="ring"><svg viewBox="0 0 150 150"><circle class="tr" cx="75" cy="75" r="65"/><circle class="pr" id="ring" cx="75" cy="75" r="65"/></svg><div><strong id="num">0</strong><span>نسبة القراءة</span></div></div>
+<div class="verdict"><div class="lbl">نسبة القراءة: كم خانة قدر النظام يعبيها من سيرتك</div><h2 id="vt"></h2><div class="match" id="match"></div></div>
+</div>
+<div id="gate"></div>
+</section>
+
+<section class="card">
+<h3>وش قرأ النظام من سيرتك</h3>
+<p class="sub">هذي الخانات اللي تحاول أنظمة الفرز تعبيها من سيرتك تلقائيًا.</p>
+<table class="tbl"><thead><tr><th>الخانة</th><th>وش لقى النظام</th><th>الحالة</th></tr></thead><tbody id="rows"></tbody></table>
+<div id="notices"></div>
+<div class="sys" id="sys" hidden><div class="sys-h">👁 سيرتك بعين النظام</div><pre id="raw" dir="auto"></pre><div class="sys-f">هذا أول اللي يوصل للنظام من سيرتك. نرتبها لك بحيث يقراها صح. <a id="wa2" href="https://wa.me/966594827253" target="_blank" rel="noopener">اطلبها على واتساب</a></div></div>
+</section>
+
+<section class="card" id="kwbox" hidden>
+<h3>التطابق مع الوظيفة <span id="kwp" style="color:var(--mut);font-size:15px"></span></h3>
+<p class="sub">نسبة تقديرية، كل شركة تحسبها بطريقتها. من 70 إلى 85% ممتازة، والتكرار الزايد يبان حشو.</p>
+<div class="kw" id="kw"></div>
+<ul class="mrows" id="mrows" style="margin-top:14px"></ul>
+</section>
+
+<section class="card">
+<h3>ملاحظات مسؤول التوظيف</h3>
+<p class="sub">أشياء ما تأثر على نسبة القراءة، بس يلاحظها اللي يقرأ سيرتك. 🔴 مهمة · 🟡 تحسين · 💡 نصيحة</p>
+<ul class="list" id="list"></ul>
+</section>
+
+<section class="card sell">
+<h2>نصلحها لك ونخليها تعدّي ✦</h2>
+<p>سيرة ذاتية احترافية متوافقة مع أنظمة الفرز، بالعربي أو الإنجليزي، تسليم من دقائق إلى 5 ساعات.</p>
+<a class="btn" id="wa" href="https://wa.me/966594827253" target="_blank" rel="noopener">اطلبها على واتساب · من 50 ريال</a>
+<button class="btn ghost" id="again" style="max-width:360px;margin:10px auto 0">افحص سيرة ثانية</button>
+</section>
+<p class="note">نسبة القراءة تقيس كم معلومة قدرنا نسحبها من ملفك بنفس طريقة أنظمة الفرز. كل شركة نظامها يختلف، فالنتيجة ما تضمن القبول، لكنها توريك وين الضعف.</p>
+</div>
+<section class="card src">
+<h3>على وش مبني الفحص؟</h3>
+<p class="sub">المعايير مبنية على طريقة قراءة أنظمة الفرز للملفات، وعلى دراسات منشورة عن التوظيف:</p>
+<div class="facts">
+<div><b>97.8%</b><p>من أكبر 500 شركة أمريكية تستخدم نظام فرز للسير الذاتية.</p><a href="https://www.jobscan.co/blog/fortune-500-use-applicant-tracking-systems/" target="_blank" rel="noopener">تقرير جوب سكان 2025</a></div>
+<div><b>+90%</b><p>من الشركات اللي عندها هالأنظمة تعتمد عليها في أول تصفية وترتيب للمتقدمين.</p><a href="https://hbswk.hbs.edu/item/how-to-tap-the-talent-automated-hr-platforms-miss" target="_blank" rel="noopener">كلية هارفارد للأعمال وأكسنتشر 2021</a></div>
+<div><b>7.4 ثانية</b><p>متوسط أول نظرة من مسؤول التوظيف على السيرة، والسير المزحومة والمتعددة الأعمدة أضعف.</p><a href="https://www.theladders.com/career-advice/is-it-true-that-recruiters-reject-a-resume-in-six-seconds" target="_blank" rel="noopener">دراسة تتبّع العين من لادرز 2018</a></div>
+</div>
+<p class="fine">الأرقام من مصادرها المذكورة، والنسبة اللي تطلع لك تقديرية من أداة سين وليست شهادة من أي جهة.</p>
+</section>
+</main>
+<footer>
+  <div><a href="index.html">الرئيسية</a> · <a href="index.html#services">كل الخدمات</a> · <a href="blog.html">مقالات</a> · <a href="https://x.com/justseensa" target="_blank" rel="noopener">إكس</a> · <a href="https://www.tiktok.com/@justseenn" target="_blank" rel="noopener">تيك توك</a></div>
+  <div style="margin-top:6px">© سين — جميع الحقوق محفوظة</div>
+</footer>
+
+<script>
+const $=s=>document.querySelector(s),esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+(function(){var k=document.querySelector('.sky'),sm=innerWidth<640,n=sm?6:10,P=[[6,12],[90,9],[16,40],[82,34],[48,66],[93,72],[8,84],[62,20],[30,90],[72,52]];
+for(var i=0;i<n;i++){var d=document.createElement('div'),z=(sm?8:10)+Math.random()*(sm?10:16);d.className='fs';
+d.style.cssText='left:'+P[i][0]+'%;top:'+P[i][1]+'%;width:'+z+'px;height:'+z+'px;--o:'+(.07+Math.random()*.13).toFixed(2)+';--d:'+(14+Math.random()*12)+'s;--r:'+(30+Math.random()*40)+'s;--x:'+((Math.random()*80-40)|0)+'px;--y:'+(-(30+Math.random()*60)|0)+'px;animation-delay:-'+(Math.random()*10).toFixed(1)+'s';
+d.innerHTML='<svg viewBox="0 0 100 100"><use href="#st"/></svg>';k.appendChild(d);}})();
+(function(){var k=document.querySelector('.sky'),n=innerWidth<640?12:20;for(var i=0;i<n;i++){var d=document.createElement('div'),z=5+Math.random()*7;d.className='fl';d.style.cssText='left:'+(Math.random()*100).toFixed(1)+'%;width:'+z+'px;height:'+z+'px;--o:'+(.25+Math.random()*.3).toFixed(2)+';--d:'+(16+Math.random()*16).toFixed(1)+'s;--x:'+((Math.random()*60-30)|0)+'px;animation-delay:-'+(Math.random()*30).toFixed(1)+'s';d.innerHTML='<svg viewBox="0 0 100 100"><use href="#st"/></svg>';k.appendChild(d)}})();
+document.getElementById('backBtn').addEventListener('click',function(e){try{var r=document.referrer&&new URL(document.referrer);if(r&&r.origin===location.origin&&history.length>1){e.preventDefault();history.back();}}catch(_){}});
+['copy','cut','contextmenu','selectstart','dragstart'].forEach(function(t){document.getElementById('sys').addEventListener(t,function(e){e.preventDefault()})});
+const V='assets/vendor/',LIBS={};function need(n){return LIBS[n]||(LIBS[n]=new Promise((ok,no)=>{const e=document.createElement('script');e.src=V+n;e.onload=ok;e.onerror=()=>{delete LIBS[n];no({code:'lib'})};document.head.appendChild(e)}))}
+async function libFor(name){if(/\.pdf$/i.test(name)){await need('pdf.min.js');pdfjsLib.GlobalWorkerOptions.workerSrc=V+'pdf.worker.min.js'}else await need('jszip.min.js')}
+
+/* ============ أدوات النص ============ */
+const digits=s=>s.replace(/[٠-٩]/g,d=>'٠١٢٣٤٥٦٧٨٩'.indexOf(d)).replace(/[۰-۹]/g,d=>'۰۱۲۳۴۵۶۷۸۹'.indexOf(d));
+const norm=s=>digits(s).toLowerCase().replace(/[أإآٱ]/g,'ا').replace(/ة/g,'ه').replace(/ى/g,'ي').replace(/[ًٌٍَُِّْـ]/g,'');
+const AR=/[؀-ۿ]/;
+const BUL=/^\s*[•▪●◦‣∙·\-–*✓✔➢►■□◆➤→]\s*/;
+
+/* ============ قوائم ============ */
+const H={
+ exp:['الخبرات','الخبره','الخبرات العمليه','الخبره العمليه','الخبره المهنيه','الخبرات المهنيه','الخبرات الوظيفيه','الخبره الوظيفيه','سجل العمل','التاريخ الوظيفي','experience','work experience','professional experience','employment','employment history','work history','career history','relevant experience'],
+ edu:['التعليم','المؤهلات','المؤهلات العلميه','المؤهل العلمي','المؤهل الدراسي','التحصيل العلمي','التحصيل الدراسي','الشهادات العلميه','education','academic background','qualifications','academic qualifications'],
+ skills:['المهارات','المهارات التقنيه','المهارات الفنيه','المهارات الشخصيه','المهارات الاساسيه','الكفاءات','skills','technical skills','core skills','key skills','competencies','core competencies','soft skills'],
+ summary:['نبذه','نبذه عني','نبذه شخصيه','الملخص','الملخص المهني','ملخص','الهدف الوظيفي','الهدف','عني','profile','summary','professional summary','about me','objective','career objective','professional profile'],
+ other:['الدورات','الدورات التدريبيه','التدريب','الشهادات','الشهادات المهنيه','اللغات','المشاريع','الانجازات','التطوع','العمل التطوعي','الانشطه','المراجع','الجوائز','الاهتمامات','معلومات التواصل','التواصل','البيانات الشخصيه','المعلومات الشخصيه','courses','training','certifications','certificates','languages','projects','achievements','volunteering','volunteer experience','activities','references','awards','interests','contact','contact information','personal information','personal details']
+};
+const HEADS={};Object.entries(H).forEach(([k,a])=>a.forEach(h=>HEADS[h]=k));
+function headOf(line){const t=norm(line).replace(/[:：\-–—|•·]/g,' ').replace(/\s+/g,' ').trim();if(!t||t.split(' ').length>5)return null;return HEADS[t]||null}
+const TITLES='محاسب محاسبه مهندس مهندسه مدير مديره اخصائي اخصائيه مسؤول مسؤوله مطور مطوره مصمم مصممه معلم معلمه مشرف مشرفه منسق منسقه محلل محلله مستشار مستشاره سكرتير سكرتيره فني فنيه مندوب مندوبه موظف موظفه باحث باحثه رئيس رئيسه مساعد مساعده متدرب متدربه ممرض ممرضه طبيب طبيبه صيدلي صيدليه مبرمج مبرمجه كاشير امين امينه وكيل وكيله قائد مراقب مراقبه مدرب مدربه محرر محرره كاتب كاتبه مترجم مترجمه مدقق مدققه خبير خبيره ممثل ممثله اداري اداريه تنفيذي accountant engineer manager specialist developer designer teacher analyst coordinator consultant officer assistant intern trainee supervisor executive representative administrator director architect programmer nurse doctor pharmacist technician auditor advisor editor writer translator instructor trainer cashier clerk secretary receptionist researcher scientist founder president'.split(' ');
+const TSET=new Set(TITLES);
+const CO=/(شركه|مؤسسه|بنك|مصرف|مستشفي|مستوصف|جامعه|كليه|معهد|وزاره|هيئه|مدرسه|مجموعه|مركز|مكتب|مصنع|بلديه|امانه|\bco\b|company|ltd|llc|inc|corp|group|bank|hospital|university|ministry|authority|school|center|centre|agency|limited|holding|solutions|technologies)/i;
+const MON={'يناير':1,'فبراير':2,'مارس':3,'ابريل':4,'مايو':5,'يونيو':6,'يوليو':7,'اغسطس':8,'سبتمبر':9,'اكتوبر':10,'نوفمبر':11,'ديسمبر':12,jan:1,feb:2,mar:3,apr:4,may:5,jun:6,jul:7,aug:8,sep:9,oct:10,nov:11,dec:12};
+const MONRE='(?:يناير|فبراير|مارس|ابريل|مايو|يونيو|يوليو|اغسطس|سبتمبر|اكتوبر|نوفمبر|ديسمبر|jan(?:uary)?|feb(?:ruary)?|mar(?:ch)?|apr(?:il)?|may|june?|july?|aug(?:ust)?|sep(?:t(?:ember)?)?|oct(?:ober)?|nov(?:ember)?|dec(?:ember)?)';
+const DRE=`(?:${MONRE}\\.?\\s*,?\\s*(?:19|20)\\d{2}|\\d{1,2}\\s*[\\/.]\\s*(?:19|20)\\d{2}|(?:19|20)\\d{2}|14\\d{2})`;
+const PRES='(?:حتي الان|الي الان|حتي تاريخه|الان|حاليا|للان|present|current|now|today|till date)';
+const RANGE=new RegExp(`(${DRE})\\s*(?:-|–|—|~|to|الي|حتي|until)\\s*(${DRE}|${PRES})`,'i');
+const RANGEG=new RegExp(RANGE.source,'gi');
+const DREG=new RegExp(DRE,'gi');
+function dkind(d){d=d.trim();if(/^14\d\d$/.test(d))return'hijri';if(new RegExp('^'+MONRE,'i').test(d))return'mon';if(/[\/.]/.test(d))return'num';return'year'}
+const NOWM=(()=>{const n=new Date();return n.getFullYear()*12+n.getMonth()+1})();
+function dval(d,end){d=d.trim();if(new RegExp('^'+PRES+'$','i').test(d))return NOWM;
+ let y=+(d.match(/(19|20|14)\d{2}/)||[0])[0],m=end?12:1;if(y>=1400&&y<1500)y=Math.round(y*.97+622);
+ const mm=d.match(new RegExp('^'+MONRE,'i'));if(mm){const k=mm[0].toLowerCase();m=MON[k]||MON[k.slice(0,3)]||m}
+ const nm=d.match(/^(\d{1,2})\s*[\/.]/);if(nm)m=+nm[1];return Math.min(y*12+m,NOWM)}
+const CLICHE=['طموح','طموحه','يحب العمل الجماعي','احب العمل الجماعي','العمل تحت الضغط','العمل ضمن فريق','شغوف','شغوفه','مجتهد','مجتهده','سريع التعلم','hard worker','hardworking','hard-working','team player','self-motivated','self motivated','detail-oriented','detail oriented','go-getter','think outside the box','results-driven','results driven','passionate','dynamic'];
+const OBVIOUS=['word','microsoft word','ms word','الانترنت','internet','email','e-mail','البريد الالكتروني','windows','الطباعه','typing','الحاسب الالي','computer'];
+const OUTDATED=[['المراجع عند الطلب','«المراجع عند الطلب»'],['references available upon request','«References available upon request»'],['references upon request','«References upon request»'],['الهدف الوظيفي','«الهدف الوظيفي»'],['career objective','«Career objective»'],['objective','«Objective»']];
+const MISSP={'انشاء الله':'إن شاء الله','مسؤل':'مسؤول','مسئول':'مسؤول','responsable':'responsible','managment':'management','experiance':'experience','acheive':'achieve','acheived':'achieved','recieve':'receive','sucess':'success','succesful':'successful','comunication':'communication','enviroment':'environment','profesional':'professional','devlopment':'development','resposibilities':'responsibilities','responsibilites':'responsibilities','excelent':'excellent','knowlege':'knowledge','langauge':'language','maintainance':'maintenance','seperate':'separate','occured':'occurred'};
+const BADMAIL=/(love|prince|princess|king|queen|cute|angel|sexy|killer|devil|baby|crazy|hot|boss|cool|sweet|lover|girl|boy|habibi|7ob|xx)/i;
+const ACR=[['seo','تحسين محركات البحث'],['kpi','مؤشرات الاداء'],['crm','اداره علاقات العملاء'],['hr','الموارد البشريه'],['erp','تخطيط موارد المؤسسات'],['ai','الذكاء الاصطناعي'],['ui','واجهه المستخدم'],['ux','تجربه المستخدم'],['pmp','اداره المشاريع'],['vat','ضريبه القيمه المضافه'],['ifrs','المعايير الدوليه'],['qa','ضمان الجوده']];
+const STOP=new Set('في من علي الي عن مع او و ثم ان لا ما هذا هذه ذلك تلك التي الذي الذين كل بعض عند لدي حتي قد كان يكون تكون لديه لديك لدينا نحن انت هو هي هم بين خلال ضمن حول عبر اي غير يجب سوف لمده سنه سنوات خبره مطلوب نبحث مثل برنامج برامج اجاده قدره القدره معرفه جيده ممتاز ممتازه مهارات مهاره العمل عمل وظيفه الوظيفه متقدم متقدمين شركه الشركه مجال المجال افضل اعداد دوام ميزه مميزات راتب المتقدم يفضل المؤهل مؤهل the and or of to in for on with a an is are be as at by from this that will you your we our us their it its have has must should can able etc such like using use experience strong good excellent work job role team years year required preferred plus knowledge skills ability hiring hire looking seeking candidate candidates join company opportunity position responsibilities requirements'.split(' '));
+function stem(w){w=norm(w);if(AR.test(w)){if(w.length>4&&/^[وبلفك]/.test(w)&&!/^(بحث|بيان|بنك|برمج|كتاب|كتب|لغ|فن|فريق|وظيف|ولاء|وكيل|وزار)/.test(w))w=w.slice(1);if(w.length>4&&w.startsWith('ال'))w=w.slice(2)}return w}
+function tokens(s){return digits(s).replace(/[^\p{L}\p{N}+#.\s]/gu,' ').split(/\s+/).map(w=>w.replace(/[.]+$/,'')).filter(Boolean).map(w=>({raw:w,k:stem(w)})).filter(o=>o.k.length>2&&!STOP.has(o.k)&&!STOP.has(norm(o.raw))&&!STOP.has(norm(o.raw).replace(/^ال/,''))&&!/^\d+$/.test(o.k))}
+const hasTitle=l=>norm(l).split(/[^\p{L}]+/u).some(w=>TSET.has(w)||TSET.has(w.replace(/^ال/,'')));
+const wordRe=w=>new RegExp('(^|[^\\p{L}])(ال)?'+w+'($|[^\\p{L}])','u');
+
+/* ============ قراءة الملفات ============ */
+function joinRow(items,rtl){
+ items.sort((a,b)=>rtl?b.x-a.x:a.x-b.x);let s='';
+ for(let i=0;i<items.length;i++){const it=items[i];if(i){const p=items[i-1];const gap=rtl?p.x-(it.x+it.w):it.x-(p.x+p.w);if(gap>it.h*.18&&!/\s$/.test(s)&&!/^\s/.test(it.s))s+=' '}s+=it.s}
+ return s.replace(/\s+/g,' ').trim();
+}
+async function readPdf(buf){
+ let pdf;try{pdf=await pdfjsLib.getDocument({data:buf}).promise}catch(e){throw{code:e&&e.name==='PasswordException'?'pass':'bad'}}
+ const lines=[];let cols=0,rowsN=0,hasPhoto=false;
+ for(let p=1;p<=pdf.numPages;p++){
+  const pg=await pdf.getPage(p),vw=pg.getViewport({scale:1}).width,c=await pg.getTextContent();
+  if(p===1){try{const ops=await pg.getOperatorList();hasPhoto=ops.fnArray.some(f=>f===pdfjsLib.OPS.paintImageXObject||f===pdfjsLib.OPS.paintJpegXObject||f===pdfjsLib.OPS.paintInlineImageXObject)}catch(e){}}
+  const rows=[];
+  c.items.forEach(it=>{if(!it.str)return;const y=it.transform[5],h=Math.abs(it.transform[3])||it.height||10;let r=rows.find(r=>Math.abs(r.y-y)<h*.45);if(!r){r={y,its:[]};rows.push(r)}r.its.push({x:it.transform[4],w:it.width||0,h,s:it.str})});
+  rows.sort((a,b)=>b.y-a.y).forEach(r=>{
+   const its=r.its;if(!its.some(i=>i.s.trim()))return;
+   const txt=its.map(i=>i.s).join('');const rtl=(txt.match(/[؀-ۿ]/g)||[]).length>(txt.match(/[A-Za-z]/g)||[]).length;
+   const srt=[...its].filter(i=>i.s.trim()).sort((a,b)=>a.x-b.x);rowsN++;
+   for(let i=1;i<srt.length;i++){const gap=srt[i].x-(srt[i-1].x+srt[i-1].w);if(gap>vw*.12){cols++;break}}
+   lines.push({t:joinRow(its,rtl),z:'body'});
+  });
+ }
+ return {kind:'pdf',lines,pages:pdf.numPages,colRatio:rowsN?cols/rowsN:0,hasPhoto,tables:0,boxes:[],hdr:[]};
+}
+async function readDocx(buf){
+ let zip;try{zip=await JSZip.loadAsync(buf)}catch(e){throw{code:'bad'}}
+ if(zip.file('EncryptionInfo')||zip.file('EncryptedPackage'))throw{code:'pass'};
+ const docF=zip.file('word/document.xml');if(!docF)throw{code:'bad'};
+ const P=new DOMParser(),W='http://schemas.openxmlformats.org/wordprocessingml/2006/main';
+ const xml=P.parseFromString(await docF.async('string'),'application/xml');
+ const headingStyles=new Set(),listStyles=new Set();
+ if(zip.file('word/styles.xml')){const st=P.parseFromString(await zip.file('word/styles.xml').async('string'),'application/xml');[...st.getElementsByTagNameNS(W,'style')].forEach(s=>{const id=s.getAttributeNS(W,'styleId')||'';const nmE=s.getElementsByTagNameNS(W,'name')[0];const nm=nmE?nmE.getAttributeNS(W,'val'):'';if(/heading|title|عنوان/i.test(nm+' '+id))headingStyles.add(id);if(/list|bullet|قائمه|تعداد/i.test(nm+' '+id)||s.getElementsByTagNameNS(W,'numPr')[0])listStyles.add(id)})}
+ const pText=p=>{let s='';const walk=n=>{for(const c of n.childNodes){if(c.localName==='txbxContent'||c.localName==='pict'&&c.getElementsByTagNameNS(W,'txbxContent')[0])continue;if(c.localName==='t')s+=c.textContent;else if(c.localName==='tab')s+=' ';else if(c.localName==='br'||c.localName==='cr')s+='\n';else if(c.childNodes&&c.childNodes.length)walk(c)}};walk(p);return s};
+ const lines=[],boxes=[];let tables=0,hasPhoto=false,pageBreaks=0;
+ const isBold=p=>{const runs=[...p.getElementsByTagNameNS(W,'r')].filter(r=>{const t=r.getElementsByTagNameNS(W,'t')[0];return t&&t.textContent.trim()});return runs.length&&runs.every(r=>{const b=r.getElementsByTagNameNS(W,'b')[0];return b&&!/^(0|false)$/.test(b.getAttributeNS(W,'val')||'')})};
+ const addP=(p,tb)=>{
+  const ps=p.getElementsByTagNameNS(W,'pStyle')[0],sid=ps?ps.getAttributeNS(W,'val'):'';
+  const li=!!p.getElementsByTagNameNS(W,'numPr')[0]||listStyles.has(sid);
+  if([...p.getElementsByTagNameNS(W,'br')].some(b=>b.getAttributeNS(W,'type')==='page'))pageBreaks++;
+  const tx=[...p.getElementsByTagNameNS(W,'txbxContent')];
+  if(p.getElementsByTagNameNS(W,'drawing')[0]&&!tx.length&&p.getElementsByTagNameNS('http://schemas.openxmlformats.org/drawingml/2006/picture','pic')[0])hasPhoto=true;
+  tx.forEach(t=>{[...t.getElementsByTagNameNS(W,'p')].forEach(q=>{const s=pText(q).replace(/\s+/g,' ').trim();if(s&&!boxes.includes(s))boxes.push(s)})});
+  pText(p).split('\n').forEach(t=>{t=t.replace(/\s+/g,' ').trim();if(t)lines.push({t:(li&&!BUL.test(t)?'• ':'')+t,z:'body',tb,li,hd:headingStyles.has(sid)||(isBold(p)&&t.split(' ').length<=4&&!/\d/.test(t))})});
+ };
+ const body=xml.getElementsByTagNameNS(W,'body')[0];
+ const walkBody=n=>{for(const c of n.children){if(c.localName==='p')addP(c,false);else if(c.localName==='tbl'){tables++;[...c.getElementsByTagNameNS(W,'tr')].forEach(tr=>{const cells=[...tr.getElementsByTagNameNS(W,'tc')].map(tc=>[...tc.getElementsByTagNameNS(W,'p')].map(pText).join(' ').replace(/\s+/g,' ').trim()).filter(Boolean);if(cells.length)lines.push({t:cells.join(' | '),z:'body',tb:true})})}else if(c.localName==='sdt'){const sc=c.getElementsByTagNameNS(W,'sdtContent')[0];if(sc)walkBody(sc)}}};
+ walkBody(body);
+ const hdr=[];for(const name of Object.keys(zip.files)){if(/^word\/(header|footer)\d*\.xml$/.test(name)){const hx=P.parseFromString(await zip.file(name).async('string'),'application/xml');[...hx.getElementsByTagNameNS(W,'t')].length&&hdr.push(hx.documentElement.textContent.replace(/\s+/g,' ').trim())}}
+ let vis=0;lines.forEach(l=>vis+=Math.max(1,Math.ceil(l.t.length/95))+(l.li?0:.35));
+ return {kind:'docx',lines,pages:Math.max(pageBreaks+1,Math.ceil(vis/44)),colRatio:0,hasPhoto,tables,boxes,hdr:hdr.filter(Boolean)};
+}
+
+/* ============ التحليل ============ */
+function analyze(d,jd,meta){
+ meta=meta||{};
+ const L=d.lines.filter(l=>l.z==='body');
+ const raw=L.map(l=>l.t).join('\n');const T=norm(raw);const chars=raw.replace(/\s/g,'').length;
+ const extra=[...(d.hdr||[]),...(d.boxes||[])].join('\n');
+ const gate=[];
+ if(chars<200)gate.push(['سيرتك صورة','النظام ما يقدر يقرأ منها ولا كلمة تقريبًا. صدّرها من Word أو Google Docs بدل ما تكون صورة أو مسح ضوئي.']);
+ const arW=raw.split(/\s+/).filter(w=>AR.test(w)||/[ﭐ-﷿ﹰ-﻿]/.test(w));
+ const single=arW.filter(w=>w.replace(/[^؀-ۿﭐ-﷿ﹰ-﻿]/g,'').length===1&&!/^[وب]$/.test(w)).length;
+ const pres=(raw.match(/[ﭐ-﷿ﹰ-﻿]/g)||[]).length;
+ const rev=['تاربخلا','تاراهملا','ميلعتلا','ةربخلا','ةعماج','ةكرش','ريدم','ةيلمعلا'].filter(w=>raw.includes(w)).length;
+ const broken=arW.length>12&&(single/arW.length>.22||pres>15||rev>=2);
+ if(broken)gate.push(['الحروف العربية تطلع للنظام مقطعة','الحروف تطلع منفصلة أو مقلوبة، فالنظام ما يفهم الكلمات. صدّر الملف من Word بدل أدوات التصميم مثل كانفا.']);
+
+ const sec={exp:[],edu:[],skills:[],summary:[],other:[]},found=[],unknownHeads=[];let cur=null;
+ L.forEach((l,i)=>{const h=headOf(l.t);if(h){cur=h;found.push(h);return}
+  if(l.hd&&d.kind==='docx'&&i>1&&l.t.length<40&&!/@|\d/.test(l.t)&&!hasTitle(l.t)&&!BUL.test(l.t))unknownHeads.push(l.t);
+  if(cur)sec[cur].push({...l,i})});
+ const cols=d.colRatio>.28,tblIn=k=>sec[k].some(l=>l.tb),boxHas=re=>(d.boxes||[]).some(b=>re.test(digits(b))),hdrHas=re=>(d.hdr||[]).some(h=>re.test(digits(h)));
+ const rows=[];const W={name:10,email:10,phone:10,titles:15,cos:10,dates:15,edu:10,skills:10,order:10};let got=0,possible=0;
+ const add=(k,label,val,frac,why,na)=>{if(na){rows.push({label,val,st:'na',why});return}possible+=W[k];got+=W[k]*frac;rows.push({label,val,st:frac>=.99?'ok':frac>0?'warn':'bad',why:frac>=.99?'':why})};
+ const isImg=chars<200;const reasons=k=>{const r=[];if(isImg)return 'سيرتك صورة، والنظام ما قرأ منها شي';if(broken)return 'الحروف العربية تطلع مقطعة فالنظام ما فهمها';if(cols)r.push('سيرتك بعمودين أو فيها شريط جانبي، والنظام يقفز بين اليمين واليسار');if(k&&tblIn(k))r.push('المعلومات داخل جدول');if((d.boxes||[]).length)r.push('فيها مربعات نص (Text Box) والنظام يتجاهلها');if(unknownHeads.length)r.push('عناوين ما يعرفها النظام: «'+unknownHeads.slice(0,3).join('»، «')+'»');return r.join('، ')};
+
+ // الاسم
+ let name=null;for(const l of L.slice(0,4)){const t=l.t.replace(BUL,'').trim(),w=t.split(/\s+/);if(!headOf(t)&&!/[@\d|]|http|www/.test(t)&&w.length>=2&&w.length<=5&&t.length<=45&&!hasTitle(t)&&/^[\p{L}\s.'\-]+$/u.test(t)){name=t;break}}
+ if(name&&(broken||isImg)){add('name','الاسم',name,.5,reasons())}else if(name&&cols&&headOf(name.split(' ').slice(-1)[0])){add('name','الاسم',name,.5,reasons())}else if(!name){const inX=(d.hdr||[]).concat(d.boxes||[]).some(t=>{const w=t.trim().split(/\s+/);return w.length>=2&&!/[@]/.test(t)});add('name','الاسم','ما لقى شي',0,inX?'موجود في الهيدر أو مربع نص، والنظام ما يقراه':(reasons()||'أول سطر في سيرتك مو اسمك'))}else add('name','الاسم',name,1);
+
+ // التواصل
+ const EM=/[\w.+-]+@[\w-]+\.[\w.]{2,}/,PH=/(?:\+?966|00966)[\s-]?5\d(?:[\s-]?\d){7}|\b05\d(?:[\s-]?\d){7}\b|\+\d{1,3}[\s-]?\d(?:[\s-]?\d){7,11}/;
+ const em=(digits(raw).match(EM)||[])[0],ph=(digits(raw).match(PH)||[])[0];
+ const whereC=re=>(isImg||broken)?reasons():hdrHas(re)?'موجود في الهيدر أو الفوتر، والنظام ما يقراه':boxHas(re)?'موجود داخل مربع نص، والنظام يتجاهله':(reasons()||'مو مكتوب كنص في السيرة');
+ add('email','الإيميل',em||'ما لقى شي',em?1:0,whereC(EM));
+ add('phone','الجوال',ph||'ما لقى شي',ph?1:0,whereC(PH));
+
+ // الخبرات
+ const ex=sec.exp;const anyRange=RANGE.test(digits(norm(raw)));
+ const noExp=!gate.length&&!ex.length&&!anyRange&&!L.some(l=>hasTitle(l.t)&&!headOf(l.t)&&l!==L[0]);
+ const jobs=[];const used=new Set();const kinds=new Set();
+ ex.forEach((l,j)=>{const n=digits(norm(l.t));const m=n.match(RANGE);if(!m)return;
+   kinds.add(dkind(m[1]));if(!new RegExp('^'+PRES+'$','i').test(m[2].trim()))kinds.add(dkind(m[2]));
+   const job={i:j,start:dval(m[1]),end:dval(m[2],true),title:null,co:null};
+   for(const k of [j,j-1,j-2,j+1]){const o=ex[k];if(!o||used.has(k)&&k!==j||BUL.test(o.t)||o.li)continue;
+     const clean=o.t.replace(new RegExp(DRE,'gi'),'').replace(/\s*[-–—~]\s*(حتى الآن|حاليًا|حاليا|الآن|present|current|now)?\s*$/i,'').trim();
+     if(!job.title&&hasTitle(o.t)){job.title=clean.split(/\s[—–|]\s|\s-\s|\s@\s|\sat\s|،|,/)[0].trim();used.add(k)}
+     if(!job.co&&(CO.test(norm(o.t))||/\s[—–|@]\s|\sat\s|\sلدى\s/i.test(o.t)&&clean.length>3)){job.co=clean;used.add(k)}}
+   used.add(j);jobs.push(job)});
+ ex.forEach((l,j)=>{if(used.has(j)||BUL.test(l.t)||l.li||!hasTitle(l.t)||l.t.split(' ').length>10)return;
+   jobs.push({i:j,title:l.t,co:CO.test(norm(l.t))?l.t:null,start:null})});
+ jobs.sort((a,b)=>a.i-b.i);
+ const nJ=jobs.length,dated=jobs.filter(j=>j.start).length,titled=jobs.filter(j=>j.title).length,cos=jobs.filter(j=>j.co).length;
+ const expWhy=(isImg||broken)?reasons():!ex.length?(reasons('exp')||'ما لقى عنوان قسم الخبرات، استخدم عنوان واضح مثل «الخبرات العملية»'):(reasons('exp')||'');
+ if(noExp){add('titles','المسميات الوظيفية','ما فيه خبرات (حديث تخرج؟)',0,'ما تنحسب عليك',true);add('cos','الشركات','—',0,'',true);add('dates','تواريخ الوظائف','—',0,'',true)}
+ else{
+  add('titles','المسميات الوظيفية',nJ?((jobs.filter(j=>j.title).map(j=>j.title).slice(0,2).join('، ')||'ما لقى شي')+(nJ>1||titled<nJ?` (${titled} من ${nJ})`:'')):'ما لقى شي',nJ?titled/nJ:0,expWhy||'المسمى مو واضح فوق كل وظيفة');
+  add('cos','الشركات',nJ?`لقى ${cos} من ${nJ}`:'ما لقى شي',nJ?cos/nJ:0,expWhy||'اكتب اسم الجهة في سطر المسمى أو تحته مباشرة');
+  let dF=nJ?dated/nJ:0,dWhy=expWhy||'كل وظيفة لازم يكون لها من وإلى، مثل «2022 – 2024»';
+  if(kinds.size>1&&dF>0){dF=Math.min(dF,.75);dWhy='صيغ تواريخ مختلفة في نفس الملف ('+[...kinds].map(k=>({mon:'شهر وسنة',num:'أرقام',year:'سنة بس',hijri:'هجري'})[k]).join(' و')+')، وحّدها'}
+  add('dates','تواريخ الوظائف',nJ?`لقى ${dated} من ${nJ}`:'ما لقى شي',dF,dWhy);
+ }
+
+ // التعليم
+ const DEG=/(بكالوريوس|ماجستير|دكتوراه|دبلوم|ثانويه|ليسانس|زماله|bachelor|master|phd|ph\.d|diploma|bsc|b\.sc|msc|m\.sc|mba|bba|\bba\b|\bbs\b|\bma\b|high school|associate degree)/i,INST=/(جامعه|كليه|معهد|اكاديميه|university|college|institute|academy|school)/i;
+ const eT=norm(sec.edu.map(l=>l.t).join(' '));let eF=0,eV='ما لقى شي';
+ if(sec.edu.length){const dg=DEG.test(eT),ins=INST.test(eT);eF=(dg?.5:0)+(ins?.5:0);eV=dg&&ins?'الدرجة والجامعة':dg?'الدرجة بس':ins?'الجامعة بس':'ما لقى شي'}
+ else if(DEG.test(T)){eF=.5;eV='لقى الدرجة بس بدون قسم واضح'}
+ add('edu','التعليم',eV,eF,(isImg||broken)?reasons():sec.edu.length?(reasons('edu')||'اكتب الدرجة والتخصص والجامعة'):(reasons()||'ما لقى قسم التعليم، استخدم عنوان «التعليم»'));
+
+ // المهارات
+ const sk=[];sec.skills.forEach(l=>l.t.replace(BUL,'').split(/[,،·•|\/;\t]|\s{2,}|\s-\s|\s–\s/).map(s=>s.trim()).filter(s=>s.length>1&&s.length<=40&&s.split(' ').length<=5).forEach(s=>sk.push(s)));
+ let skF=sec.skills.length?Math.min(1,sk.length/5):0,skWhy='';
+ if(sec.skills.length&&tblIn('skills')){skF=Math.min(skF,.3);skWhy='جدول المهارات انقرا ملخبط'}
+ if(cols&&sec.skills.length){skF=Math.min(skF,.5);skWhy=reasons()}
+ if(isImg||broken)skWhy=reasons();add('skills','المهارات',sec.skills.length?`${sk.length} مهارة: ${sk.slice(0,4).join('، ')}${sk.length>4?'…':''}`:'ما لقى شي',skF,skWhy||(sec.skills.length?'اكتب 6 إلى 12 مهارة مفصولة بفواصل أو نقاط':(reasons('skills')||'ما لقى قسم المهارات، استخدم عنوان «المهارات»')));
+
+ // الترتيب
+ const main=['exp','edu','skills'].filter(k=>found.includes(k)).length,dup=['exp','edu','skills','summary'].some(k=>found.filter(x=>x===k).length>1);
+ const need=noExp?2:3;let oF=main>=need?1:main>=1?.5:0,oWhy='';if(isImg||broken){oF=0;oWhy=reasons()}else 
+ if(cols){oF=0;oWhy=reasons()}else if(d.tables){oF=Math.min(oF,.5);oWhy='فيها جداول تخلط ترتيب المعلومات'}else if(dup){oF=Math.min(oF,.5);oWhy='نفس القسم تكرر أكثر من مرة، فيه تداخل'}else if((d.boxes||[]).length){oF=Math.min(oF,.5);oWhy='فيها مربعات نص تطلع برا الترتيب'}
+ if(main<need&&!oWhy)oWhy='ما لقى عناوين الأقسام الأساسية'+(unknownHeads.length?'. '+reasons():'');
+ add('order','ترتيب النص',oF>=1?'الأقسام مرتبة وما فيه تداخل':oF>0?'فيه تداخل':'ملخبط',oF,oWhy);
+
+ let score=possible?Math.round(got/possible*100):0;if(gate.length)score=Math.min(score,30);
+
+ // ===== ملاحظات المسؤول =====
+ const notes=[];const N=(lvl,title,why,fix)=>{if(!isImg&&!broken||lvl==='gate')notes.push({lvl,title,why,fix})};
+ const bullets=ex.filter(l=>BUL.test(l.t)||l.li);
+ if(bullets.length>=3){const withN=bullets.filter(l=>/\d|%|٪|ريال|sar|\$/i.test(digits(l.t).replace(DREG,''))).length;if(withN/bullets.length<1/3)N('yel','إنجازاتك بدون أرقام',`${withN} بس من ${bullets.length} نقطة فيها رقم. المسؤول يدور على نتايج يقدر يقيسها.`,'حوّل المهام لنتايج، مثل «رفعت المبيعات 20%» أو «خدمت 300 عميل شهريًا».')}
+ const nearTitle=j=>{const jb=[...jobs].reverse().find(x=>x.i<=j&&x.title);return jb?jb.title:null};
+ let para=null;if(d.kind==='docx'){ex.forEach((l,j)=>{if(para===null&&!l.li&&!BUL.test(l.t)&&l.t.length>280)para=j})}else{let run=0;ex.forEach((l,j)=>{if(!BUL.test(l.t)&&!RANGE.test(digits(norm(l.t)))&&!hasTitle(l.t)&&l.t.split(' ').length>5){run++;if(run>=4&&para===null)para=j}else run=0})}
+ if(para!==null){const t=nearTitle(para);N('yel','فقرة طويلة'+(t?` في خبرة «${t.slice(0,40)}»`:' في الخبرات'),'المسؤول يمر على السيرة بسرعة، والفقرة الطويلة تضيّع إنجازاتك.','قسّمها لـ 3 أو 4 نقاط، كل نقطة تبدأ بفعل.')}
+ const dj=jobs.filter(j=>j.start);let totalM=0;dj.forEach(j=>totalM+=Math.max(0,j.end-j.start+1));const years=totalM/12;
+ if(d.pages>2)N('red',`السيرة ${d.pages} صفحات`,'المسؤول ما يقرأ أكثر من صفحتين، واللي بعدها يضيع.','اختصرها لصفحة أو صفحتين، وخل الأحدث والأهم.');
+ else if(d.pages===2&&years<7)N('yel','صفحتين وخبرتك أقل من 7 سنوات','الصفحة الوحدة تكفي لخبرتك، والطول الزايد يخفّف الإنجازات المهمة.','اختصرها لصفحة وحدة.');
+ for(let k=1;k<dj.length;k++){if(dj[k].start>dj[k-1].start+1){N('yel','الخبرات مو مرتبة من الأحدث','المسؤول يبي يشوف آخر وظيفة أول شي.','رتّب الوظايف من الأحدث للأقدم.');break}}
+ const byS=[...dj].sort((a,b)=>a.start-b.start);for(let k=1;k<byS.length;k++){const gap=byS[k].start-byS[k-1].end-1;if(gap>12){N('yel','فيه فجوة أكثر من سنة بين وظيفتين',`تقريبًا ${Math.round(gap/12*10)/10} سنة بدون شي مكتوب. المسؤول بيسأل عنها.`,'اكتب وش سويت فيها (دراسة، دورات، تطوع، عمل حر) بسطر واحد.');break}}
+ const shortJ=dj.filter(j=>j.end-j.start+1<12&&j.end<NOWM-1).length;if(shortJ>2)N('yel','تنقل كثير بين الوظايف',`${shortJ} وظايف مدتها أقل من سنة.`,'إذا كانت عقود أو مشاريع مؤقتة، اكتب «عقد» أو «مشروع» جنبها.');
+ const D=digits(raw).replace(/(?:\+?966|00966)[\s-]?5\d(?:[\s-]?\d){7}|\b05\d(?:[\s-]?\d){7}\b/g,'');
+ if(/(^|\D)[12]\d{9}(\D|$)/.test(D))N('red','فيها رقم هوية','رقم الهوية معلومة حساسة وما يحتاجها أحد في السيرة.','احذفه.');
+ if(/(الحاله الاجتماعيه|متزوج|اعزب|عزباء|marital|married)/i.test(T))N('yel','الحالة الاجتماعية مكتوبة','معلومة ما تفيد في التوظيف.','احذفها.');
+ if(/(تاريخ الميلاد|تاريخ الولاده|date of birth|\bdob\b|birth date)/i.test(T))N('yel','تاريخ الميلاد كامل','ما يحتاجه المسؤول، والعمر ممكن يأثر على الحكم بدون قصد.','احذفه.');
+ if(d.hasPhoto)N('yel','فيها صورة','أنظمة الفرز ما تقرأ الصور، وبعض الشركات تفضل السيرة بدونها.','إذا مو مطلوبة في الإعلان، شيلها.');
+ if(em){const lp=em.split('@')[0].toLowerCase();const nm=(name||'').toLowerCase().split(/\s+/).filter(w=>/^[a-z]{3,}$/.test(w));if(BADMAIL.test(lp)||(nm.length&&!nm.some(w=>lp.includes(w.slice(0,4)))))N('yel','الإيميل غير مهني',`«${em}» ما يعطي انطباع رسمي.`,'سوّ إيميل فيه اسمك، مثل name.family@gmail.com.')}
+ const cl=CLICHE.filter(c=>wordRe(norm(c)).test(T));if(cl.length)N('yel','عبارات مستهلكة',`«${cl.slice(0,3).join('»، «')}». كل السير فيها هالكلام، فما يميزك.`,'بدّلها بموقف أو رقم يثبت الصفة.');
+ const skN=sk.map(s=>norm(s));const ob=OBVIOUS.filter(o=>skN.includes(o));if(ob.length)N('yel','مهارات بديهية',`«${ob.join('»، «')}» يعرفها الكل، وتاخذ مكان مهارات أهم.`,'شيلها وحط مهارات تخصصك بدالها.');
+ const od=OUTDATED.filter(o=>o[0]==='objective'?/^\s*(career\s+)?objective\s*:?\s*$/im.test(raw):T.includes(norm(o[0])));const odU=[...new Set(od.map(o=>o[1]))];if(odU.length)N('yel','أشياء قديمة',`${odU.join(' و')} ما عاد أحد يستخدمها.`,'بدّل «الهدف الوظيفي» بنبذة قصيرة عن خبرتك، واحذف «المراجع عند الطلب».');
+ const ms=Object.keys(MISSP).filter(w=>wordRe(norm(w)).test(T));if(ms.length)N('yel','أخطاء إملائية',ms.slice(0,4).map(w=>`«${w}» صحتها «${MISSP[w]}»`).join('، ')+'.','راجع السيرة كاملة قبل ما ترسلها.');
+ if(!sec.summary.length)N('yel','ما فيه نبذة','النبذة أول شي يقراه المسؤول، وتلخص له ليش أنت مناسب.','اكتب 2 إلى 3 أسطر عن خبرتك وأقوى مهاراتك.');
+ else{const sw=sec.summary.map(l=>l.t).join(' ').split(/\s+/).length;if(sw>80)N('yel','النبذة طويلة',`${sw} كلمة، أطول من 5 أسطر.`,'اختصرها لـ 2 إلى 3 أسطر.')}
+ if(!/linkedin/i.test(raw+extra))N('tip','أضف رابط لينكدإن','كثير من المسؤولين يشيكون على لينكدإن قبل المقابلة.','حطه تحت الإيميل والجوال.');
+ const latin=(raw.match(/[A-Za-z]/g)||[]).length,arab=(raw.match(/[؀-ۿ]/g)||[]).length;if(arab>latin*4&&arab>200)N('tip','سوّ نسخة إنجليزية','كثير من الشركات أنظمتها وإعلاناتها بالإنجليزي.','جهّز نسخة إنجليزية من نفس السيرة.');
+ const eY=Math.max(0,...[...eT.matchAll(/(?:19|20)\d{2}/g)].map(m=>+m[0]));if((noExp||years<1)&&eY>=new Date().getFullYear()-2&&!/(معدل|gpa|تقدير)/i.test(T))N('tip','أضف معدلك','لحديثي التخرج، المعدل العالي يفرق.','إذا معدلك عالي اكتبه جنب التخصص.');
+ const fn=(meta.fileName||'').replace(/\.[^.]+$/,'');if(fn&&(/^(cv|resume|سيره|سيرة|السيره|السيرة|سيرتي|document|untitled|new|مستند|scan|img|file)[\s_\-\d()]*$/i.test(fn)||/^[\d\s_\-()]+$/.test(fn)))N('tip','غيّر اسم الملف',`«${meta.fileName}» ما يوضح مين أنت.`,'سمّه باسمك ومسماك، مثل «الاسم-المسمى.pdf».');
+ const notices=[];if(meta.size>2*1024*1024)notices.push(`حجم الملف ${(meta.size/1048576).toFixed(1)}MB. بعض الأنظمة مثل Greenhouse ما تقبل فوق 2.5MB، صغّره.`);
+
+ // ===== التطابق =====
+ let kw=null;
+ if(jd&&jd.trim().split(/\s+/).length>8){
+  const freq={},show={};tokens(jd).forEach(o=>{freq[o.k]=(freq[o.k]||0)+1;if(!show[o.k]||o.raw.length<show[o.k].length)show[o.k]=o.raw.replace(/^[وب](?=\p{L}{4})/u,'')});
+  const top=Object.entries(freq).sort((a,b)=>b[1]-a[1]).slice(0,18).map(x=>x[0]);
+  const cv=new Set(tokens(raw).map(o=>o.k));const have=top.filter(w=>cv.has(w));
+  const m=[];const J=norm(digits(jd));
+  const jt=TITLES.filter(t=>wordRe(t).test(J));
+  if(jt.length){const ok=jt.some(t=>wordRe(t).test(T)||wordRe(t+'ه').test(T));m.push([ok,'المسمى الوظيفي',ok?'مسمى الإعلان أو قريب منه موجود في سيرتك.':`الإعلان يطلب «${jt[0]}». إذا هذا مسماك فعلًا، اكتبه بنفس الكلمة.`])}
+  const yr=J.match(/(\d{1,2})\s*\+?\s*(?:سنوات|سنه|سنين|عام|اعوام|years?|yrs)/);if(yr){const need=+yr[1],ok=years+.25>=need;m.push([ok,'سنوات الخبرة',ok?`المطلوب ${need}، وسيرتك فيها تقريبًا ${Math.round(years*10)/10}.`:`المطلوب ${need} سنوات، وسيرتك فيها تقريبًا ${Math.round(years*10)/10}. تأكد إن كل خبراتك مكتوبة بتواريخها.`])}
+  const DG=[['دبلوم','دبلوم|diploma'],['بكالوريوس','بكالوريوس|bachelor|bsc|\\bba\\b|\\bbs\\b'],['ماجستير','ماجستير|master|msc|mba'],['دكتوراه','دكتوراه|phd']];
+  const req=[...DG].reverse().find(x=>new RegExp(x[1],'i').test(J));
+  if(req){const lv=DG.findIndex(x=>x[0]===req[0]),ok=DG.some((x,i)=>i>=lv&&new RegExp(x[1],'i').test(T));m.push([ok,'المؤهل',ok?`الإعلان يطلب ${req[0]} وموجود في سيرتك.`:`الإعلان يطلب ${req[0]}، وما لقيناه في سيرتك.`])}
+  ACR.forEach(([a,f])=>{const ar=new RegExp('(^|[^a-z])'+a+'($|[^a-z])','i');const inJ=ar.test(J)||J.includes(f),aC=ar.test(T),fC=T.includes(f);if(inJ&&aC!==fC)m.push([false,'الاختصار والاسم الكامل',`اكتب «${a.toUpperCase()}» و«${f}» مع بعض، عشان النظام يلقاها بأي طريقة بحث فيها.`])});
+  kw={top,have,show,pct:top.length?Math.round(100*have.length/top.length):0,m};
+ }
+ return {score,gate,rows,notes,notices,kw,raw};
+}
+
+/* ============ العرض ============ */
+const DESC=s=>s>=90?'النظام يقرأ سيرتك كاملة':s>=70?'النظام يقرأ أغلبها، وفيه خانات ضايعة':s>=40?'النظام يضيّع أجزاء مهمة من سيرتك':'النظام بيتعب يقراها';
+function show(r){
+ $('#up').style.display='none';$('#load').style.display='none';$('#res').style.display='block';
+ const s=r.score,col=s>=90?'var(--ok)':s>=70?'#a9d36c':s>=40?'var(--warn)':'var(--bad)';
+ const ring=$('#ring');ring.style.stroke=col;$('#num').style.color=col;ring.style.strokeDashoffset=408.4;
+ requestAnimationFrame(()=>requestAnimationFrame(()=>ring.style.strokeDashoffset=408.4*(1-s/100)));
+ let n=0;$('#num').textContent='0%';const step=()=>{n=Math.min(s,n+Math.max(1,Math.round(s/40)));$('#num').textContent=n+'%';if(n<s)requestAnimationFrame(step)};step();
+ $('#vt').textContent=DESC(s);
+ $('#match').innerHTML=r.kw?`<b>التطابق مع الوظيفة: ${r.kw.pct}%</b><small>نسبة تقديرية، كل شركة تحسبها بطريقتها</small>`:`<b>التطابق مع الوظيفة</b><small>الصق إعلان الوظيفة عشان تعرف تطابقك معها</small>`;
+ $('#gate').innerHTML=r.gate.map(g=>`<div class="gate"><b>⛔ ${esc(g[0])}</b><small>${esc(g[1])}</small></div>`).join('');
+ const ic={ok:'✓',warn:'⚠️',bad:'✗',na:'—'};
+ $('#rows').innerHTML=r.rows.map(x=>`<tr><td>${esc(x.label)}</td><td class="got">${esc(x.val)}</td><td class="st s-${x.st==='na'?'ok':x.st}">${ic[x.st]}${x.why?`<span class="why">${esc(x.why)}</span>`:''}</td></tr>`).join('');
+ $('#notices').innerHTML=r.notices.map(t=>`<div class="notice">⚠️ ${esc(t)}</div>`).join('');
+ const sl=(r.raw||'').split('\n').map(l=>l.trim()).filter(Boolean);if(s<90&&sl.length){$('#sys').hidden=false;$('#raw').textContent=sl.slice(0,8).map(l=>l.length>80?l.slice(0,80)+'…':l).join('\n')}else{$('#sys').hidden=true;$('#raw').textContent=''}
+ const ord={red:0,yel:1,tip:2},ico={red:'🔴',yel:'🟡',tip:'💡'};
+ const nt=r.notes.sort((a,b)=>ord[a.lvl]-ord[b.lvl]);
+ $('#list').innerHTML=r.gate.length&&!nt.length?'<li class="empty" style="color:var(--mut)">نصلّح القراءة أول، وبعدها تطلع ملاحظات المسؤول.</li>':nt.length?nt.map(o=>`<li class="${o.lvl}"><span class="dot">${ico[o.lvl]}</span><div><b>${esc(o.title)}</b><small>${esc(o.why)}</small><span class="fix">✦ ${esc(o.fix)}</span></div></li>`).join(''):'<li class="empty">ما عندنا ملاحظات، سيرتك مرتبة 👌</li>';
+ if(r.kw){$('#kwbox').hidden=false;$('#kwp').textContent='· '+r.kw.pct+'%';$('#kw').innerHTML=r.kw.top.map(w=>`<span class="${r.kw.have.includes(w)?'have':''}">${esc(r.kw.show[w])}</span>`).join('');
+  $('#mrows').innerHTML=r.kw.m.map(([ok,t,d])=>`<li><b class="${ok?'s-ok':'s-warn'}">${ok?'✓':'⚠️'} ${esc(t)}</b><small>${esc(d)}</small></li>`).join('')}else $('#kwbox').hidden=true;
+ try{window.gtag&&gtag('event','ats_check',{score_band:s>=90?'90+':s>=70?'70-89':s>=40?'40-69':'0-39',with_job:r.kw?'yes':'no'})}catch(_){}
+ $('#wa2').href=$('#wa').href='https://wa.me/966594827253?text='+encodeURIComponent('هلا، فحصت سيرتي في موقع سين وطلعت نسبة القراءة '+s+'% وأبي أعدّلها');
+ scrollTo({top:0,behavior:'smooth'});
+}
+
+/* ============ الرفع ============ */
+let file=null;const f=$('#f'),drop=$('#drop');
+function err(m){const e=$('#err');e.textContent=m;e.style.display=m?'block':'none'}
+function pick(x){if(!x)return;const bad=/\.doc$/i.test(x.name)?'هذي صيغة وورد القديمة. احفظها بصيغة docx أو PDF وارفعها.':!/\.(pdf|docx)$/i.test(x.name)?'ارفع السيرة PDF أو Word':x.size>10*1048576?'الملف أكبر من 10 ميقا. صغّره أو صدّره من جديد وارفعه.':'';if(bad){err(bad);file=null;$('#go').disabled=true;$('#fname').style.display='none';return}file=x;libFor(x.name).catch(()=>{});$('#fname').style.display='block';$('#fname').textContent='📄 '+x.name;$('#go').disabled=false;err('')}
+f.onchange=()=>pick(f.files[0]);
+['dragenter','dragover'].forEach(e=>drop.addEventListener(e,ev=>{ev.preventDefault();drop.classList.add('over')}));
+['dragleave','drop'].forEach(e=>drop.addEventListener(e,ev=>{ev.preventDefault();drop.classList.remove('over')}));
+drop.addEventListener('drop',ev=>pick(ev.dataTransfer.files[0]));
+async function run(fileObj,jd){
+ const buf=await fileObj.arrayBuffer();let d;
+ await libFor(fileObj.name);
+ if(/\.pdf$/i.test(fileObj.name))d=await readPdf(buf);else d=await readDocx(buf);
+ return analyze(d,jd,{fileName:fileObj.name,size:fileObj.size});
+}
+$('#go').onclick=async()=>{
+ if(!file)return;err('');$('#up').style.display='none';$('#load').style.display='block';
+ try{show(await run(file,$('#jd').value))}
+ catch(e){$('#load').style.display='none';$('#up').style.display='block';err(e&&e.code==='pass'?'الملف محمي بكلمة سر وما ينفتح، ارفعه بدون حماية.':e&&e.code==='lib'?'ما قدرنا نحمّل أداة القراءة، تأكد من الإنترنت وجرب مرة ثانية.':'الملف ما ينفتح، يمكن تالف. صدّره من جديد وارفعه.')}
+};
+$('#again').onclick=()=>{$('#res').style.display='none';$('#up').style.display='block';file=null;f.value='';$('#fname').style.display='none';$('#go').disabled=true;scrollTo({top:0,behavior:'smooth'})};
+$('#demo').onclick=()=>{
+ const t=`ريم عبدالله الشمري
+المحاسبة | الرياض
+نبذة
+محاسبة بخبرة 4 سنوات في إعداد القوائم المالية والتسويات البنكية، وأحب العمل الجماعي.
+الخبرات العملية
+محاسبة أولى — شركة نموذجية للتجارة
+يناير 2023 – حتى الآن
+• إعداد القوائم المالية الشهرية لـ 3 فروع
+• متابعة الحسابات والتسويات البنكية
+• إدخال القيود اليومية في النظام
+محاسبة — مؤسسة نموذجية
+2020 – 2022
+• إعداد تقارير ضريبة القيمة المضافة
+• تحسين عملية الإقفال الشهري وتقليل وقتها 30%
+التعليم
+بكالوريوس محاسبة — جامعة الملك سعود 2020
+المهارات
+إكسل، القوائم المالية، التسويات البنكية، الحاسب الآلي، الإنترنت`;
+ const jd='مطلوب محاسب بخبرة 5 سنوات في إعداد القوائم المالية والتسويات البنكية وإعداد الميزانيات وتحليل التكاليف وإجادة برنامج إكسل وأنظمة ERP مثل SAP وتقارير ضريبة القيمة المضافة VAT والزكاة. المؤهل بكالوريوس محاسبة.';
+ $('#jd').value=jd;$('.jd').open=true;
+ show(analyze({kind:'docx',lines:t.split('\n').map(x=>({t:x,z:'body',li:x.startsWith('•')})),pages:1,colRatio:0,hasPhoto:false,tables:0,boxes:[],hdr:['reem.s.demo@email.com · 0550000000']},jd,{fileName:'cv.pdf',size:180000}));
+};
+window.__ats={analyze,readPdf,readDocx,run};
+</script>
+</body></html>
