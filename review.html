@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<title>قيّم تجربتك | سين</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#F7F3EC">
+<link rel="icon" type="image/png" href="logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Alexandria:wght@600;700;800&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/site.css?v=202611260907">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JFNHEZNBXT"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-JFNHEZNBXT');document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a[href*="wa.me"]');if(a)gtag('event','whatsapp_click',{link_text:(a.textContent||'').trim().slice(0,60),page_path:location.pathname});},true);</script>
+<style>
+.page{padding:40px 0 80px}
+.box{max-width:520px;margin:0 auto}
+.panel{padding:clamp(22px,5vw,34px);text-align:center}
+.panel h1{font-size:clamp(26px,6vw,34px);font-weight:800;margin:14px 0 6px}
+.panel>p{color:var(--muted);margin:0 0 20px}
+.svc{display:inline-block;background:var(--gold-soft);color:#8a6a22;font-weight:700;font-size:13.5px;border-radius:999px;padding:4px 14px}
+.stars{display:flex;flex-direction:row-reverse;justify-content:center;gap:8px;margin:6px 0 18px}
+.stars input{display:none}
+.stars label{font-size:44px;line-height:1;color:var(--line2);cursor:pointer;transition:transform .15s}
+.stars label:hover{transform:scale(1.12)}
+.stars input:checked~label,.stars label:hover,.stars label:hover~label{color:var(--gold)}
+.field{text-align:start}
+.msg{border-radius:14px;padding:12px 16px;font-size:14.5px;margin-top:14px}
+.msg.err{background:#FEF3F2;border:1px solid #FECDCA;color:var(--err)}
+.thanks .ok{width:76px;height:76px;border-radius:50%;background:#E3F1EA;color:var(--ok);display:grid;place-items:center;margin:0 auto 14px;font-size:36px}
+</style>
+</head>
+<body>
+<header class="hdr scrolled"><div class="wrap">
+  <a class="logo" href="index.html"><img src="logo.png" alt="" width="40" height="40"><span><b>سين</b><small>رأيك يهمنا</small></span></a>
+  <div class="hdr-act" style="margin-inline-start:auto"><a class="cartbtn" href="track.html" aria-label="تتبّع طلبك" title="تتبّع طلبك"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 8 12 3 3 8v8l9 5 9-5z"/><path d="m3 8 9 5 9-5M12 13v8"/></svg></a></div>
+</div></header>
+
+<main class="page"><div class="wrap"><div class="box">
+  <form class="card panel" id="f" hidden>
+    <span class="svc" id="svc">طلبك من سين</span>
+    <h1>كيف كانت تجربتك؟</h1>
+    <p>رأيك يظهر في موقع سين ويساعد غيرك يختار.</p>
+    <div class="stars" role="radiogroup" aria-label="التقييم">
+      <input type="radio" name="r" id="s5" value="5"><label for="s5" aria-label="5 من 5">★</label>
+      <input type="radio" name="r" id="s4" value="4"><label for="s4" aria-label="4 من 5">★</label>
+      <input type="radio" name="r" id="s3" value="3"><label for="s3" aria-label="3 من 5">★</label>
+      <input type="radio" name="r" id="s2" value="2"><label for="s2" aria-label="2 من 5">★</label>
+      <input type="radio" name="r" id="s1" value="1"><label for="s1" aria-label="1 من 5">★</label>
+    </div>
+    <div class="field"><label for="body">اكتب تجربتك باختصار</label><textarea class="inp" id="body" maxlength="600" style="min-height:110px" placeholder="مثال: السيرة طلعت مرتبة وجاتني مقابلتين خلال أسبوع"></textarea></div>
+    <div class="field"><label for="nm">الاسم اللي يظهر <small>(اختياري)</small></label><input class="inp" id="nm" maxlength="40" placeholder="مثل: نورة، طالبة"></div>
+    <button class="btn btn-primary" id="go" style="width:100%">أرسل التقييم</button>
+    <div class="msg err" id="err" hidden></div>
+  </form>
+
+  <div class="card panel thanks" id="done" hidden>
+    <div class="ok">✓</div>
+    <h1>شكرًا لك 🤍</h1>
+    <p>تقييمك صار ظاهر في موقع سين.</p>
+    <a class="btn btn-ghost" href="index.html#reviews">شوف التقييمات</a>
+  </div>
+
+  <div class="card panel" id="bad" hidden>
+    <h1>الرابط ما يشتغل</h1>
+    <p>تأكد إنك فتحت الرابط كامل من رسالة واتساب، أو اطلب من سين رابط جديد.</p>
+    <a class="btn btn-primary waLink" target="_blank" rel="noopener" href="#">كلّمنا واتساب</a>
+  </div>
+</div></div></main>
+
+<script src="assets/config.js?v=202611260907"></script>
+<script src="assets/catalog.js?v=202611260907"></script>
+<script>
+(()=>{
+const $=s=>document.querySelector(s), S=window.SEEN;
+document.querySelectorAll('.waLink').forEach(a=>a.href=S.wa('مرحبًا سين، رابط التقييم ما اشتغل معي'));
+const q=new URLSearchParams(location.search), code=(q.get('c')||'').toUpperCase().trim(), p4=(q.get('p')||'').replace(/\D/g,'').slice(-4);
+const svc=q.get('s');
+if(!S.dbReady()||!/^SN-\d{5}$/.test(code)||p4.length!==4){ $('#bad').hidden=false; return; }
+$('#f').hidden=false;
+if(svc) $('#svc').textContent=svc;
+$('#f').addEventListener('submit',async e=>{
+  e.preventDefault(); $('#err').hidden=true;
+  const r=+((document.querySelector('input[name=r]:checked')||{}).value||0), b=$('#body').value.trim();
+  if(!r||b.length<3){ $('#err').textContent='اختر عدد النجوم واكتب تجربتك'; $('#err').hidden=false; return; }
+  $('#go').disabled=true;
+  try{
+    await S.rpc('submit_review',{p_code:code,p_phone4:p4,p_rating:r,p_body:b,p_name:$('#nm').value.trim()||null});
+    if(window.gtag) gtag('event','review_submitted',{rating:r});
+    $('#f').hidden=true; $('#done').hidden=false;
+  }catch(err){
+    const m=String(err.message||err);
+    $('#err').textContent=/التسليم/.test(m)?'تقدر تقيّم بعد ما نسلّمك الطلب.':/غير موجود/.test(m)?'الرابط ما يطابق أي طلب، اطلب رابط جديد على واتساب.':m;
+    $('#err').hidden=false; $('#go').disabled=false;
+  }
+});
+})();
+</script>
+</body>
+</html>

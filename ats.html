@@ -7,7 +7,7 @@
 <meta name="description" content="ارفع سيرتك الذاتية وشوف وش يقرأ منها نظام فرز السير: نسبة القراءة، والتطابق مع الوظيفة، وملاحظات واضحة وكيف تصلحها. مجاني والملف ما يطلع من جهازك.">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://justseensa.com/ats.html">
-<meta name="theme-color" content="#0d2019">
+<meta name="theme-color" content="#F7F3EC">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="ar_SA">
 <meta property="og:site_name" content="سين">
@@ -21,10 +21,10 @@
 <link rel="icon" type="image/png" href="logo.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=El+Messiri:wght@600;700&family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/page.css">
+<link href="https://fonts.googleapis.com/css2?family=Alexandria:wght@600;700;800&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/page.css?v=202611260907">
 <style>
-:root{--deep:#091310;--g:#0d2019;--g3:#1c3b30;--gold:#cbb682;--gold2:#e7d29a;--gold3:#a8874a;--cream:#ece3d2;--mut:#9fb0a6;--line:rgba(203,182,130,.16);--ok:#5cc08a;--warn:#e9b44c;--bad:#e2725b;--tip:#7fb6e6}
+:root{--deep:#0F1A15;--g:#0E3B2C;--g3:#18563F;--gold:#C29A45;--gold2:#8a6a22;--gold3:#8a6a22;--cream:#0F1A15;--mut:#6A746E;--line:#E3DACA;--ok:#15803d;--warn:#b7791f;--bad:#b42318;--tip:#1d4ed8}
 :where(main) :where(*){margin:0;padding:0}
 main h2{margin:0;display:block}
 main h2::before{display:none}
@@ -32,7 +32,7 @@ main h2::before{display:none}
 .drop{display:block;border:2px dashed rgba(203,182,130,.35);border-radius:20px;padding:34px 18px;text-align:center;cursor:pointer;transition:.25s}
 .drop:hover,.drop.over{border-color:var(--gold2);background:rgba(231,210,154,.05)}
 .drop .ic{width:62px;height:62px;margin:0 auto 10px;border-radius:18px;background:linear-gradient(135deg,var(--gold),var(--gold2));display:grid;place-items:center;color:var(--deep);font-size:28px}
-.drop b{display:block;font-size:18px;color:#fff}
+.drop b{display:block;font-size:18px;color:var(--cream)}
 .drop small{color:var(--mut);font-size:14px}
 .drop input{display:none}
 .file{display:none;margin-top:12px;font-size:14px;color:var(--gold2);text-align:center}
@@ -40,9 +40,9 @@ details.jd{margin:16px 0 0;background:none;border:0;border-top:1px solid var(--l
 details.jd summary{cursor:pointer;color:var(--gold2);font-weight:700;list-style:none}
 details.jd summary::-webkit-details-marker{display:none}
 details.jd summary span{color:var(--mut);font-weight:400;font-size:13px}
-textarea{width:100%;margin-top:10px;min-height:120px;background:rgba(0,0,0,.25);border:1px solid var(--line);border-radius:14px;color:var(--cream);font:15px Tajawal;padding:12px;resize:vertical}
+textarea{width:100%;margin-top:10px;min-height:120px;background:#fff;border:1px solid var(--line);border-radius:14px;color:var(--cream);font:15px 'IBM Plex Sans Arabic';padding:12px;resize:vertical}
 textarea:focus{outline:2px solid rgba(231,210,154,.35)}
-.btn{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;margin-top:18px;border:0;border-radius:14px;padding:14px;font:700 16.5px Tajawal;cursor:pointer;background:linear-gradient(135deg,var(--gold2),var(--gold-soft));color:var(--deep);transition:transform .25s var(--ease),box-shadow .25s,filter .2s;text-decoration:none}
+.btn{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;margin-top:18px;border:0;border-radius:14px;padding:14px;font:700 16.5px 'IBM Plex Sans Arabic';cursor:pointer;background:linear-gradient(135deg,var(--gold2),var(--gold-soft));color:var(--deep);transition:transform .25s var(--ease),box-shadow .25s,filter .2s;text-decoration:none}
 a.btn[href*="wa.me"]::before{content:"";width:19px;height:19px;flex:none;background:currentColor;-webkit-mask:var(--wa) center/contain no-repeat;mask:var(--wa) center/contain no-repeat}
 .btn:hover{transform:translateY(-2px);box-shadow:0 14px 30px rgba(203,182,130,.25)}
 .btn:disabled{opacity:.45;transform:none;box-shadow:none;cursor:default}
@@ -55,20 +55,20 @@ a.btn[href*="wa.me"]::before{content:"";width:19px;height:19px;flex:none;backgro
 .ring{position:relative;width:150px;height:150px;flex:none}
 .ring svg{width:100%;height:100%;transform:rotate(-90deg)}
 .ring circle{fill:none;stroke-width:11;stroke-linecap:round}
-.ring .tr{stroke:rgba(255,255,255,.07)}
+.ring .tr{stroke:#EFE8DC}
 .ring .pr{stroke-dasharray:408.4;stroke-dashoffset:408.4;transition:stroke-dashoffset 1.2s cubic-bezier(.2,.8,.2,1),stroke .3s}
 .ring div{position:absolute;inset:0;display:grid;place-content:center;text-align:center}
-.ring strong{font:700 40px 'El Messiri';line-height:1}
+.ring strong{font:700 40px Alexandria;line-height:1}
 .ring span{font-size:12.5px;color:var(--mut)}
 .verdict .lbl{font-size:13px;color:var(--gold2)}
-.verdict h2{font:700 25px 'El Messiri';color:#fff;line-height:1.5}
-.match{margin-top:12px;display:inline-flex;flex-direction:column;gap:2px;background:rgba(255,255,255,.04);border:1px solid var(--line);border-radius:14px;padding:8px 14px}
+.verdict h2{font:700 25px Alexandria;color:var(--cream);line-height:1.5}
+.match{margin-top:12px;display:inline-flex;flex-direction:column;gap:2px;background:#FAF8F3;border:1px solid var(--line);border-radius:14px;padding:8px 14px}
 .match b{color:var(--gold2);font-size:15.5px}
 .match small{color:var(--mut);font-size:12.5px}
 .gate{margin-top:18px;background:rgba(226,114,91,.1);border:1px solid rgba(226,114,91,.35);border-radius:16px;padding:14px 16px}
-.gate b{display:block;color:#f2a592}
-.gate small{color:#e9cfc8;font-size:14px}
-h3{font:700 19px 'El Messiri';color:var(--gold2);margin:0 0 4px}
+.gate b{display:block;color:#b42318}
+.gate small{color:#7a271a;font-size:14px}
+h3{font:700 19px Alexandria;color:var(--gold2);margin:0 0 4px}
 #up,#res .card{padding:22px;margin:16px 0 0}
 .hero .lead{margin-bottom:6px}
 .badge{margin-bottom:10px}
@@ -77,17 +77,17 @@ h3{font:700 19px 'El Messiri';color:var(--gold2);margin:0 0 4px}
 .tbl th{font-weight:500;color:var(--mut);font-size:12.5px;text-align:start;padding:0 6px 8px;border-bottom:1px solid var(--line)}
 .tbl td{padding:12px 6px;border-bottom:1px solid var(--line);vertical-align:top}
 .tbl tr:last-child td{border:0}
-.tbl td:first-child{color:#fff;font-weight:700;white-space:nowrap}
-.tbl .got{color:#cdd6cf;word-break:break-word}
+.tbl td:first-child{color:var(--cream);font-weight:700;white-space:nowrap}
+.tbl .got{color:#33413A;word-break:break-word}
 .tbl .st{font-weight:700;min-width:44px}
 .tbl .why{display:block;font-weight:400;color:var(--mut);font-size:12.5px;margin-top:2px}
 .s-ok{color:var(--ok)}.s-warn{color:var(--warn)}.s-bad{color:var(--bad)}
 .notice{margin-top:12px;font-size:13.5px;color:var(--warn);background:rgba(233,180,76,.08);border-radius:12px;padding:10px 14px}
 .src{padding:22px;margin:16px 0 0}
 .facts{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:4px}
-.facts div{border:1px solid var(--line);border-radius:14px;padding:14px 14px 12px;background:rgba(0,0,0,.18)}
-.facts b{display:block;font:700 27px 'El Messiri';color:var(--gold2);line-height:1.4}
-.facts p{font-size:13.5px;color:#cdd6cf;line-height:1.75}
+.facts div{border:1px solid var(--line);border-radius:14px;padding:14px 14px 12px;background:#FAF8F3}
+.facts b{display:block;font:700 27px Alexandria;color:var(--gold2);line-height:1.4}
+.facts p{font-size:13.5px;color:#33413A;line-height:1.75}
 .facts a{display:inline-block;margin-top:6px;font-size:12px;color:var(--mut);text-underline-offset:3px}
 .src .fine{margin-top:12px;font-size:12.5px;color:var(--mut);line-height:1.7}
 @media (max-width:640px){.src{padding:16px 14px;margin-top:12px}.facts{grid-template-columns:1fr;gap:8px}.facts div{display:grid;grid-template-columns:86px 1fr;column-gap:10px;align-items:start;padding:12px}.facts b{font-size:23px;grid-row:span 2}.facts a{margin-top:2px}}
@@ -96,9 +96,9 @@ main,footer{position:relative;z-index:1}
 .sky .fl{position:absolute;bottom:-24px;color:var(--gold2);opacity:0;animation:flyup var(--d,20s) linear infinite;will-change:transform,opacity}
 .sky .fl svg{display:block;width:100%;height:100%;filter:drop-shadow(0 0 6px rgba(231,210,154,.5))}
 @keyframes flyup{0%{transform:translate(0,0) rotate(0);opacity:0}12%{opacity:var(--o,.4)}50%{transform:translate(var(--x,20px),-55vh) rotate(90deg)}88%{opacity:var(--o,.4)}100%{transform:translate(0,-112vh) rotate(180deg);opacity:0}}
-.sys{margin-top:16px;border:1px dashed var(--line);border-radius:14px;background:rgba(0,0,0,.28);overflow:hidden;-webkit-user-select:none;user-select:none;-webkit-touch-callout:none}
+.sys{margin-top:16px;border:1px dashed var(--line);border-radius:14px;background:#FAF8F3;overflow:hidden;-webkit-user-select:none;user-select:none;-webkit-touch-callout:none}
 .sys-h{padding:10px 14px;font-weight:700;color:var(--gold2);font-size:14px;border-bottom:1px dashed var(--line)}
-.sys pre{padding:12px 14px;white-space:pre-wrap;word-break:break-word;font:13.5px/1.9 Tajawal;color:#cdd6cf;max-height:215px;overflow:hidden;-webkit-mask-image:linear-gradient(#000 40%,transparent);mask-image:linear-gradient(#000 40%,transparent);pointer-events:none}
+.sys pre{padding:12px 14px;white-space:pre-wrap;word-break:break-word;font:13.5px/1.9 'IBM Plex Sans Arabic';color:#33413A;max-height:215px;overflow:hidden;-webkit-mask-image:linear-gradient(#000 40%,transparent);mask-image:linear-gradient(#000 40%,transparent);pointer-events:none}
 .sys-f{padding:4px 14px 14px;font-size:13.5px;color:var(--mut)}
 .sys-f a{font-weight:700;white-space:nowrap}
 .list li{list-style:none;display:flex;gap:13px;padding:14px 0;border-top:1px solid var(--line)}
@@ -107,21 +107,21 @@ main,footer{position:relative;z-index:1}
 .red .dot{background:rgba(226,114,91,.15)}
 .yel .dot{background:rgba(233,180,76,.15)}
 .tip .dot{background:rgba(127,182,230,.15)}
-.list b{display:block;color:#fff}
-.tip b{color:#b9d8f3}
+.list b{display:block;color:var(--cream)}
+.tip b{color:#1d4ed8}
 .list small{display:block;color:var(--mut);font-size:14px;line-height:1.65}
 .fix{display:block;margin-top:4px;color:var(--gold2);font-size:13.5px}
 .tip .fix{color:var(--tip)}
 .empty{color:var(--ok);font-size:15px}
 .kw{display:flex;flex-wrap:wrap;gap:7px;margin-top:8px}
-.kw span{font-size:13px;padding:2px 11px;border-radius:14px;background:rgba(226,114,91,.12);color:#f0a896}
-.kw span.have{background:rgba(92,192,138,.12);color:#8fd8ae}
+.kw span{font-size:13px;padding:2px 11px;border-radius:14px;background:rgba(226,114,91,.12);color:#b42318}
+.kw span.have{background:rgba(92,192,138,.12);color:#15803d}
 .mrows li{list-style:none;padding:10px 0;border-top:1px solid var(--line);font-size:14.5px}
 .mrows li:first-child{border:0}
 .mrows small{display:block;color:var(--mut);font-size:13.5px}
 .sell{text-align:center;background:linear-gradient(160deg,rgba(231,210,154,.12),rgba(255,255,255,.03));border-color:rgba(231,210,154,.35)}
-.sell h2{font:700 24px 'El Messiri';color:var(--gold2)}
-.sell p{color:#cdd6cf}
+.sell h2{font:700 24px Alexandria;color:var(--gold2)}
+.sell p{color:#33413A}
 .sell .btn{max-width:360px;margin:16px auto 0}
 .note{font-size:13px;color:var(--mut);text-align:center;margin-top:18px;line-height:1.7}
 .loading{display:none;text-align:center;padding:30px 0;color:var(--gold2)}
@@ -129,6 +129,58 @@ main,footer{position:relative;z-index:1}
 @keyframes spin{to{transform:rotate(360deg)}}
 @media (max-width:640px){#up,#res .card{padding:16px 14px;margin-top:12px}.drop{padding:26px 14px}.sys pre{font-size:12.5px}.score{flex-direction:column;text-align:center;gap:14px}.ring{width:132px;height:132px}.ring strong{font-size:34px}.tbl{font-size:13.5px}.tbl td{padding:10px 4px}.tbl td:first-child{white-space:normal}}
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+
+/* الهوية الجديدة */
+.btn:not(.ghost){background:#0E3B2C!important;color:#F7F3EC!important;border-radius:999px}
+.btn:hover{box-shadow:0 14px 30px -12px rgba(14,59,44,.5)}
+.ghost{color:#0F1A15!important;border-color:#D6CAB4!important;border-radius:999px}
+.drop{border-color:#D6CAB4;background:#FAF8F3}.drop:hover,.drop.over{border-color:#18563F;background:#EEF4F0}
+.drop .ic{background:#0E3B2C;color:#E2C27E}
+.badge{color:#18563F;background:#F4EAD2;border-color:#EAD9AE}
+.sell{background:#F4EAD2;border-color:#EAD9AE}
+textarea{color:#0F1A15}
+.how{margin-top:14px;background:#FAF8F3;border:1px solid #E3DACA;border-radius:14px;padding:12px 16px}
+.how summary{cursor:pointer;font-weight:700;color:#0F1A15}
+.how p{margin:10px 0 0;font-size:14px;color:#33413A;line-height:1.8}
+.how table.w{width:100%;border-collapse:collapse;margin-top:10px;font-size:14px}
+.how table.w td{padding:7px 8px;border-bottom:1px solid #E3DACA}
+.how table.w td:nth-child(even){font-weight:700;color:#0E3B2C;text-align:center;width:44px}
+.refs{margin:10px 0 0;padding:0;display:flex;flex-direction:column;gap:10px}
+.refs li{list-style:none;font-size:14px;color:#33413A;line-height:1.8}
+.refs b{color:#0F1A15}
+.refs a{color:#18563F;font-weight:600}
+
+/* ===== تصميم صفحة الفحص الجديد ===== */
+main.ats{max-width:1080px}
+.ats-hero{display:grid;grid-template-columns:1.05fr .95fr;gap:28px;align-items:center;margin-top:6px}
+.ats-intro h1{font-size:clamp(32px,4.6vw,48px);line-height:1.45;margin:14px 0 12px}
+.ats-intro .lead{font-size:17px;color:#33413A;line-height:1.95;margin:0 0 20px}
+.ats-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.ats-stats div{background:#fff;border:1px solid #E3DACA;border-radius:16px;padding:12px}
+.ats-stats b{display:block;font:800 24px Alexandria;color:#0E3B2C}
+.ats-stats span{display:block;font-size:12.5px;color:#6A746E;line-height:1.6;margin-top:2px}
+.ats-stats a{font-size:11.5px;color:#8a6a22;text-decoration:none}
+#up{margin:0!important;padding:24px!important;border-radius:24px;box-shadow:0 30px 60px -36px rgba(14,59,44,.45)}
+.up-t{display:block;font:700 18px Alexandria;margin-bottom:12px;color:#0F1A15}
+.ats-how{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:30px 0 10px}
+.ats-how div{background:#fff;border:1px solid #E3DACA;border-radius:18px;padding:18px}
+.ats-how i{font-style:normal;width:34px;height:34px;border-radius:10px;background:#0E3B2C;color:#E2C27E;display:grid;place-items:center;font:700 15px Alexandria;margin-bottom:10px}
+.ats-how b{display:block;font:700 16px Alexandria;color:#0F1A15}
+.ats-how span{display:block;font-size:14px;color:#6A746E;line-height:1.8;margin-top:4px}
+.ats-research{margin-top:40px}
+.ats-research h2{font:800 clamp(24px,3.4vw,32px) Alexandria;color:#0F1A15}
+.ats-research .sub{max-width:720px}
+.rs-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:16px}
+.rs-grid article{background:#fff;border:1px solid #E3DACA;border-radius:18px;padding:18px;display:flex;flex-direction:column;gap:6px}
+.rs-grid b{font:700 16.5px Alexandria;color:#0F1A15}
+.rs-grid p{font-size:14px;color:#33413A;line-height:1.85}
+.rs-grid cite{font-style:normal;font-size:12.5px;color:#6A746E;direction:ltr;text-align:right}
+.rs-grid a{font-size:13px;font-weight:700;color:#18563F;text-decoration:none}
+.rt{align-self:flex-start;font-size:11.5px;font-weight:700;border-radius:999px;padding:3px 10px}
+.rt.peer{background:#0E3B2C;color:#E2C27E}.rt.report{background:#F4EAD2;color:#8a6a22}.rt.docs{background:#E3F1EA;color:#15803d}
+#res{margin-top:20px}
+@media (max-width:860px){.ats-hero{grid-template-columns:1fr}.ats-how{grid-template-columns:1fr}.rs-grid{grid-template-columns:1fr}}
+@media (max-width:520px){.ats-stats{grid-template-columns:1fr}.ats-stats div{display:grid;grid-template-columns:86px 1fr;align-items:center;column-gap:10px}.ats-stats a{grid-column:2}#up{padding:18px!important}}
 </style>
 <!-- GA4 -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-JFNHEZNBXT"></script>
@@ -140,31 +192,44 @@ document.addEventListener('click',function(e){var a=e.target.closest&&e.target.c
 <header class="top"><div class="in">
   <div class="top-start"><a class="back" id="backBtn" href="index.html#services" aria-label="رجوع"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>رجوع</span></a>
   <a class="brand" href="index.html"><img src="logo.png" alt=""><span>سين</span></a></div>
-  <div class="top-act"><a class="cta" href="https://wa.me/966594827253?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%20%D8%B3%D9%8A%D9%86%D8%8C%20%D8%A3%D8%B1%D8%BA%D8%A8%20%D9%81%D9%8A%20%D8%B7%D9%84%D8%A8%3A%20%D8%B3%D9%8A%D8%B1%D8%A9%20%D8%B0%D8%A7%D8%AA%D9%8A%D8%A9%20%D8%A7%D8%AD%D8%AA%D8%B1%D8%A7%D9%81%D9%8A%D8%A9%20-%20%D9%8A%D8%A8%D8%AF%D8%A3%20%D9%85%D9%86%2050%20%D8%B1.%D8%B3" target="_blank" rel="noopener">اطلب الآن</a></div>
+  <div class="top-act"><a class="cartbtn" href="track.html" aria-label="تتبّع طلبك" title="تتبّع طلبك"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 8 12 3 3 8v8l9 5 9-5z"/><path d="m3 8 9 5 9-5M12 13v8"/></svg></a><a class="cta" href="order.html?s=cv">اطلب الآن</a></div>
 </div></header>
-<main>
+<main class="ats">
 <nav class="crumbs"><a href="index.html">الرئيسية</a> ‹ <a href="cv.html">سيرة ذاتية احترافية</a> ‹ افحص سيرتك</nav>
-<section class="hero">
-<span class="badge">✦ أداة مجانية من سين</span>
-<h1>هل تعدّي سيرتك أنظمة الفرز؟</h1>
-<p class="lead">ارفع سيرتك الذاتية وتعرف نسبة تقديرية لتوافقها مع أنظمة ATS، وتشوف بعينك وش يقرأ منها النظام، مع ملاحظات واضحة وكيف تصلح كل وحدة.</p>
+<section class="ats-hero">
+ <div class="ats-intro">
+  <span class="badge">أداة مجانية · مبنية على أبحاث وأدلة منشورة</span>
+  <h1>هل تعدّي سيرتك<br>أنظمة الفرز؟</h1>
+  <p class="lead">ارفع سيرتك وشوف بعينك وش يقرأ منها نظام الفرز (ATS)، ونسبة تقديرية لقراءتها، وملاحظات مسؤول التوظيف مع طريقة إصلاح كل وحدة.</p>
+  <div class="ats-stats">
+   <div><b>97.8%</b><span>من أكبر 500 شركة أمريكية تستخدم أنظمة فرز</span><a href="#sources">Jobscan 2025</a></div>
+   <div><b>+90%</b><span>من الشركات تعتمد عليها في التصفية الأولى</span><a href="#sources">هارفارد وأكسنتشر 2021</a></div>
+   <div><b>7.4 ث</b><span>أول نظرة من مسؤول التوظيف على سيرتك</span><a href="#sources">Ladders 2018</a></div>
+  </div>
+ </div>
+ <section class="card" id="up">
+  <b class="up-t">افحص سيرتك الحين</b>
+  <label class="drop" id="drop">
+   <div class="ic"><svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="m17 8-5-5-5 5M12 3v12"/></svg></div>
+   <b>اسحب سيرتك هنا أو اضغط للاختيار</b>
+   <small>PDF أو Word ‏(docx) · عربي أو إنجليزي</small>
+   <input type="file" id="f" accept=".pdf,.docx,application/pdf,application/vnd.openxmlformats-officedocument.wordprocessingml.document">
+  </label>
+  <div class="file" id="fname"></div>
+  <details class="jd"><summary>+ الصق وصف الوظيفة <span>(اختياري، يطلع لك تطابقك معها)</span></summary>
+  <textarea id="jd" placeholder="انسخ إعلان الوظيفة اللي بتقدم عليها والصقه هنا"></textarea>
+  </details>
+  <button class="btn" id="go" disabled>افحص سيرتي</button>
+  <button class="btn ghost" id="demo">جرّب بسيرة نموذجية</button>
+  <div class="err" id="err"></div>
+  <div class="trust"><span>🔒 الملف ما يطلع من جهازك</span><span>⚡ خلال ثواني</span><span>✦ مجاني</span></div>
+ </section>
 </section>
 
-<section class="card" id="up">
-<label class="drop" id="drop">
-<div class="ic">⇪</div>
-<b>اسحب سيرتك هنا أو اضغط للاختيار</b>
-<small>PDF أو Word ‏(docx) · عربي أو إنجليزي</small>
-<input type="file" id="f" accept=".pdf,.docx,application/pdf,application/vnd.openxmlformats-officedocument.wordprocessingml.document">
-</label>
-<div class="file" id="fname"></div>
-<details class="jd"><summary>+ الصق وصف الوظيفة <span>(اختياري، يطلع لك تطابقك معها)</span></summary>
-<textarea id="jd" placeholder="انسخ إعلان الوظيفة اللي بتقدم عليها والصقه هنا"></textarea>
-</details>
-<button class="btn" id="go" disabled>افحص سيرتي</button>
-<button class="btn ghost" id="demo">جرّب بسيرة نموذجية</button>
-<div class="err" id="err"></div>
-<div class="trust"><span>🔒 الملف ما يطلع من جهازك</span><span>⚡ النتيجة خلال ثواني</span><span>✦ مجاني</span></div>
+<section class="ats-how">
+ <div><i>1</i><b>نقرأ ملفك مثل النظام</b><span>نحوّل السيرة لنص عادي بنفس الطريقة اللي تستخدمها أنظمة الفرز، داخل جهازك.</span></div>
+ <div><i>2</i><b>نعبّي 9 خانات أساسية</b><span>الاسم والتواصل والمسميات والشركات والتواريخ والتعليم والمهارات، ونشوف وش ضاع.</span></div>
+ <div><i>3</i><b>نعطيك ملاحظات المسؤول</b><span>أكثر من 25 فحص لأخطاء يلاحظها مسؤول التوظيف، مع طريقة الإصلاح.</span></div>
 </section>
 
 <div class="loading" id="load"><svg viewBox="0 0 100 100"><path d="M50 2 C54 34 66 46 98 50 C66 54 54 66 50 98 C46 66 34 54 2 50 C34 46 46 34 50 2 Z" fill="#cbb682"/></svg><div>نقرأ سيرتك…</div></div>
@@ -202,20 +267,30 @@ document.addEventListener('click',function(e){var a=e.target.closest&&e.target.c
 <section class="card sell">
 <h2>نصلحها لك ونخليها تعدّي ✦</h2>
 <p>سيرة ذاتية احترافية متوافقة مع أنظمة الفرز، بالعربي أو الإنجليزي، تسليم خلال ساعات.</p>
-<a class="btn" id="wa" href="https://wa.me/966594827253" target="_blank" rel="noopener">اطلبها على واتساب · من 50 ريال</a>
+<a class="btn" id="wa" href="order.html?s=cv">اطلبها · من 40 ريال بعد الخصم</a>
 <button class="btn ghost" id="again" style="max-width:360px;margin:10px auto 0">افحص سيرة ثانية</button>
 </section>
 <p class="note">نسبة القراءة تقيس كم معلومة قدرنا نسحبها من ملفك بنفس طريقة أنظمة الفرز. كل شركة نظامها يختلف، فالنتيجة ما تضمن القبول، لكنها توريك وين الضعف.</p>
 </div>
-<section class="card src">
-<h3>على وش مبني الفحص؟</h3>
-<p class="sub">المعايير مبنية على طريقة قراءة أنظمة الفرز للملفات، وعلى دراسات منشورة عن التوظيف:</p>
-<div class="facts">
-<div><b>97.8%</b><p>من أكبر 500 شركة أمريكية تستخدم نظام فرز للسير الذاتية.</p><a href="https://www.jobscan.co/blog/fortune-500-use-applicant-tracking-systems/" target="_blank" rel="noopener">تقرير جوب سكان 2025</a></div>
-<div><b>+90%</b><p>من الشركات اللي عندها هالأنظمة تعتمد عليها في أول تصفية وترتيب للمتقدمين.</p><a href="https://hbswk.hbs.edu/item/how-to-tap-the-talent-automated-hr-platforms-miss" target="_blank" rel="noopener">كلية هارفارد للأعمال وأكسنتشر 2021</a></div>
-<div><b>7.4 ثانية</b><p>متوسط أول نظرة من مسؤول التوظيف على السيرة، والسير المزحومة والمتعددة الأعمدة أضعف.</p><a href="https://www.theladders.com/career-advice/is-it-true-that-recruiters-reject-a-resume-in-six-seconds" target="_blank" rel="noopener">دراسة تتبّع العين من لادرز 2018</a></div>
-</div>
-<p class="fine">الأرقام من مصادرها المذكورة، والنسبة اللي تطلع لك تقديرية من أداة سين وليست شهادة من أي جهة.</p>
+
+<section class="ats-research" id="sources">
+ <h2>مبنية على أبحاث وأدلة منشورة</h2>
+ <p class="sub">ما اخترعنا المعايير من عندنا. كل فحص في الأداة مربوط بدراسة محكّمة، أو تقرير بحثي، أو دليل رسمي من شركات أنظمة الفرز ومراكز التوظيف في الجامعات.</p>
+ <div class="rs-grid">
+  <article><span class="rt peer">دراسة محكّمة</span><b>كيف يقرأ مسؤولو التوظيف السيرة</b><p>دراسة عن كيف يستخدم مسؤولو التوظيف معلومات السيرة (التعليم والخبرة والأنشطة) لتقييم الخريجين. عليها بنينا الخانات والأقسام اللي نفحصها.</p><cite>Cole, Rubin, Feild &amp; Giles (2007). <i>Applied Psychology</i>, 56(2), 319–343.</cite><a href="https://scholars.depaul.edu/en/publications/recruiters-perceptions-and-use-of-applicant-r%C3%A9sum%C3%A9-information-sc/" target="_blank" rel="noopener">المصدر ↗</a></article>
+  <article><span class="rt peer">دراسة محكّمة</span><b>كل نظام فرز يختلف</b><p>بحث حلّل شركات أنظمة التقييم الآلي ولقى إن أغلبها ما يفصح عن طريقة تقييمه. عشان كذا نسبتنا تقديرية، ونركز على اللي يخرب القراءة في كل الأنظمة.</p><cite>Raghavan, Barocas, Kleinberg &amp; Levy (2020). ACM FAT* Conference.</cite><a href="https://arxiv.org/abs/1906.09208" target="_blank" rel="noopener">المصدر ↗</a></article>
+  <article><span class="rt report">تقرير بحثي</span><b>الأنظمة هي أول تصفية</b><p>أكثر من 90% من الشركات اللي تستخدم هالأنظمة تعتمد عليها في أول تصفية وترتيب للمتقدمين، وكثير من المؤهلين ينرفضون بسبب شكل السيرة.</p><cite>Harvard Business School &amp; Accenture (2021). <i>Hidden Workers: Untapped Talent</i>.</cite><a href="https://hbswk.hbs.edu/item/how-to-tap-the-talent-automated-hr-platforms-miss" target="_blank" rel="noopener">المصدر ↗</a></article>
+  <article><span class="rt report">دراسة تتبّع العين</span><b>7.4 ثانية للنظرة الأولى</b><p>مسؤول التوظيف يقرر يكمل أو لا خلال ثواني، والسير المزحومة والمتعددة الأعمدة أضعف. منها فحص الفقرات الطويلة والترتيب.</p><cite>Ladders Inc. (2018). Eye-Tracking Study.</cite><a href="https://www.theladders.com/career-advice/is-it-true-that-recruiters-reject-a-resume-in-six-seconds" target="_blank" rel="noopener">المصدر ↗</a></article>
+  <article><span class="rt docs">دليل رسمي</span><b>الصيغ والحجم والجداول</b><p>Greenhouse تقبل PDF وWord وما تقرأ سيرة فوق 2.5MB، وLever توضح إن السيرة تتحول لنص عادي فاللي داخل الجداول والهيدر يضيع.</p><cite>Greenhouse Support · Lever Help Center</cite><a href="https://support.greenhouse.io/hc/en-us/articles/200989175-Unsuccessful-resume-parse" target="_blank" rel="noopener">Greenhouse ↗</a> <a href="https://help.lever.co/hc/en-us/articles/20087345054749" target="_blank" rel="noopener">Lever ↗</a></article>
+  <article><span class="rt docs">دليل جامعي</span><b>أفعال الإنجاز والأرقام</b><p>أدلة جامعة هارفارد تنصح تبدأ كل نقطة بفعل إنجاز وتبعد عن «مسؤول عن»، ومنها فحص البدايات الضعيفة والإنجازات بدون أرقام.</p><cite>Harvard Office of Career Services · Harvard Chan School</cite><a href="https://careerservices.fas.harvard.edu/resources/create-a-strong-resume" target="_blank" rel="noopener">المصدر ↗</a></article>
+  <article><span class="rt report">تقرير سوق</span><b>انتشار أنظمة الفرز</b><p>97.8% من شركات Fortune 500 تستخدم نظام فرز، وأخطاء التنسيق الشائعة مثل الرموز والخطوط والصور تخرب القراءة.</p><cite>Jobscan (2025)</cite><a href="https://www.jobscan.co/blog/fortune-500-use-applicant-tracking-systems/" target="_blank" rel="noopener">المصدر ↗</a></article>
+ </div>
+ <details class="how"><summary>كيف نحسب نسبة القراءة؟</summary>
+<p>نقرأ ملفك داخل جهازك بنفس الطريقة اللي تحوّل فيها أنظمة الفرز السيرة لنص عادي، وبعدها نحاول نعبي 9 خانات أساسية. كل خانة لها وزن، والنسبة هي مجموع اللي قدرنا نقراه صح:</p>
+<table class="w"><tr><td>المسميات الوظيفية</td><td>15</td><td>تواريخ الخبرات</td><td>15</td></tr><tr><td>الاسم</td><td>10</td><td>الإيميل</td><td>10</td></tr><tr><td>الجوال</td><td>10</td><td>جهات العمل</td><td>10</td></tr><tr><td>التعليم</td><td>10</td><td>المهارات</td><td>10</td></tr><tr><td>ترتيب الأقسام</td><td>10</td><td></td><td></td></tr></table>
+<p>إذا الملف صورة أو الحروف العربية تطلع مقطعة، النسبة ما تتعدى 30% مهما كان المحتوى، لأن النظام فعليًا ما يقدر يقرأ شي. ملاحظات مسؤول التوظيف ما تدخل في النسبة.</p>
+</details>
+ <p class="fine">🔒 ملفك يُقرأ داخل متصفحك وما يُرفع لأي سيرفر. الأداة مبنية على المصادر المذكورة، لكنها اجتهاد من سين وليست أداة رسمية لأي نظام توظيف. النتيجة ما تضمن القبول، بس توريك وين الضعف بالضبط.</p>
 </section>
 </main>
 <footer>
@@ -443,6 +518,19 @@ function analyze(d,jd,meta){
  if(!/linkedin/i.test(raw+extra))N('tip','أضف رابط لينكدإن','كثير من المسؤولين يشيكون على لينكدإن قبل المقابلة.','حطه تحت الإيميل والجوال.');
  const latin=(raw.match(/[A-Za-z]/g)||[]).length,arab=(raw.match(/[؀-ۿ]/g)||[]).length;if(arab>latin*4&&arab>200)N('tip','سوّ نسخة إنجليزية','كثير من الشركات أنظمتها وإعلاناتها بالإنجليزي.','جهّز نسخة إنجليزية من نفس السيرة.');
  const eY=Math.max(0,...[...eT.matchAll(/(?:19|20)\d{2}/g)].map(m=>+m[0]));if((noExp||years<1)&&eY>=new Date().getFullYear()-2&&!/(معدل|gpa|تقدير)/i.test(T))N('tip','أضف معدلك','لحديثي التخرج، المعدل العالي يفرق.','إذا معدلك عالي اكتبه جنب التخصص.');
+ // ===== فحوصات إضافية (مبنية على أدلة الجامعات وأنظمة الفرز) =====
+ const WEAK=['مسؤول عن','مسؤوله عن','كنت مسؤول','من مهامي','مهامي تشمل','المهام تشمل','تتلخص مهامي','responsible for','duties included','duties include','tasks included','tasks include','worked on','helped with'];
+ const wk=WEAK.filter(w=>T.includes(norm(w)));
+ if(wk.length)N('yel','بدايات ضعيفة للنقاط',`لقينا «${wk.slice(0,2).join('»، «')}». هالصيغة تسرد مهام بدل ما توضح وش أنجزت، وأدلة هارفارد للسير تنصح تبدّلها بأفعال.`,'ابدأ كل نقطة بفعل إنجاز: قدت، طورت، رفعت، خفّضت، أطلقت… مثل «رفعت المبيعات 18% خلال 6 أشهر».');
+ const sym=(raw.match(/[☀-➿⬀-⯿\u{1F300}-\u{1FAFF}-]/gu)||[]).filter(c=>!/[•▪●◦‣∙·✓✔➢►■□◆➤→]/.test(c));
+ if(sym.length>=3)N('yel','رموز وأيقونات داخل النص',`فيه ${sym.length} رمز مثل «${[...new Set(sym)].slice(0,4).join(' ')}». أنظمة الفرز تحوّل النص لنص عادي، وهالرموز تطلع لها مربعات أو تخرب السطر.`,'اكتب «الجوال:» و«الإيميل:» كنص بدل الأيقونات، واستخدم نقاط عادية (•) فقط.');
+ const CITY=['الرياض','جده','مكه','المدينه المنوره','الدمام','الخبر','الظهران','الاحساء','الهفوف','الطائف','تبوك','بريده','القصيم','عنيزه','ابها','خميس مشيط','حائل','جازان','نجران','الجبيل','ينبع','الباحه','عرعر','سكاكا','الجوف','القطيف','حفر الباطن','المجمعه','الخرج','riyadh','jeddah','jiddah','makkah','mecca','madinah','medina','dammam','khobar','dhahran','al ahsa','hofuf','taif','tabuk','buraydah','qassim','abha','khamis mushait','hail','jazan','jizan','najran','jubail','yanbu','saudi arabia','ksa','السعوديه','المملكه العربيه السعوديه','dubai','abu dhabi','doha','kuwait','manama','muscat','cairo','amman','دبي','ابوظبي','الدوحه','الكويت','المنامه','مسقط','القاهره','عمان'];
+ if(!CITY.some(c=>T.includes(c)))N('tip','اكتب مدينتك','ما لقينا مدينة في سيرتك. كثير من مسؤولي التوظيف يفلترون المتقدمين حسب المدينة، والنظام يسحبها من رأس السيرة.','أضف المدينة جنب الجوال والإيميل، مثل «الرياض، السعودية».');
+ const enW=raw.split(/\s+/).filter(w=>/^[A-Za-z]/.test(w));
+ const iMe=(raw.match(/\b(I|me|my|I'm|I've)\b/g)||[]).length;
+ if(enW.length>120&&iMe>=4)N('tip','ضمائر المتكلم بالإنجليزي',`استخدمت I / my / me ${iMe} مرات. السير الإنجليزية تُكتب بدون ضمير المتكلم.`,'ابدأ النقطة بالفعل مباشرة: «Led a team of 6…» بدل «I led a team of 6…».');
+ const words=raw.split(/\s+/).filter(w=>/[\p{L}]/u.test(w)).length;
+ if(!isImg&&!broken&&words>0&&words<140)N('yel','سيرتك قصيرة جدًا',`فيها تقريبًا ${words} كلمة. النظام يبحث عن كلمات مفتاحية، وكل ما كانت السيرة أقصر قلّت فرص التطابق.`,'وسّع كل خبرة بنقطتين إلى أربع نقاط فيها نتيجة أو رقم، وأضف المهارات المرتبطة بالوظيفة.');
  const fn=(meta.fileName||'').replace(/\.[^.]+$/,'');if(fn&&(/^(cv|resume|سيره|سيرة|السيره|السيرة|سيرتي|document|untitled|new|مستند|scan|img|file)[\s_\-\d()]*$/i.test(fn)||/^[\d\s_\-()]+$/.test(fn)))N('tip','غيّر اسم الملف',`«${meta.fileName}» ما يوضح مين أنت.`,'سمّه باسمك ومسماك، مثل «الاسم-المسمى.pdf».');
  const notices=[];if(meta.size>2*1024*1024)notices.push(`حجم الملف ${(meta.size/1048576).toFixed(1)}MB. بعض الأنظمة مثل Greenhouse ما تقبل فوق 2.5MB، صغّره.`);
 
@@ -535,4 +623,5 @@ $('#demo').onclick=()=>{
 };
 window.__ats={analyze,readPdf,readDocx,run};
 </script>
+<script src="assets/inner.js?v=202611260907"></script>
 </body></html>

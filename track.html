@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<title>تتبّع طلبك | سين</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="تابع حالة طلبك في سين برقم الطلب وآخر 4 أرقام من جوالك.">
+<meta name="theme-color" content="#F7F3EC">
+<link rel="canonical" href="https://justseensa.com/track.html">
+<link rel="icon" type="image/png" href="logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Alexandria:wght@500;600;700;800&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/site.css?v=202611260907">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JFNHEZNBXT"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-JFNHEZNBXT');document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a[href*="wa.me"]');if(a)gtag('event','whatsapp_click',{link_text:(a.textContent||'').trim().slice(0,60),page_path:location.pathname});},true);</script>
+<style>
+.page{padding:40px 0 90px}
+.box{max-width:640px;margin:0 auto}
+.box h1{font-size:clamp(28px,4.4vw,40px);font-weight:800;margin:12px 0 8px;text-align:center}
+.box>p{color:var(--muted);text-align:center;margin:0 0 26px}
+.panel{padding:clamp(20px,4vw,30px)}
+.res{margin-top:18px;padding:clamp(20px,4vw,30px)}
+.res .top{display:flex;justify-content:space-between;gap:12px;align-items:flex-start;flex-wrap:wrap;margin-bottom:20px}
+.res .top b{font-family:var(--f-head);font-size:20px;display:block}
+.res .top small{color:var(--muted)}
+.badge{font-size:13px;font-weight:700;padding:6px 14px;border-radius:999px;color:#fff}
+.tl{list-style:none;margin:0;padding:0;position:relative}
+.tl li{display:flex;gap:14px;padding:0 0 22px;position:relative;color:var(--muted)}
+.tl li::before{content:"";position:absolute;inset-inline-start:13px;top:28px;bottom:0;width:2px;background:var(--line)}
+.tl li:last-child::before{display:none}
+.tl i{width:28px;height:28px;border-radius:50%;border:2px solid var(--line2);background:var(--surface);flex:none;display:grid;place-items:center;font-style:normal;font-size:13px;position:relative;z-index:1}
+.tl li.done{color:var(--ink)}.tl li.done i{background:var(--brand);border-color:var(--brand);color:#fff}
+.tl li.done::before{background:var(--brand)}
+.tl li.now{color:var(--ink);font-weight:700}.tl li.now i{border-color:var(--gold);background:var(--gold-soft);box-shadow:0 0 0 5px rgba(194,154,69,.15)}
+.tl b{display:block;font-size:15.5px}.tl small{font-weight:400;color:var(--muted)}
+.money{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:6px}
+.money div{background:var(--bg);border:1px solid var(--line);border-radius:14px;padding:12px;text-align:center}
+.money small{color:var(--muted);font-size:12.5px;display:block}
+.money b{font-family:var(--f-head);font-size:20px}
+.stars{display:flex;gap:6px;flex-direction:row-reverse;justify-content:flex-end}
+.stars input{display:none}
+.stars label{font-size:32px;color:var(--line2);cursor:pointer;line-height:1}
+.stars input:checked~label,.stars label:hover,.stars label:hover~label{color:var(--gold)}
+.alert{background:#FEF3F2;border:1px solid #FECDCA;color:var(--err);border-radius:14px;padding:12px 16px;font-size:14px;margin-top:14px}
+.note{background:var(--gold-soft);border:1px solid #EAD9AE;border-radius:14px;padding:12px 16px;margin:0 0 18px;font-size:14.5px}.note b{display:block;font-size:12.5px;color:#8a6a22;margin-bottom:2px}
+.files{display:flex;flex-direction:column;gap:8px;margin-top:18px}.files a{display:flex;align-items:center;gap:10px;background:var(--bg);border:1px solid var(--line);border-radius:12px;padding:11px 14px;text-decoration:none;color:var(--ink);font-weight:600;font-size:14px}.files a span{flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.files a:hover{border-color:var(--gold)}
+.forgot{text-align:center;margin:14px 0 0;font-size:14px}.forgot a{color:var(--muted);font-weight:600}
+.okmsg{background:#E3F1EA;border:1px solid #B7DCC7;color:var(--ok);border-radius:14px;padding:12px 16px;font-size:14px;margin-top:14px}
+</style>
+</head>
+<body>
+<header class="hdr scrolled"><div class="wrap">
+  <a class="logo" href="index.html"><img src="logo.png" alt="" width="40" height="40"><span><b>سين</b><small>تتبّع طلبك</small></span></a>
+  <div class="hdr-act" style="margin-inline-start:auto"><a class="btn btn-primary btn-sm" href="order.html" style="display:inline-flex">طلب جديد</a></div>
+</div></header>
+
+<main class="page"><div class="wrap"><div class="box">
+  <div style="text-align:center"><span class="eyebrow">تتبّع الطلب</span></div>
+  <h1>وين وصل طلبك؟</h1>
+  <p>اكتب رقم الطلب اللي وصلك (مثل SN-12345) وآخر 4 أرقام من جوالك.</p>
+
+  <form class="card panel" id="f">
+    <div class="row2">
+      <div class="field"><label for="code">رقم الطلب</label><input class="inp" id="code" placeholder="SN-12345" dir="ltr" style="text-align:right;text-transform:uppercase" required autocomplete="off"></div>
+      <div class="field"><label for="p4">آخر 4 أرقام من الجوال</label><input class="inp" id="p4" inputmode="numeric" maxlength="4" placeholder="1234" dir="ltr" style="text-align:right" required></div>
+    </div>
+    <button class="btn btn-primary" style="width:100%" id="go">اعرض حالة الطلب</button>
+    <div class="alert" id="err" hidden></div>
+    <p class="forgot"><a id="forgot" target="_blank" rel="noopener" href="#">نسيت رقم الطلب؟</a></p>
+  </form>
+
+  <div class="card res" id="res" hidden></div>
+</div></div></main>
+
+<script src="assets/config.js?v=202611260907"></script>
+<script src="assets/catalog.js?v=202611260907"></script>
+<script>
+(()=>{
+const $=s=>document.querySelector(s), S=window.SEEN;
+const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const fmt=d=>d?new Date(d).toLocaleDateString('ar-SA-u-ca-gregory',{day:'numeric',month:'long',hour:'numeric',minute:'2-digit'}):'';
+const NOTE={new:'وصلنا طلبك وبنراجعه ونرسل لك السعر على واتساب',quoted:'أرسلنا لك السعر على واتساب، ننتظر تأكيدك والدفع',paid:'استلمنا الدفع وطلبك في الطابور',in_progress:'نشتغل على طلبك الحين',review:'أرسلنا لك معاينة، راجعها وقل لنا رأيك',delivered:'سلّمناك الطلب، بالتوفيق!',cancelled:'تم إلغاء الطلب، تواصل معنا لو عندك سؤال'};
+const dlUrl=p=>`${window.SEEN_CONFIG.SUPABASE_URL}/storage/v1/object/public/deliveries/${p.split('/').map(encodeURIComponent).join('/')}?download=`;
+const prm=new URLSearchParams(location.search);
+let last={}; try{last=JSON.parse(localStorage.getItem('seen-last-order')||'{}')}catch(e){}
+$('#code').value=prm.get('code')||last.code||''; if(last.code&&last.code===$('#code').value) $('#p4').value=last.p4||'';
+
+$('#forgot').href=S.wa('مرحبًا سين، نسيت رقم طلبي وأبغى أعرف وين وصل. اسمي: ');
+if(!S.dbReady()){ $('#f').innerHTML=`<p style="margin:0;text-align:center">تتبّع الطلبات بيكون متاح قريب. حاليًا تقدر تسأل عن طلبك على <a href="${S.wa('مرحبًا سين، أبغى أعرف وين وصل طلبي')}" target="_blank" rel="noopener">واتساب</a>.</p>`; return; }
+
+async function look(e){
+  e&&e.preventDefault(); $('#err').hidden=true;
+  const code=$('#code').value.trim().toUpperCase(), p4=$('#p4').value.trim();
+  if(!/^SN-\d{5}$/.test(code)||!/^\d{4}$/.test(p4)){ $('#err').textContent='تأكد من رقم الطلب (SN-12345) وآخر 4 أرقام'; $('#err').hidden=false; return; }
+  $('#go').disabled=true;
+  try{ const r=await S.rpc('track_order',{p_code:code,p_phone4:p4}); const o=Array.isArray(r)?r[0]:r;
+    if(!o){ $('#res').hidden=true; $('#err').textContent='ما لقينا طلب بهالبيانات، تأكد منها أو اضغط «نسيت رقم الطلب؟» تحت'; $('#err').hidden=false; return; }
+    render(o,code,p4); try{localStorage.setItem('seen-last-order',JSON.stringify({code,p4}))}catch(e){}
+  }catch(err){ $('#err').textContent='صار خطأ، جرّب بعد شوي'; $('#err').hidden=false; }
+  finally{ $('#go').disabled=false; }
+}
+function render(o,code,p4){
+  const st=S.STATUS[o.status]||S.STATUS.new, flow=S.STATUS_FLOW, idx=flow.indexOf(o.status), cancelled=o.status==='cancelled';
+  const steps=flow.map((k,i)=>{const cls=cancelled?'':(i<idx||o.status==='delivered'?'done':i===idx?'now':''); return `<li class="${cls}"><i>${cls==='done'?'✓':i+1}</i><div><b>${S.STATUS[k][0]}</b>${i===idx?`<small>${NOTE[k]}</small>`:''}</div></li>`;}).join('');
+  const rem=o.price?Math.max(0,o.price-(o.paid||0)):null;
+  $('#res').innerHTML=`<div class="top"><div><b>${esc(o.service_name)}${o.tier?` (${esc(o.tier)})`:''}</b><small dir="ltr">${esc(o.code)}</small> · <small>${fmt(o.created_at)}</small></div><span class="badge" style="background:${st[2]}">${st[0]}</span></div>
+    ${o.customer_note?`<div class="note"><b>رسالة من سين</b>${esc(o.customer_note)}</div>`:''}
+    ${cancelled?`<p>${NOTE.cancelled}</p>`:`<ol class="tl">${steps}</ol>`}
+    ${o.price?`<div class="money"><div><small>السعر</small><b>${o.price}</b></div><div><small>المدفوع</small><b>${o.paid||0}</b></div><div><small>المتبقي</small><b>${rem}</b></div></div>`:''}
+    ${o.deadline?`<p style="color:var(--muted);font-size:14px;margin:14px 0 0">موعد التسليم المتفق عليه: ${new Date(o.deadline).toLocaleDateString('ar-SA-u-ca-gregory',{day:'numeric',month:'long'})}</p>`:''}
+    ${(o.delivery||[]).length?`<div class="files"><b style="font-family:var(--f-head)">ملفاتك</b>${o.delivery.map(f=>`<a href="${dlUrl(f.path)}" target="_blank" rel="noopener" download><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12m0 0-4-4m4 4 4-4M5 21h14"/></svg><span>${esc(f.name)}</span></a>`).join('')}</div>`:''}
+    <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:18px"><a class="btn btn-ghost btn-sm" target="_blank" rel="noopener" href="${S.wa(`مرحبًا سين، بخصوص طلبي ${o.code}`)}">اسألنا عن طلبك</a></div>
+    ${o.status==='delivered'&&!o.has_review?`<hr style="border:0;border-top:1px dashed var(--line);margin:24px 0">
+      <form id="rv"><b style="font-family:var(--f-head);font-size:18px">كيف كانت تجربتك يا ${esc(o.customer_name||'')}؟</b><p style="color:var(--muted);margin:4px 0 12px;font-size:14px">رأيك يساعد غيرك يختار، ويساعدنا نتحسن</p>
+      <div class="stars">${[5,4,3,2,1].map(n=>`<input type="radio" name="r" id="s${n}" value="${n}"><label for="s${n}" aria-label="${n} من 5">★</label>`).join('')}</div>
+      <div class="field" style="margin-top:12px"><textarea class="inp" id="rvBody" maxlength="600" placeholder="اكتب تجربتك باختصار" style="min-height:100px"></textarea></div>
+      <div class="field"><input class="inp" id="rvName" maxlength="40" placeholder="الاسم اللي يظهر (اختياري، مثل: نورة – طالبة)"></div>
+      <button class="btn btn-gold" id="rvBtn">أرسل التقييم</button><div id="rvMsg"></div></form>`:''}
+    ${o.has_review?`<div class="okmsg">شكرًا على تقييمك 🤍</div>`:''}`;
+  $('#res').hidden=false;
+  const f=$('#rv'); if(f) f.addEventListener('submit',async ev=>{ev.preventDefault(); const r=+(f.querySelector('input[name=r]:checked')||{}).value, b=$('#rvBody').value.trim();
+    if(!r||b.length<3){$('#rvMsg').innerHTML='<div class="alert">اختر عدد النجوم واكتب تجربتك</div>';return;}
+    $('#rvBtn').disabled=true; try{await S.rpc('submit_review',{p_code:code,p_phone4:p4,p_rating:r,p_body:b,p_name:$('#rvName').value.trim()||null}); f.outerHTML='<div class="okmsg">شكرًا لك 🤍 تقييمك صار ظاهر في موقع سين.</div>'; if(window.gtag) gtag('event','review_submitted',{rating:r});}catch(e){$('#rvMsg').innerHTML=`<div class="alert">${esc(e.message)}</div>`;$('#rvBtn').disabled=false;}});
+}
+$('#f').addEventListener('submit',look);
+if($('#code').value&&$('#p4').value) look();
+})();
+</script>
+</body>
+</html>
