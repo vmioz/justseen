@@ -153,3 +153,7 @@ body::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;ba
 .toast{pointer-events:none}.toast.show{pointer-events:auto}
 .toast a{color:var(--gold2);font-weight:700;margin-inline-start:6px}
 @media (max-width:620px){.cartbtn{width:38px;height:38px}}
+
+/* الجوال الصغير: مساحة لأيقونة التتبع */
+@media (max-width:430px){.hdr-act{gap:6px}.hdr-act .cartbtn,.hdr-act .lang-btn,.hdr-act .burger{width:36px;height:36px}.logo{min-width:0}.logo small{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:34vw}}
+@media (max-width:370px){.logo small{display:none}}
