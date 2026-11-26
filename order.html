@@ -11,7 +11,7 @@
 <meta property="og:title" content="سلتك وطلبك | سين"><meta property="og:image" content="https://justseensa.com/og-image.jpg"><meta property="og:locale" content="ar_SA">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Alexandria:wght@500;600;700;800&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/site.css?v=202611262031">
+<link rel="stylesheet" href="assets/site.css?v=202611262047">
 <script>document.documentElement.classList.add('js')</script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-JFNHEZNBXT"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-JFNHEZNBXT');document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a[href*="wa.me"]');if(a)gtag('event','whatsapp_click',{link_text:(a.textContent||'').trim().slice(0,60),page_path:location.pathname});},true);</script>
@@ -249,10 +249,10 @@ aside.sum{position:sticky;top:92px;padding:22px;display:flex;flex-direction:colu
 </main>
 <div class="toast" id="toast"></div>
 
-<script src="assets/config.js?v=202611262031"></script>
-<script src="assets/catalog.js?v=202611262031"></script>
-<script src="assets/details.js?v=202611262031"></script>
-<script src="assets/cart.js?v=202611262031"></script>
+<script src="assets/config.js?v=202611262047"></script>
+<script src="assets/catalog.js?v=202611262047"></script>
+<script src="assets/details.js?v=202611262047"></script>
+<script src="assets/cart.js?v=202611262047"></script>
 <script>
 (()=>{
 const $=s=>document.querySelector(s), S=window.SEEN, C=S.cart, DB=S.dbReady();
@@ -401,7 +401,7 @@ const payloadItems=()=>items().map(({s,tier})=>({id:s.id,name:s.name,tier:tier||
 const whenText=()=>whenMode==='asap'?'بأسرع وقت':deadline?fmt(new Date(deadline+'T00:00')):'';
 function summaryText(code){
   const L={ar:'عربي',en:'إنجليزي',both:'عربي وإنجليزي'}[lang], it=payloadItems(), total=it.reduce((a,x)=>a+(x.price||0),0);
-  return [`مرحبًا سين 👋`, code?`رقم الطلب: ${code}`:null, `الخدمات:`, ...it.map(x=>`• ${x.name}${x.tier?` (${x.tier})`:''}${x.price!=null?` - ${x.price} ر.س`:' - حسب النطاق'}`),
+  return [`مرحبًا سين`, code?`رقم الطلب: ${code}`:null, `الخدمات:`, ...it.map(x=>`• ${x.name}${x.tier?` (${x.tier})`:''}${x.price!=null?` - ${x.price} ر.س`:' - حسب النطاق'}`),
     (total&&cpn)?`كود الخصم: ${cpn.code} (${cpn.pct}%)`:null, total?`المجموع التقديري: ${cpn?afterCpn(total):total} ر.س`:null, `الاسم: ${$('#name').value.trim()}`, $('#fieldOf').value.trim()?`التخصص: ${$('#fieldOf').value.trim()}`:null,
     `اللغة: ${L}`, `الموعد: ${whenText()}`, `التفاصيل: ${$('#details').value.trim()}`, (!code&&files.length)?`عندي ${files.length} ملفات بأرسلها هنا`:null].filter(Boolean).join('\n');
 }

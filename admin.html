@@ -9,7 +9,7 @@
 <link rel="icon" href="/favicon.ico" sizes="48x48"><link rel="icon" type="image/png" sizes="192x192" href="/icon-192.png"><link rel="apple-touch-icon" href="/icon-192.png">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Alexandria:wght@600;700;800&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/site.css?v=202611262031">
+<link rel="stylesheet" href="assets/site.css?v=202611262047">
 <style>
 body{background:#F3EFE7}
 .bar{background:var(--ink);color:#fff;position:sticky;top:0;z-index:30}
@@ -94,8 +94,8 @@ pre.sql{background:var(--ink);color:#E2C27E;padding:12px;border-radius:12px;dire
 <body>
 <div id="app"></div>
 <div class="toast" id="toast"></div>
-<script src="assets/config.js?v=202611262031"></script>
-<script src="assets/catalog.js?v=202611262031"></script>
+<script src="assets/config.js?v=202611262047"></script>
+<script src="assets/catalog.js?v=202611262047"></script>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.js"></script>
 <script>
 (async()=>{
@@ -301,15 +301,17 @@ function exportCsv(list){
 async function openOrder(id){
   const o=ORD.find(x=>x.id===id); if(!o) return;
   const first=(o.customer_name||'').split(' ')[0], review=`${C.SITE}/review.html?c=${o.code}&p=${String(o.phone||'').slice(-4)}`, track=`${C.SITE}/track.html?code=${o.code}`;
+  const p4=String(o.phone||'').slice(-4), dd=o.deadline?new Date(o.deadline+'T00:00').toLocaleDateString('ar-SA-u-ca-gregory-nu-latn',{day:'numeric',month:'long'}):'';
+  const pr=+o.price||0, hasFiles=(o.delivery||[]).length>0;
   const T={
-    quote:`هلا ${first} 👋\nوصلنا طلبك ${o.code} (${o.service_name}).\nالسعر: ${o.price||'…'} ر.س${o.deadline?`\nالتسليم: ${o.deadline}`:''}\n${(+o.price||0)>=100?`العربون: ${Math.ceil((+o.price||0)/2)} ر.س والباقي بعد المعاينة`:'الدفع كامل قبل البدء'}\nإذا مناسب لك نرسل لك بيانات الدفع.`,
-    paid:`شكرًا ${first}، استلمنا الدفع ✅\nبدأنا على طلبك ${o.code}، وتقدر تتابعه من هنا:\n${track}\n(اكتب آخر 4 أرقام من جوالك)`,
-    review:`هلا ${first}، جهزت المعاينة لطلبك ${o.code} 👀\n${(o.delivery||[]).length?`تنزلها من هنا:\n${track}\n`:''}راجعها وقل لنا رأيك، ولك 3 تعديلات مجانية.`,
-    track:`هلا ${first} 👋\nتقدر تتابع طلبك ${o.code} من هنا:\n${track}\nاكتب آخر 4 أرقام من جوالك وتشوف وين وصل.`,
-    remind:`هلا ${first} 👋 إن شاء الله عجبك شغلنا في طلبك ${o.code}.\nلو عندك دقيقة، رأيك يفرق معنا كثير:\n${review}\nشكرًا لك 🤍`,
-    done:`تم تسليم طلبك ${o.code} 🎉\nيسعدنا رأيك، قيّمنا من هنا خلال دقيقة:\n${review}\nبالتوفيق يا ${first}!`
+    quote:`هلا ${first}، حياك الله في سين\nوصلنا طلبك رقم ${o.code}\nالخدمة: ${o.service_name}\nالسعر: ${pr||'…'} ر.س${dd?`\nموعد التسليم: ${dd}`:''}\n${pr>=100?`العربون ${Math.ceil(pr/2)} ر.س، والباقي بعد ما تشوف المعاينة.`:'الدفع كامل قبل البدء.'}\nإذا مناسب لك أرسل لك بيانات التحويل.`,
+    paid:`شكرًا ${first}، وصلنا المبلغ ✓\nبدأنا على طلبك ${o.code}، وتقدر تتابعه من هنا:\n${track}\n(اكتب آخر 4 أرقام من جوالك: ${p4})`,
+    track:`هلا ${first}\nتقدر تتابع طلبك ${o.code} من هنا:\n${track}\nاكتب آخر 4 أرقام من جوالك (${p4}) وتشوف وين وصل.`,
+    review:`هلا ${first}، المعاينة جاهزة لطلبك ${o.code}\n${hasFiles?`تنزلها من هنا: ${track}\n`:''}راجعها وقل لي ملاحظاتك، ولك 3 تعديلات مجانية.`,
+    done:`تم تسليم طلبك ${o.code} بحمد الله ✓\nيسعدنا نسمع رأيك، ياخذ منك دقيقة:\n${review}\nبالتوفيق يا ${first}، وننتظرك مرة ثانية.`,
+    remind:`هلا ${first}، إن شاء الله الشغل عجبك\nلو عندك دقيقة، رأيك في طلبك ${o.code} يفرق معنا كثير:\n${review}\nشكرًا لك.`
   };
-  const waTo=t=>`https://wa.me/${o.phone}?text=${encodeURIComponent(t)}`;
+  const waTo=t=>`https://api.whatsapp.com/send?phone=${o.phone}&text=${encodeURIComponent(t)}`;
   document.getElementById('dr').innerHTML=`<div class="drawer" id="dw"><div class="in">
     <div style="display:flex;justify-content:space-between;align-items:center;gap:10px"><div><code dir="ltr">${esc(o.code)}</code> ${pill(o.status)}</div><button class="btn btn-ghost btn-sm" id="cx">إغلاق</button></div>
     <h2 style="margin-top:12px">${esc(o.service_name)}${o.tier?` (${esc(o.tier)})`:''}</h2>
