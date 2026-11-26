@@ -11,7 +11,7 @@
 <meta property="og:title" content="سلتك وطلبك | سين"><meta property="og:image" content="https://justseensa.com/og-image.jpg"><meta property="og:locale" content="ar_SA">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Alexandria:wght@500;600;700;800&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/site.css?v=202611261009">
+<link rel="stylesheet" href="assets/site.css?v=202611261022">
 <script>document.documentElement.classList.add('js')</script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-JFNHEZNBXT"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-JFNHEZNBXT');document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a[href*="wa.me"]');if(a)gtag('event','whatsapp_click',{link_text:(a.textContent||'').trim().slice(0,60),page_path:location.pathname});},true);</script>
@@ -83,7 +83,17 @@
 .files li{display:flex;align-items:center;gap:10px;background:var(--bg);border:1px solid var(--line);border-radius:12px;padding:8px 12px;font-size:14px}
 .files li span{flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;direction:ltr;text-align:start}
 .files li button{all:unset;cursor:pointer;color:var(--muted);width:26px;height:26px;display:grid;place-items:center;border-radius:50%}
-.nav-btns{display:flex;justify-content:space-between;gap:10px;margin-top:24px}
+.nav-btns{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-top:24px}
+.nb-total{display:none;font-size:13px;color:var(--muted);line-height:1.3}.nb-total b{display:block;font-family:var(--f-head);font-size:18px;color:var(--ink)}
+.pick-toggle{all:unset;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:8px;width:100%;box-sizing:border-box;border:1.5px dashed var(--line2);border-radius:16px;padding:14px;font-weight:700;color:var(--brand2);margin-top:4px}
+.pick-toggle:hover{border-color:var(--brand2);background:#EEF4F0}
+.picking .pick-toggle{display:none}
+@media (max-width:960px){
+  .nav-btns{position:sticky;bottom:0;z-index:20;margin:18px calc(-1 * clamp(18px,4vw,30px)) calc(-1 * clamp(18px,4vw,30px));padding:12px clamp(18px,4vw,30px) calc(12px + env(safe-area-inset-bottom));background:rgba(255,255,255,.96);backdrop-filter:blur(8px);border-top:1px solid var(--line);border-radius:0 0 var(--r) var(--r);box-shadow:0 -8px 24px rgba(15,26,21,.06)}
+  .nav-btns .btn{padding:13px 20px}
+  .nb-total{display:block}
+  .nav-btns #back+.nb-total,.nav-btns .nb-total{margin-inline-end:auto}
+}
 .nav-btns .btn-primary{margin-inline-start:auto}
 .check{display:flex;gap:10px;align-items:flex-start;font-size:14px;color:var(--ink2);cursor:pointer}
 .check input{width:20px;height:20px;accent-color:var(--brand);margin-top:3px;flex:none}
@@ -145,9 +155,12 @@ aside.sum{position:sticky;top:92px;padding:22px;display:flex;flex-direction:colu
             <p class="hint">تقدر تطلب أكثر من خدمة في طلب واحد.</p>
             <div class="cart-list" id="cartList"></div>
             <div class="empty-cart" id="emptyCart" hidden><b>سلتك فاضية</b>اختر الخدمات اللي تحتاجها من تحت</div>
+            <button type="button" class="pick-toggle" id="pickOpen" hidden>＋ أضف خدمة ثانية</button>
+            <div id="pickBox">
             <div class="picker-h"><b id="pickTitle">أضف خدمات</b></div>
             <div class="chips" id="cats"></div>
             <div class="svc-pick" id="pick"></div>
+            </div>
             <p class="err-msg" id="e1" hidden>اختر خدمة وحدة على الأقل</p>
           </section>
 
@@ -200,6 +213,7 @@ aside.sum{position:sticky;top:92px;padding:22px;display:flex;flex-direction:colu
 
           <div class="nav-btns">
             <button type="button" class="btn btn-ghost" id="back" hidden>رجوع</button>
+            <span class="nb-total" id="nbTotal"></span>
             <button type="button" class="btn btn-primary" id="next">التالي</button>
           </div>
         </form>
@@ -235,10 +249,10 @@ aside.sum{position:sticky;top:92px;padding:22px;display:flex;flex-direction:colu
 </main>
 <div class="toast" id="toast"></div>
 
-<script src="assets/config.js?v=202611261009"></script>
-<script src="assets/catalog.js?v=202611261009"></script>
-<script src="assets/details.js?v=202611261009"></script>
-<script src="assets/cart.js?v=202611261009"></script>
+<script src="assets/config.js?v=202611261022"></script>
+<script src="assets/catalog.js?v=202611261022"></script>
+<script src="assets/details.js?v=202611261022"></script>
+<script src="assets/cart.js?v=202611261022"></script>
 <script>
 (()=>{
 const $=s=>document.querySelector(s), S=window.SEEN, C=S.cart, DB=S.dbReady();
@@ -270,10 +284,15 @@ function renderPick(){
   $('#pick').innerHTML=list.map(s=>`<button type="button" role="checkbox" class="opt${s.pkg?' pkg':''}" data-id="${s.id}" aria-checked="${C.has(s.id)}"><i>${S.svg(s.icon)}</i><span class="tx"><b>${esc(s.name)}</b><small>${priceLabel(s)}</small></span><span class="ck">✓</span></button>`).join('');
 }
 $('#pick').addEventListener('click',e=>{const b=e.target.closest('.opt');if(!b)return;const id=b.dataset.id;
+  const wasEmpty=!items().length;
   if(C.has(id)) C.remove(id); else { const s=byId(id); C.add(id, s&&s.tiers?s.tiers[0][0]:null); }
-  $('#e1').hidden=true; renderAll();});
+  $('#e1').hidden=true; renderAll();
+  if(wasEmpty&&items().length&&!pickOpen&&matchMedia('(max-width:960px)').matches) toast('انضافت للسلة ✓ اضغط «التالي» تحت');});
+let pickOpen=false;
+function syncPick(){ const has=items().length>0, show=!has||pickOpen; $('#pickBox').hidden=!show; $('#pickOpen').hidden=show; }
+$('#pickOpen').addEventListener('click',()=>{ pickOpen=true; syncPick(); $('#pickBox').scrollIntoView({behavior:'smooth',block:'start'}); });
 function renderCart(){
-  const it=items();
+  const it=items(); syncPick();
   $('#emptyCart').hidden=!!it.length;
   $('#pickTitle').textContent=it.length?'تبي تضيف خدمة ثانية؟':'اختر الخدمات';
   $('#cartList').innerHTML=it.map(({s,tier})=>`<div class="ci"><i>${S.svg(s.icon)}</i><div class="tx"><b>${esc(s.name)}</b><small>${s.tiers?`${unit(s,tier)} ر.س${S.DISCOUNT?` <s>${baseOf(s,tier)}</s>`:''}`:priceLabel(s)}</small>
@@ -305,6 +324,7 @@ function renderSum(){
     return `<div><span>${esc(s.name)}${tier?` <small>(${esc(tier)})</small>`:''}</span><span>${u==null?'حسب النطاق':u+' ر.س'}</span></div>`;}).join(''):'<div><span style="color:var(--muted)">ما اخترت خدمة بعد</span></div>';
   if(cpn&&total){ const off=total-afterCpn(total); $('#sumItems').insertAdjacentHTML('beforeend',`<div class="disc"><span>كود ${esc(cpn.code)} (${cpn.pct}%)</span><span>-${off} ر.س</span></div>`); total=afterCpn(total); }
   $('#sumTotal').textContent=total?`${total} ر.س${hasQ?' +':''}`:(hasQ?'حسب النطاق':'0 ر.س');
+  $('#nbTotal').innerHTML=it.length?`${it.length===1?'خدمة وحدة':it.length===2?'خدمتين':it.length+' خدمات'}<b>${$('#sumTotal').textContent}</b>`:'';
   $('#qInfo').hidden=!hasQ;
   const needs=it.map(({s})=>[s,((S.DETAILS||{})[s.id]||{}).need||[]]).filter(([,n])=>n.length);
   $('#needBox').hidden=!needs.length;
