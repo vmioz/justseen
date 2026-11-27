@@ -22,7 +22,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Alexandria:wght@600;700;800&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/page.css?v=202611262047">
+<link rel="stylesheet" href="assets/page.css?v=202611280016">
 <style>
 :root{--deep:#0F1A15;--g:#0E3B2C;--g3:#18563F;--gold:#C29A45;--gold2:#8a6a22;--gold3:#8a6a22;--cream:#0F1A15;--mut:#6A746E;--line:#E3DACA;--ok:#15803d;--warn:#b7791f;--bad:#b42318;--tip:#1d4ed8}
 :where(main) :where(*){margin:0;padding:0}
@@ -80,7 +80,7 @@ h3{font:700 19px Alexandria;color:var(--gold2);margin:0 0 4px}
 .tbl td:first-child{color:var(--cream);font-weight:700;white-space:nowrap}
 .tbl .got{color:#33413A;word-break:break-word}
 .tbl .st{font-weight:700;min-width:44px}
-.tbl .why{display:block;font-weight:400;color:var(--mut);font-size:12.5px;margin-top:2px}
+.tbl .why{display:block;font-weight:400;color:#b45309;font-size:12.5px;margin-top:3px}
 .s-ok{color:var(--ok)}.s-warn{color:var(--warn)}.s-bad{color:var(--bad)}
 .notice{margin-top:12px;font-size:13.5px;color:var(--warn);background:rgba(233,180,76,.08);border-radius:12px;padding:10px 14px}
 .src{padding:22px;margin:16px 0 0}
@@ -128,6 +128,19 @@ main,footer{position:relative;z-index:1}
 .loading svg{width:34px;height:34px;animation:spin 1.4s linear infinite;margin-bottom:6px}
 @keyframes spin{to{transform:rotate(360deg)}}
 @media (max-width:640px){#up,#res .card{padding:16px 14px;margin-top:12px}.drop{padding:26px 14px}.sys pre{font-size:12.5px}.score{flex-direction:column;text-align:center;gap:14px}.ring{width:132px;height:132px}.ring strong{font-size:34px}.tbl{font-size:13.5px}.tbl td{padding:10px 4px}.tbl td:first-child{white-space:normal}}
+.sumbar{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
+.sumbar span{background:#FAF8F3;border:1px solid var(--line);border-radius:999px;padding:6px 12px;font-size:13.5px;font-weight:600;color:#33413A}
+.acts{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:14px}
+.act{all:unset;box-sizing:border-box;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:7px;border:1px solid var(--line);background:#fff;border-radius:14px;padding:11px 8px;font:600 14px 'IBM Plex Sans Arabic',sans-serif;color:#0E3B2C;text-align:center}
+.act:hover{border-color:var(--gold2)}.act svg{width:18px;height:18px;flex:none}
+#aWa{background:#0E3B2C;color:#F7F3EC;border-color:#0E3B2C}
+.offer{font-size:13px;color:#8a6a22;margin:8px 0 0;font-weight:600}
+@media (max-width:640px){.acts{grid-template-columns:1fr}.tbl thead{display:none}.tbl,.tbl tbody,.tbl tr,.tbl td{display:block;width:100%}.tbl tr{display:grid;grid-template-columns:1fr auto;column-gap:10px;padding:10px 0;border-bottom:1px solid var(--line)}.tbl tr:last-child{border:0}.tbl td{border:0;padding:2px 0}.tbl td:first-child{grid-column:1}.tbl .got{grid-column:1;font-size:13.5px;color:var(--mut)}.tbl .st{grid-column:2;grid-row:1/3;align-self:center;text-align:center}.sumbar span{font-size:12.5px}}
+.lead h3{margin:0 0 4px}.leadf{display:grid;grid-template-columns:1fr 1fr auto;gap:8px;margin-top:12px}
+.leadf input{border:1px solid var(--line);border-radius:14px;padding:11px 14px;font:500 15px 'IBM Plex Sans Arabic',sans-serif;background:#fff;min-width:0}
+.leadmsg{margin:10px 0 0;font-weight:600;color:#15803d}
+@media (max-width:640px){.leadf{grid-template-columns:1fr}}
+@media print{#leadBox,header,.top,#up,.ats-hero,.ats-how,.ats-research,#load,.acts,.sell,footer,.fab,nav,.crumbs,.note,.cartbtn,[class*=wa-]{display:none!important}body{background:#fff!important}#res{display:block!important}#res .card{break-inside:avoid;box-shadow:none}}
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
 
 /* الهوية الجديدة */
@@ -200,11 +213,11 @@ document.addEventListener('click',function(e){var a=e.target.closest&&e.target.c
  <div class="ats-intro">
   <span class="badge">أداة مجانية · مبنية على أبحاث وأدلة منشورة</span>
   <h1>هل تعدّي سيرتك<br>أنظمة الفرز؟</h1>
-  <p class="lead">ارفع سيرتك وشوف بعينك وش يقرأ منها نظام الفرز (ATS)، ونسبة تقديرية لقراءتها، وملاحظات مسؤول التوظيف مع طريقة إصلاح كل وحدة.</p>
+  <p class="lead">ارفع سيرتك وشوف بعينك وش يقرأ منها نظام الفرز الآلي، ونسبة تقديرية لقراءتها، وملاحظات مسؤول التوظيف مع طريقة إصلاح كل وحدة.</p>
   <div class="ats-stats">
-   <div><b>97.8%</b><span>من أكبر 500 شركة أمريكية تستخدم أنظمة فرز</span><a href="#sources">Jobscan 2025</a></div>
+   <div><b>97.8%</b><span>من أكبر 500 شركة أمريكية تستخدم أنظمة فرز</span><a href="#sources">جوب سكان 2025</a></div>
    <div><b>+90%</b><span>من الشركات تعتمد عليها في التصفية الأولى</span><a href="#sources">هارفارد وأكسنتشر 2021</a></div>
-   <div><b>7.4 ث</b><span>أول نظرة من مسؤول التوظيف على سيرتك</span><a href="#sources">Ladders 2018</a></div>
+   <div><b>7.4 ث</b><span>أول نظرة من مسؤول التوظيف على سيرتك</span><a href="#sources">لادرز 2018</a></div>
   </div>
  </div>
  <section class="card" id="up">
@@ -212,7 +225,7 @@ document.addEventListener('click',function(e){var a=e.target.closest&&e.target.c
   <label class="drop" id="drop">
    <div class="ic"><svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="m17 8-5-5-5 5M12 3v12"/></svg></div>
    <b>اسحب سيرتك هنا أو اضغط للاختيار</b>
-   <small>PDF أو Word ‏(docx) · عربي أو إنجليزي</small>
+   <small>بي دي إف أو وورد · عربي أو إنجليزي</small>
    <input type="file" id="f" accept=".pdf,.docx,application/pdf,application/vnd.openxmlformats-officedocument.wordprocessingml.document">
   </label>
   <div class="file" id="fname"></div>
@@ -240,7 +253,26 @@ document.addEventListener('click',function(e){var a=e.target.closest&&e.target.c
 <div class="ring"><svg viewBox="0 0 150 150"><circle class="tr" cx="75" cy="75" r="65"/><circle class="pr" id="ring" cx="75" cy="75" r="65"/></svg><div><strong id="num">0</strong><span>نسبة القراءة</span></div></div>
 <div class="verdict"><div class="lbl">نسبة القراءة: كم خانة قدر النظام يعبيها من سيرتك</div><h2 id="vt"></h2><div class="match" id="match"></div></div>
 </div>
+<div class="sumbar" id="sumbar"></div>
+<div class="acts">
+ <a class="act" id="aWa" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.1-1.7-.8-2-.9-.3-.1-.5-.1-.7.1-.2.3-.8.9-.9 1.1-.2.2-.3.2-.6.1-.3-.1-1.2-.5-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6l.4-.5c.2-.2.2-.3.3-.5.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5 2.5 1 3 .8 3.6.7.6-.1 1.7-.7 2-1.4.2-.7.2-1.2.2-1.4-.1-.1-.3-.2-.6-.3zM12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2z"/></svg>أرسل لي التقرير</a>
+ <button class="act" id="aShare" type="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="m8.6 13.5 6.8 4M15.4 6.5l-6.8 4"/></svg>شارك نتيجتك</button>
+ <button class="act" id="aPrint" type="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 9V2h12v7M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>احفظ التقرير</button>
+</div>
 <div id="gate"></div>
+</section>
+
+<section class="card lead" id="leadBox">
+<h3>تبي نرسل لك التقرير وطريقة الإصلاح؟</h3>
+<p class="sub">اكتب رقم واتسابك ونرسل لك ملاحظات سيرتك مرتبة مع طريقة إصلاح كل وحدة. اختياري، وما نستخدم رقمك لشي ثاني.</p>
+<form id="leadF" class="leadf"><input id="leadN" maxlength="60" placeholder="اسمك (اختياري)" autocomplete="given-name"><input id="leadP" inputmode="tel" dir="ltr" placeholder="05xxxxxxxx" required autocomplete="tel"><button class="act" id="leadGo" style="background:#0E3B2C;color:#F7F3EC;border-color:#0E3B2C">أرسلوه لي</button></form>
+<p class="leadmsg" id="leadMsg" hidden></p>
+</section>
+
+<section class="card">
+<h3>ملاحظات مسؤول التوظيف</h3>
+<p class="sub">أشياء ما تأثر على نسبة القراءة، بس يلاحظها اللي يقرأ سيرتك. 🔴 مهمة · 🟡 تحسين · 💡 نصيحة</p>
+<ul class="list" id="list"></ul>
 </section>
 
 <section class="card">
@@ -258,16 +290,12 @@ document.addEventListener('click',function(e){var a=e.target.closest&&e.target.c
 <ul class="mrows" id="mrows" style="margin-top:14px"></ul>
 </section>
 
-<section class="card">
-<h3>ملاحظات مسؤول التوظيف</h3>
-<p class="sub">أشياء ما تأثر على نسبة القراءة، بس يلاحظها اللي يقرأ سيرتك. 🔴 مهمة · 🟡 تحسين · 💡 نصيحة</p>
-<ul class="list" id="list"></ul>
-</section>
 
 <section class="card sell">
 <h2>نصلحها لك ونخليها تعدّي ✦</h2>
 <p>سيرة ذاتية احترافية متوافقة مع أنظمة الفرز، بالعربي أو الإنجليزي، تسليم خلال ساعات.</p>
-<a class="btn" id="wa" href="order.html?s=cv">اطلبها · من 40 ريال بعد الخصم</a>
+<a class="btn" id="wa" href="order.html?s=cv">اطلبها · من 40 ريال</a>
+<p class="offer" id="offer"></p>
 <button class="btn ghost" id="again" style="max-width:360px;margin:10px auto 0">افحص سيرة ثانية</button>
 </section>
 <p class="note">نسبة القراءة تقيس كم معلومة قدرنا نسحبها من ملفك بنفس طريقة أنظمة الفرز. كل شركة نظامها يختلف، فالنتيجة ما تضمن القبول، لكنها توريك وين الضعف.</p>
@@ -281,9 +309,9 @@ document.addEventListener('click',function(e){var a=e.target.closest&&e.target.c
   <article><span class="rt peer">دراسة محكّمة</span><b>كل نظام فرز يختلف</b><p>بحث حلّل شركات أنظمة التقييم الآلي ولقى إن أغلبها ما يفصح عن طريقة تقييمه. عشان كذا نسبتنا تقديرية، ونركز على اللي يخرب القراءة في كل الأنظمة.</p><cite>Raghavan, Barocas, Kleinberg &amp; Levy (2020). ACM FAT* Conference.</cite><a href="https://arxiv.org/abs/1906.09208" target="_blank" rel="noopener">المصدر ↗</a></article>
   <article><span class="rt report">تقرير بحثي</span><b>الأنظمة هي أول تصفية</b><p>أكثر من 90% من الشركات اللي تستخدم هالأنظمة تعتمد عليها في أول تصفية وترتيب للمتقدمين، وكثير من المؤهلين ينرفضون بسبب شكل السيرة.</p><cite>Harvard Business School &amp; Accenture (2021). <i>Hidden Workers: Untapped Talent</i>.</cite><a href="https://hbswk.hbs.edu/item/how-to-tap-the-talent-automated-hr-platforms-miss" target="_blank" rel="noopener">المصدر ↗</a></article>
   <article><span class="rt report">دراسة تتبّع العين</span><b>7.4 ثانية للنظرة الأولى</b><p>مسؤول التوظيف يقرر يكمل أو لا خلال ثواني، والسير المزحومة والمتعددة الأعمدة أضعف. منها فحص الفقرات الطويلة والترتيب.</p><cite>Ladders Inc. (2018). Eye-Tracking Study.</cite><a href="https://www.theladders.com/career-advice/is-it-true-that-recruiters-reject-a-resume-in-six-seconds" target="_blank" rel="noopener">المصدر ↗</a></article>
-  <article><span class="rt docs">دليل رسمي</span><b>الصيغ والحجم والجداول</b><p>Greenhouse تقبل PDF وWord وما تقرأ سيرة فوق 2.5MB، وLever توضح إن السيرة تتحول لنص عادي فاللي داخل الجداول والهيدر يضيع.</p><cite>Greenhouse Support · Lever Help Center</cite><a href="https://support.greenhouse.io/hc/en-us/articles/200989175-Unsuccessful-resume-parse" target="_blank" rel="noopener">Greenhouse ↗</a> <a href="https://help.lever.co/hc/en-us/articles/20087345054749" target="_blank" rel="noopener">Lever ↗</a></article>
+  <article><span class="rt docs">دليل رسمي</span><b>الصيغ والحجم والجداول</b><p>منصة «قرين هاوس» تقبل بي دي إف ووورد وما تقرأ سيرة فوق 2.5 ميقا، ومنصة «ليفر» توضح إن السيرة تتحول لنص عادي فاللي داخل الجداول والهيدر يضيع.</p><cite>Greenhouse Support · Lever Help Center</cite><a href="https://support.greenhouse.io/hc/en-us/articles/200989175-Unsuccessful-resume-parse" target="_blank" rel="noopener">Greenhouse ↗</a> <a href="https://help.lever.co/hc/en-us/articles/20087345054749" target="_blank" rel="noopener">Lever ↗</a></article>
   <article><span class="rt docs">دليل جامعي</span><b>أفعال الإنجاز والأرقام</b><p>أدلة جامعة هارفارد تنصح تبدأ كل نقطة بفعل إنجاز وتبعد عن «مسؤول عن»، ومنها فحص البدايات الضعيفة والإنجازات بدون أرقام.</p><cite>Harvard Office of Career Services · Harvard Chan School</cite><a href="https://careerservices.fas.harvard.edu/resources/create-a-strong-resume" target="_blank" rel="noopener">المصدر ↗</a></article>
-  <article><span class="rt report">تقرير سوق</span><b>انتشار أنظمة الفرز</b><p>97.8% من شركات Fortune 500 تستخدم نظام فرز، وأخطاء التنسيق الشائعة مثل الرموز والخطوط والصور تخرب القراءة.</p><cite>Jobscan (2025)</cite><a href="https://www.jobscan.co/blog/fortune-500-use-applicant-tracking-systems/" target="_blank" rel="noopener">المصدر ↗</a></article>
+  <article><span class="rt report">تقرير سوق</span><b>انتشار أنظمة الفرز</b><p>97.8% من أكبر 500 شركة أمريكية تستخدم نظام فرز، وأخطاء التنسيق الشائعة مثل الرموز والخطوط والصور تخرب القراءة.</p><cite>Jobscan (2025)</cite><a href="https://www.jobscan.co/blog/fortune-500-use-applicant-tracking-systems/" target="_blank" rel="noopener">المصدر ↗</a></article>
  </div>
  <details class="how"><summary>كيف نحسب نسبة القراءة؟</summary>
 <p>نقرأ ملفك داخل جهازك بنفس الطريقة اللي تحوّل فيها أنظمة الفرز السيرة لنص عادي، وبعدها نحاول نعبي 9 خانات أساسية. كل خانة لها وزن، والنسبة هي مجموع اللي قدرنا نقراه صح:</p>
@@ -298,6 +326,7 @@ document.addEventListener('click',function(e){var a=e.target.closest&&e.target.c
   <div style="margin-top:6px">© سين — جميع الحقوق محفوظة</div>
 </footer>
 
+<script src="assets/config.js?v=202611280016"></script>
 <script>
 const $=s=>document.querySelector(s),esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
 (function(){var k=document.querySelector('.sky'),sm=innerWidth<640,n=sm?6:10,P=[[6,12],[90,9],[16,40],[82,34],[48,66],[93,72],[8,84],[62,20],[30,90],[72,52]];
@@ -555,7 +584,12 @@ function analyze(d,jd,meta){
 
 /* ============ العرض ============ */
 const DESC=s=>s>=90?'النظام يقرأ سيرتك كاملة':s>=70?'النظام يقرأ أغلبها، وفيه خانات ضايعة':s>=40?'النظام يضيّع أجزاء مهمة من سيرتك':'النظام بيتعب يقراها';
-function show(r){
+let atsId=null;
+function rpc(fn,body){const c=window.SEEN_CONFIG||{};if(!c.SUPABASE_URL)return Promise.reject(new Error('no db'));
+ return fetch(c.SUPABASE_URL+'/rest/v1/rpc/'+fn,{method:'POST',headers:{apikey:c.SUPABASE_ANON_KEY,Authorization:'Bearer '+c.SUPABASE_ANON_KEY,'Content-Type':'application/json'},body:JSON.stringify(body)}).then(async x=>{const t=await x.text();if(!x.ok)throw new Error((JSON.parse(t||'{}').message)||'error');return t?JSON.parse(t):null;});}
+function logAts(d){ if(/^(localhost|127\.)/.test(location.hostname)&&!/statstest/.test(location.search))return; if(localStorage.getItem('seen-admin')==='1')return;
+ const st=window.SEEN_STATS||{}; atsId=null; rpc('log_ats',{p:Object.assign({sid:st.sid||'',source:st.src||''},d)}).then(id=>{atsId=id}).catch(()=>{}); }
+function show(r,demo){ if(demo) r.__demo=true;
  $('#up').style.display='none';$('#load').style.display='none';$('#res').style.display='block';
  const s=r.score,col=s>=90?'var(--ok)':s>=70?'#a9d36c':s>=40?'var(--warn)':'var(--bad)';
  const ring=$('#ring');ring.style.stroke=col;$('#num').style.color=col;ring.style.strokeDashoffset=408.4;
@@ -565,7 +599,7 @@ function show(r){
  $('#match').innerHTML=r.kw?`<b>التطابق مع الوظيفة: ${r.kw.pct}%</b><small>نسبة تقديرية، كل شركة تحسبها بطريقتها</small>`:`<b>التطابق مع الوظيفة</b><small>الصق إعلان الوظيفة عشان تعرف تطابقك معها</small>`;
  $('#gate').innerHTML=r.gate.map(g=>`<div class="gate"><b>⛔ ${esc(g[0])}</b><small>${esc(g[1])}</small></div>`).join('');
  const ic={ok:'✓',warn:'⚠️',bad:'✗',na:'—'};
- $('#rows').innerHTML=r.rows.map(x=>`<tr><td>${esc(x.label)}</td><td class="got">${esc(x.val)}</td><td class="st s-${x.st==='na'?'ok':x.st}">${ic[x.st]}${x.why?`<span class="why">${esc(x.why)}</span>`:''}</td></tr>`).join('');
+ $('#rows').innerHTML=r.rows.map(x=>`<tr><td>${esc(x.label)}</td><td class="got">${esc(x.val)}${x.why?`<span class="why">${esc(x.why)}</span>`:''}</td><td class="st s-${x.st==='na'?'ok':x.st}">${ic[x.st]}</td></tr>`).join('');
  $('#notices').innerHTML=r.notices.map(t=>`<div class="notice">⚠️ ${esc(t)}</div>`).join('');
  const sl=(r.raw||'').split('\n').map(l=>l.trim()).filter(Boolean);if(s<90&&sl.length){$('#sys').hidden=false;$('#raw').textContent=sl.slice(0,8).map(l=>l.length>80?l.slice(0,80)+'…':l).join('\n')}else{$('#sys').hidden=true;$('#raw').textContent=''}
  const ord={red:0,yel:1,tip:2},ico={red:'🔴',yel:'🟡',tip:'💡'};
@@ -574,7 +608,20 @@ function show(r){
  if(r.kw){$('#kwbox').hidden=false;$('#kwp').textContent='· '+r.kw.pct+'%';$('#kw').innerHTML=r.kw.top.map(w=>`<span class="${r.kw.have.includes(w)?'have':''}">${esc(r.kw.show[w])}</span>`).join('');
   $('#mrows').innerHTML=r.kw.m.map(([ok,t,d])=>`<li><b class="${ok?'s-ok':'s-warn'}">${ok?'✓':'⚠️'} ${esc(t)}</b><small>${esc(d)}</small></li>`).join('')}else $('#kwbox').hidden=true;
  try{window.gtag&&gtag('event','ats_check',{score_band:s>=90?'90+':s>=70?'70-89':s>=40?'40-69':'0-39',with_job:r.kw?'yes':'no'})}catch(_){}
- $('#wa2').href=$('#wa').href='https://wa.me/966594827253?text='+encodeURIComponent('هلا، فحصت سيرتي في موقع سين وطلعت نسبة القراءة '+s+'% وأبي أعدّلها');
+ const nR=r.notes.filter(o=>o.lvl==='red').length,nY=r.notes.filter(o=>o.lvl==='yel').length,nT=r.notes.filter(o=>o.lvl==='tip').length,okRows=r.rows.filter(x=>x.st==='ok').length;
+ $('#sumbar').innerHTML=`<span>✓ ${okRows} من ${r.rows.length} خانات مقروءة</span>`+(nR?`<span>🔴 ${nR} مهمة</span>`:'')+(nY?`<span>🟡 ${nY} تحسين</span>`:'')+(nT?`<span>💡 ${nT} نصيحة</span>`:'')+(r.kw?`<span>🎯 تطابق ${r.kw.pct}%</span>`:'');
+ const top=nt.slice(0,5).map(o=>'• '+o.title).join('\n');
+ $('#aWa').href='https://wa.me/966594827253?text='+encodeURIComponent('هلا سين، فحصت سيرتي في موقعكم وأبي تقرير مفصل وطريقة الإصلاح.\nنسبة القراءة: '+s+'%'+(r.kw?'\nالتطابق مع الوظيفة: '+r.kw.pct+'%':'')+(top?'\nأهم الملاحظات:\n'+top:''));
+ const shareTxt='فحصت سيرتي الذاتية مجانًا في سين وطلعت نسبة القراءة '+s+'% 📄 جرّب سيرتك:';
+ $('#aShare').onclick=async()=>{const url='https://justseensa.com/ats.html';try{if(navigator.share){await navigator.share({text:shareTxt,url});}else{window.open('https://api.whatsapp.com/send?text='+encodeURIComponent(shareTxt+' '+url),'_blank');}}catch(_){} try{window.gtag&&gtag('event','ats_share',{score:s})}catch(_){}};
+ $('#aPrint').onclick=()=>{try{window.gtag&&gtag('event','ats_save',{score:s})}catch(_){} window.print();};
+ $('#aWa').onclick=()=>{try{window.gtag&&gtag('event','ats_report_whatsapp',{score:s})}catch(_){}};
+ const END=Date.parse('2026-12-03T23:59:59+03:00'),on=Date.now()<END;
+ $('#wa').textContent='اطلبها · من '+(on?40:50)+' ريال'; $('#offer').textContent=on?'عرض الافتتاح: خصم 20% لين الخميس 3 ديسمبر':''; $('#offer').hidden=!on;
+ if(!r.__demo){ logAts({score:s,read_ok:okRows,read_total:r.rows.length,red:nR,yel:nY,tip:nT,with_job:!!r.kw,kw_pct:r.kw?r.kw.pct:'',top_notes:nt.slice(0,5).map(o=>o.title).join(' · ')}); }
+ $('#leadBox').hidden=!!r.__demo; $('#leadMsg').hidden=true; $('#leadF').hidden=false;
+ $('#wa2').href='https://wa.me/966594827253?text='+encodeURIComponent('هلا، فحصت سيرتي في موقع سين وطلعت نسبة القراءة '+s+'% وأبي أعدّلها');
+ $('#wa').href='order.html?s=cv';
  scrollTo({top:0,behavior:'smooth'});
 }
 
@@ -597,6 +644,12 @@ $('#go').onclick=async()=>{
  try{show(await run(file,$('#jd').value))}
  catch(e){$('#load').style.display='none';$('#up').style.display='block';err(e&&e.code==='pass'?'الملف محمي بكلمة سر وما ينفتح، ارفعه بدون حماية.':e&&e.code==='lib'?'ما قدرنا نحمّل أداة القراءة، تأكد من الإنترنت وجرب مرة ثانية.':'الملف ما ينفتح، يمكن تالف. صدّره من جديد وارفعه.')}
 };
+$('#leadF').onsubmit=async e=>{e.preventDefault();const m=$('#leadMsg');const ph=$('#leadP').value.trim();if(!/^[0-9+\s]{9,16}$/.test(ph)){m.hidden=false;m.style.color='#b42318';m.textContent='اكتب رقم واتساب صحيح مثل 05xxxxxxxx';return;}
+ $('#leadGo').disabled=true;
+ try{ if(!atsId) throw new Error('wait'); await rpc('ats_contact',{p_id:atsId,p_phone:ph,p_name:$('#leadN').value.trim()}); $('#leadF').hidden=true; m.hidden=false; m.style.color='#15803d'; m.textContent='وصلنا رقمك ✓ بنرسل لك التقرير على واتساب قريب.'; try{window.gtag&&gtag('event','ats_lead')}catch(_){} }
+ catch(err){ m.hidden=false; m.style.color='#b42318'; m.innerHTML='ما قدرنا نحفظ رقمك، أرسل لنا على <a href="'+$('#aWa').href+'" target="_blank" rel="noopener">واتساب</a> مباشرة.'; }
+ finally{ $('#leadGo').disabled=false; } };
+$('#wa').addEventListener('click',()=>{ if(atsId) rpc('ats_ordered',{p_id:atsId}).catch(()=>{}); });
 $('#again').onclick=()=>{$('#res').style.display='none';$('#up').style.display='block';file=null;f.value='';$('#fname').style.display='none';$('#go').disabled=true;scrollTo({top:0,behavior:'smooth'})};
 $('#demo').onclick=()=>{
  const t=`ريم عبدالله الشمري
@@ -619,9 +672,10 @@ $('#demo').onclick=()=>{
 إكسل، القوائم المالية، التسويات البنكية، الحاسب الآلي، الإنترنت`;
  const jd='مطلوب محاسب بخبرة 5 سنوات في إعداد القوائم المالية والتسويات البنكية وإعداد الميزانيات وتحليل التكاليف وإجادة برنامج إكسل وأنظمة ERP مثل SAP وتقارير ضريبة القيمة المضافة VAT والزكاة. المؤهل بكالوريوس محاسبة.';
  $('#jd').value=jd;$('.jd').open=true;
- show(analyze({kind:'docx',lines:t.split('\n').map(x=>({t:x,z:'body',li:x.startsWith('•')})),pages:1,colRatio:0,hasPhoto:false,tables:0,boxes:[],hdr:['reem.s.demo@email.com · 0550000000']},jd,{fileName:'cv.pdf',size:180000}));
+ show(analyze({kind:'docx',lines:t.split('\n').map(x=>({t:x,z:'body',li:x.startsWith('•')})),pages:1,colRatio:0,hasPhoto:false,tables:0,boxes:[],hdr:['reem.s.demo@email.com · 0550000000']},jd,{fileName:'cv.pdf',size:180000}),true);
 };
 window.__ats={analyze,readPdf,readDocx,run};
 </script>
-<script src="assets/inner.js?v=202611262047"></script>
+<script src="assets/inner.js?v=202611280016"></script>
+<script src="assets/stats.js?v=202611280016" defer></script>
 </body></html>
