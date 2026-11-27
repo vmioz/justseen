@@ -40,3 +40,10 @@
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', paint); else paint();
   W.paintCart = paint;
 })();
+
+/* عرض الافتتاح: بعد تاريخ الانتهاء ترجع الأسعار كاملة في صفحات الخدمات */
+(function(){function f(){document.querySelectorAll('[data-end]').forEach(function(e){if(Date.now()<Date.parse(e.getAttribute('data-end')))return;
+ if(e.classList.contains('offnote')){e.remove();return;}
+ var b=e.querySelector('b'),full=e.getAttribute('data-full');if(b&&full)b.textContent=full;
+ e.querySelectorAll('s,em.tag').forEach(function(x){x.remove();});e.removeAttribute('data-end');});}
+ if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',f);else f();})();
